@@ -2,6 +2,7 @@
 
 This is a simple stripped back basic template that I'd use for every email I send.
 
+## The code
 ```
 <!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -121,12 +122,12 @@ If you are interested in the reasons behind why each part of the code is there, 
   <meta name="color-scheme" content="light only">
   <meta name="supported-color-schemes" content="light only">
   ```
-  These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renames to `color-scheme` so for now we include both to get more support but in the future it should be safe t only use `color-scheme`.
+  These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renames to `color-scheme` so for now we include both to get more as the old name is supported by WebKit, Safari, and Mail in macOS 10.14.4.
 
   The `content` values are
-  * light dark—The UA will choose the light or dark theme to match the user’s preference. If the user’s preference does not match something in the list, the UA is allowed to apply transformations to the content.
-  * only (synonym for light only—The UA will only ever render the content in the light color scheme, and never apply transformations.
-  * light dark only—The UA will choose the first of the listed schemes that it supports taking user preference into account, and never apply transformations.
+  * light dark — tells the email clients that both light and dark mode are coded and ready to use.
+  * only - tells the email clients that only light mode is ready to use and not to try and transform light styles.
+  * light dark only — The UA will choose the first of the listed schemes that it supports taking user preference into account, and never apply transformations.
 
   I tend to default to `light only` then control dark styles with a `prefers-color-scheme` media query.
 
