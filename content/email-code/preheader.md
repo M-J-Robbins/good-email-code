@@ -30,5 +30,5 @@ Ok well there are a few other things worth mentioning.
 
   I've also heard reports of the code sometimes showing in the preheader, I've not been able to reproduce this but from what I've heard that might only happen when using `&zwnj;`.
 
-## GMX app
-  The GMX app pulls in preheader content from the plain text version of the email, if this version is generated with `&zwnj;` `&#847;` or `&#8204;` rather than the characters they represent then they will show in the preheader.
+## GMX apps
+  The GMX app pulls in preheader content from the plain text version of the email, if this version is generated with `&zwnj;` `&#847;` or `&#8204;` rather than the characters they represent then they will show in the preheader.  You may need to copy and paste the character into your plain text version, you can copy the [Combining Grapheme Joiner on unicode-table](https://unicode-table.com/en/034F/), remember to put a space between each time you paste it.

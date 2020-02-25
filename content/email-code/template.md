@@ -163,7 +163,7 @@ If you are interested in the reasons behind why each part of the code is there, 
     }
   </style>
   ```
-  This is essentially a duplicate of the [meta color-scheme](#color-scheme). Meta is the preferred format as that should render before the CSS, but email is likely to remove meta in some cases so using both should give better support.
+  This is essentially a duplicate of the [meta color-scheme](#color-scheme). At time of writing this only really works in Apple Mail which supports both methods but in the interest of future proofing I'm including both.  There is also a potential argument to apply this to the wrapping element too. 
 
 ## Body
   ```
