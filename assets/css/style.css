@@ -1,14 +1,16 @@
 body{
-  background: #fff;
+  background: #e6fff5;
   margin:0;
   font-size: 1rem;
 }
-main{
-  max-width: 50em;
+#main{
+  max-width: 80em;
+  padding: 2em;
   margin: 0 auto;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #e6fff5, #c2d6ce);
-  box-shadow:  30px 30px 60px #b7cac3,
-              -30px -30px 60px #f7ffff;
-
+  border-radius: 4em;
+  background: linear-gradient(145deg,
+  #e6fff5,
+  #c2d6ce);
+  box-shadow: 2em 2em 4em
+  #b7cac3, -2em -2em 4em rgb(221, 245, 235);
 }
