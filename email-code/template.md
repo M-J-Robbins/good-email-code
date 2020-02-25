@@ -3,6 +3,34 @@
 This is a simple stripped back basic template that I'd use for every email I send.
 
 ## The code
+{% highlight html %}
+<body class="body">
+<div role="article" aria-roledescription="email" aria-label="email name" lang="en">
+<!-- email content in here -->
+</div>
+</body>
+{% endhighlight %}
+
+{% highlight html %}
+```
+<body class="body">
+<div role="article" aria-roledescription="email" aria-label="email name" lang="en">
+<!-- email content in here -->
+</div>
+</body>
+```
+{% endhighlight %}
+
+```
+{% highlight html %}
+<body class="body">
+<div role="article" aria-roledescription="email" aria-label="email name" lang="en">
+<!-- email content in here -->
+</div>
+</body>
+{% endhighlight %}
+```
+
 ```
 <!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
