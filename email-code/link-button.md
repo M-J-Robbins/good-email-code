@@ -13,73 +13,73 @@ Just a quick note to start with as I like to be a pedantic, this is not a button
 There is quite a lot going on in here, if you want to just copy and paste the code you can. Editing the href and the colours should be pretty self explanatory however if you want to edit the padding then best to read up about that below.
 
 
-  ### Start with web code
-    We start with a pretty standard link button that we might use on the web
-    ```
-    <a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block;">
-      Link Text
-    </a>
-    ```
-    All of the styles here are optional except the `padding` and `display` without those it's a regular text link, which is also fine but that's not what we're looking at now. I've set `display` to `inline-block` so it flows with the text-align, but you could also use `block`.
+### Start with web code
+  We start with a pretty standard link button that we might use on the web
+  ```
+  <a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block;">
+    Link Text
+  </a>
+  ```
+  All of the styles here are optional except the `padding` and `display` without those it's a regular text link, which is also fine but that's not what we're looking at now. I've set `display` to `inline-block` so it flows with the text-align, but you could also use `block`.
 
 
-  ### Reset padding for Outlook
-    ```
-    mso-padding-alt:0;
-    ```
-    Because outlook doesn't respect padding very well we need to make a few changes to get this working, first up is to reset the padding using `mso-padding-alt`
+### Reset padding for Outlook
+  ```
+  mso-padding-alt:0;
+  ```
+  Because outlook doesn't respect padding very well we need to make a few changes to get this working, first up is to reset the padding using `mso-padding-alt`
 
 
-  ### Add left and right padding
-    ```
-    <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
-    ```
-    Inside the link either side of the text we add an `<i>` element, the element isn't relevant it's just something small and can take the style.
+### Add left and right padding
+  ```
+  <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+  ```
+  Inside the link either side of the text we add an `<i>` element, the element isn't relevant it's just something small and can take the style.
 
-    This is wrapped in a conditional comment so it only shows to Outlook `<!--[if mso]> <![endif]-->`
+  This is wrapped in a conditional comment so it only shows to Outlook `<!--[if mso]> <![endif]-->`
 
-    We add `letter-spacing:` to the amount of padding we want, and a `&nbsp;` so that spacing has something to apply to.
+  We add `letter-spacing:` to the amount of padding we want, and a `&nbsp;` so that spacing has something to apply to.
 
-    By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` take up no added space by setting `mso-font-width:-100%`
-
-
-  ### Add bottom padding
-    ```
-    <span style="mso-text-raise:15pt;">Link Text</span>
-    ```
-    Inside the link we wrap the link text with a span and apply `mso-text-raise` if you are designing with `px` write it as `pt` but don't adjust the value.  Not sure why but this give a more exact match to other email clients.
+  By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` take up no added space by setting `mso-font-width:-100%`
 
 
-  ### Add top padding
-    ```
-    <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]-->
-    ```
-    In the `<i>` we have added for either the left or right padding we add `mso-text-raise` again using `pt` units but this time adding both the top and bottom padding together, this plus the height of the `nbsp;` adds to the total height of our design.
+### Add bottom padding
+  ```
+  <span style="mso-text-raise:15pt;">Link Text</span>
+  ```
+  Inside the link we wrap the link text with a span and apply `mso-text-raise` if you are designing with `px` write it as `pt` but don't adjust the value.  Not sure why but this give a more exact match to other email clients.
 
-    If you don't have left or right padding then you'll need to add the `<i>` element to get the top padding, keep the `mso-font-width:-100%;` but no need to include the `letter-spacing`
+
+### Add top padding
+  ```
+  <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]-->
+  ```
+  In the `<i>` we have added for either the left or right padding we add `mso-text-raise` again using `pt` units but this time adding both the top and bottom padding together, this plus the height of the `nbsp;` adds to the total height of our design.
+
+  If you don't have left or right padding then you'll need to add the `<i>` element to get the top padding, keep the `mso-font-width:-100%;` but no need to include the `letter-spacing`
 
 
 ## Code formatting
-  If there is a space or new line between the conditional comment `<!--[if mso]> <![endif]-->` and the `<span> </span>` then extra padding will be added to the link button.  This could be an issue with some ESPs that will reformat your code before sending or sharing code with other developers who like to tidy code to a more readable format.
+If there is a space or new line between the conditional comment `<!--[if mso]> <![endif]-->` and the `<span> </span>` then extra padding will be added to the link button.  This could be an issue with some ESPs that will reformat your code before sending or sharing code with other developers who like to tidy code to a more readable format.
 
 
 ## Height and width
-  This code uses padding to create the size of the design rather than height and width.  This is to give a more consistent rendering across email clients.  Where as most email clients will support height and width Outlook will not.
+This code uses padding to create the size of the design rather than height and width.  This is to give a more consistent rendering across email clients.  Where as most email clients will support height and width Outlook will not.
 
-  ### Height
-  To add height just add a `height` to the `<a>` styles and for Outlook, add `line-height` or the same value to one of the `<i>` elements.
+### Height
+To add height just add a `height` to the `<a>` styles and for Outlook, add `line-height` or the same value to one of the `<i>` elements.
 
-  ### Width
-  To add width just add a `width` to the `<a>` styles and for Outlook we can't do anything so you have to reply on the `letter-spacing` tick.  For example if you want to do `width:100%;` you'd need to estimate a `px` value of what that might be for Outlook.
+### Width
+To add width just add a `width` to the `<a>` styles and for Outlook we can't do anything so you have to reply on the `letter-spacing` tick.  For example if you want to do `width:100%;` you'd need to estimate a `px` value of what that might be for Outlook.
 
 
 ## Background image
-  Add `background-image` to the `<a>` styles.  For Outlook set a `background-color` as a fallback.
+Add `background-image` to the `<a>` styles.  For Outlook set a `background-color` as a fallback.
 
 
 ## Border radius
-  Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square.
+Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square.
 
 
 ## Text wrapping
-  Text will wrap normally in all clients apart from MSO Outlook.  As MSO Outlook is a desktop client we don't need to worry about responsive layouts, the Outlook apps are not MSO so they wrap as expected.  There is perhaps a usecase for a 2 line link button on desktop but I'm yet to find a way for that to work in MSO Outlook.
+Text will wrap normally in all clients apart from MSO Outlook.  As MSO Outlook is a desktop client we don't need to worry about responsive layouts, the Outlook apps are not MSO so they wrap as expected.  There is perhaps a usecase for a 2 line link button on desktop but I'm yet to find a way for that to work in MSO Outlook.

@@ -1,3 +1,14 @@
 body{
   background: #fff;
+  margin:0;
+  font-size: 1rem;
+}
+main{
+  max-width: 50em;
+  margin: 0 auto;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #e6fff5, #c2d6ce);
+  box-shadow:  30px 30px 60px #b7cac3,
+              -30px -30px 60px #f7ffff;
+
 }
