@@ -1,22 +1,28 @@
-body{
-  background: #e6fff5;
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Code+Pro&display=swap');
+html{
+  --bg-color: #eee;
+  --fg-color: #222;
+  background: var(--bg-color, #eee);
+  color: var(--fg-color, #222);
   margin:0;
   font-size: 1rem;
+  font-family:  Montserrat, arial, sans-serif;
+}
+.wrapper{
+  
+}
+header{
+  
 }
 #main{
   max-width: 80em;
   padding: 2em;
   margin: 0 auto;
-  border-radius: 4em;
-  background: linear-gradient(145deg,
-  #e6fff5,
-  #c2d6ce);
-  box-shadow: 2em 2em 4em
-  #b7cac3, -2em -2em 4em rgb(221, 245, 235);
+
 }
 
 /* Syntax highlighting */
-.highlight pre { background-color: #272822; }
+.highlight pre { background-color: #272822; padding:1em; white-space: pre-wrap; font-family: 'Source Code Pro', monospace;}
 .highlight .hll { background-color: #272822; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
