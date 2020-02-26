@@ -3,11 +3,11 @@
 This is a text snippet that appears under the subject line in the inbox but is hidden from the from the email when it's opened.
 
 ## The code
-```
+{% highlight html %}
 <div style="display:none">
   Preheader text here
 </div>
-```
+{% endhighlight %}
 Yup it's that simple.
 
 Ok well there are a few other things worth mentioning.
@@ -17,11 +17,11 @@ Ok well there are a few other things worth mentioning.
 
   So if you want to make it work in mail.ru we can use this code
 
-  ```
+  {% highlight html %}
   <div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">
     Preheader text here
   </div>
-  ```
+  {% endhighlight %}
 
   For this we set the div to not take up any height space, and to hide the content that would overflow `max-height:0;overflow:hidden;`.  Then for MSO Outlook we can use the specific mso code `mso-hide:all;`. And finally as we want this code to be hidden in the email we also want it hidden for screen readers so we add `aria-hidden="true"`.
 
