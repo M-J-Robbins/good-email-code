@@ -14,7 +14,6 @@
   <meta name="description" content="{{project_tagline}}">
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
 </head>
 
 <body>
@@ -22,6 +21,7 @@
   <div class="wrapper">
     <header>
       <h1 class="title">{{project_title}}</h1>
+      <img src="../images/logo.svg">
     </header>
     <div id="container">
       <p class="tagline">{{project_tagline}}</p>
@@ -42,19 +42,7 @@
       </div>
     </div>
     <footer>
-      <div class="owner">
-      {{#project_page?}}
-      <p><a href="{{owner_url}}" class="avatar"><img src="{{owner_gravatar_url}}" width="48" height="48"/></a> <a href="{{owner_url}}">{{owner_name}}</a> maintains <a href="{{github_url}}">{{project_title}}</a></p>
-      {{/project_page?}}
-
-       {{#user_page?}}
-      <p><a href="{{owner_url}}" class="avatar"><img src="{{owner_gravatar_url}}" width="48" height="48"/></a>View <a href="{{owner_url}}">{{owner_name}}</a> on <a href="https://www.github.com">GitHub</a></p>
-      {{/user_page?}}
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
+      FOOTER
     </footer>
   </div>
   <div class="current-section">
