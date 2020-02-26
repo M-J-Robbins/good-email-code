@@ -7,36 +7,36 @@ This is a simple stripped back basic template that I'd use for every email I sen
 <!DOCTYPE html>
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="format-detection" content="telephone=no">
-<meta name="format-detection" content="date=no">
-<meta name="format-detection" content="address=no">
-<meta name="format-detection" content="email=no">
-<meta name="x-apple-disable-message-reformatting">
-<meta name="color-scheme" content="light only">
-<meta name="supported-color-schemes" content="light only">
-<title>Email title</title>
-<!--[if mso]>
-<xml>
-<o:OfficeDocumentSettings>
-  <o:AllowPNG/>
-  <o:PixelsPerInch>96</o:PixelsPerInch>
-</o:OfficeDocumentSettings>
-</xml>
-<![endif]-->
-<style>
-:root {
-  color-scheme: light only;
-  supported-color-schemes: light only;
-}
-</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark only">
+  <meta name="supported-color-schemes" content="light dark only">
+  <title>Email title</title>
+  <!--[if mso]>
+  <xml>
+  <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+  <style>
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+  </style>
 </head>
 <body class="body">
-<div role="article" aria-roledescription="email" aria-label="email name" lang="en">
-<!-- email content in here -->
-</div>
+  <div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:1rem">
+    <!-- email content in here -->
+  </div>
 </body>
 </html>
 {% endhighlight %}
@@ -118,17 +118,18 @@ There are more details on [Apple auto-scaling emails bug](https://github.com/hte
 
 ### color-scheme
 {% highlight html %}
-<meta name="color-scheme" content="light only">
-<meta name="supported-color-schemes" content="light only">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 {% endhighlight %}
 These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renames to `color-scheme` so for now we include both to get more as the old name is supported by WebKit, Safari, and Mail in macOS 10.14.4.
 
 The `content` values are
-* light dark — tells the email clients that both light and dark mode are coded and ready to use.
-* only - tells the email clients that only light mode is ready to use and not to try and transform light styles.
-* light dark only — The UA will choose the first of the listed schemes that it supports taking user preference into account, and never apply transformations.
+* light dark — tells the email clients that both light and dark styles are coded and ready to use.
+* light - tells the email client that only light styles are provided
+* light only - tells the email clients that only light mode styles are ready to use and not to try and transform light styles.
+* light dark only — tells the email clients that light and dark styles are ready to use and not to try and transform light styles.
 
-I tend to default to `light only` then control dark styles with a `prefers-color-scheme` media query.
+It's best to set this with logic depending on if dark styles are included in the code. But if you can't place that logic I'd opt for `light dark`.
 
 
 ## Title
@@ -157,8 +158,8 @@ This code helps rendering on Windows versions of Outlook desktop.
 {% highlight html %}
 <style>
   :root {
-    color-scheme: light only;
-    supported-color-schemes: light only;
+    color-scheme: light dark;
+    supported-color-schemes: light dark;
   }
 </style>
 {% endhighlight %}
@@ -172,7 +173,7 @@ I always like to define a body class on the body element, this is because someti
 
 ## Wrapping element
 {% highlight html %}
-<div role="article" aria-roledescription="email" aria-label="email name" lang="en">
+<div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:1rem">
 {% endhighlight %}
 Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people appoly these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use a `<table>`.
 
@@ -187,4 +188,9 @@ We define this as stand alone content but it will be described as a article whic
 So we've said this is stand along content, we've said the content type is email now we give that a title.  I'd recommend using something like the subject line, or perhaps say who the email is from.
 
 ### lang="en"
-This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicateit here also.
+This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
+
+### font-size:1rem
+Some email clients may force a font-size on your email content. This resets it to be relative to the users settings so better for accessibility.  Ideally all other units in the email should be `em` so they are relative to this.
+
+Unfortunately rem units don't work everywhere if you want to find out more look at [email client support for rem units](https://www.caniemail.com/features/css-unit-rem/) and [browser support for rem units](https://caniuse.com/#feat=rem)
