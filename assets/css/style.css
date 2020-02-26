@@ -8,21 +8,52 @@ html{
   font-size: 1rem;
   font-family:  Montserrat, arial, sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  html{
+    --bg-color: #333;
+    --fg-color: #eee;
+  }
+  a{
+    color:#bcbcff;
+  }
+  .highlight pre{
+    background-color: #111;
+  }
+}
+/* article{
+  transform:rotate(-5deg) skew(-5deg)
+} */
+
 .wrapper{
-  
+
 }
 header{
-  
+  text-align:center;
+}
+header .logo{
+  width:18em;
 }
 #main{
+  width:90%;
   max-width: 80em;
   padding: 2em;
   margin: 0 auto;
-
+  box-shadow:0 10em 10em -5em var(--fg-color, #222);
+}
+h1{
+  font-size:3em;
+  border-bottom:.1em solid currentcolor;
+}
+h2,h3,h4,h5,h6{
+  margin:2em 0 1em 0
 }
 
 /* Syntax highlighting */
-.highlight pre { background-color: #272822; padding:1em; white-space: pre-wrap; font-family: 'Source Code Pro', monospace;}
+.highlight pre { background-color: #272822; padding:1em; white-space: pre-wrap; font-family: 'Source Code Pro', monospace; color:#fff;border-radius:.5em;
+box-shadow:  inset .25em .25em .5em #616161,
+            .25em .25em .5em rgba(0,0,0,0.5);
+
+}
 .highlight .hll { background-color: #272822; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
@@ -32,7 +63,7 @@ header{
 .highlight .o { color: #f92672 } /* Operator */
 .highlight .p { color: #f8f8f2 } /* Punctuation */
 .highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
+.highlight .cp { color: #97937c } /* Comment.Preproc */
 .highlight .c1 { color: #75715e } /* Comment.Single */
 .highlight .cs { color: #75715e } /* Comment.Special */
 .highlight .ge { font-style: italic } /* Generic.Emph */
