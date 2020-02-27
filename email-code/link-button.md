@@ -1,7 +1,7 @@
 # Link - button
 
-**Pedantic Semantic**
-Just a quick note to start with as I like to be a pedantic, this is not a button.  Here I've named it *Link - button* as this is a link that is styles like a button.  Quite often in the email world we talk about buttons, when actually we mean links.  In email it's rare to use a `<button>` but really that is the only thing we should call a button and a `<a>` is a link (or possible an anchor as that's that the a stands for).  For a designer this could be a button if they are only concerned with the look and not the function.
+**Pedantic Semantic:**
+Just a quick note to start with as I like to be a pedant, this is not a button.  Here I've named it *Link - button* as this is a link that is styles like a button.  Quite often in the email world we talk about buttons, when actually we mean links.  In email it's rare to use a `<button>` but really that is the only thing we should call a button and a `<a>` is a link (or possible an anchor as that's that the `<a>` stands for).  For a designer this could be a button if they are only concerned with the look and not the function.
 
 
 ## The code
