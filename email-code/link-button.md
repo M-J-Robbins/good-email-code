@@ -74,11 +74,11 @@ To add width just add a `width` to the `<a>` styles and for Outlook we can't do 
 
 
 ## Background image
-Add `background-image` to the `<a>` styles.  For Outlook set a `background-color` as a fallback.
+Add `background-image` to the `<a>` styles.  For Outlook set a `background-color` as a fallback or use [VML button](https://buttons.cm).
 
 
 ## Border radius
-Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square.
+Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square or use [VML button](https://buttons.cm).
 
 
 ## Text wrapping
