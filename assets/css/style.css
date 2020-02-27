@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i|Source+Code+Pro&display=swap');
 
 /* Try and remove these another way  */
 .highlight .lines {
@@ -96,7 +96,7 @@ footer{
     text-align: center;
 }
 footer a{
-  color:#005959;
+  color:#00d9d9;
 }
 @media screen and (max-width:60em){
   #main{
