@@ -88,17 +88,19 @@ footer{
     border-radius: 120% 4em 120% 4em / 4em 120% 4em 120%;
     text-align: center;
 }
-footer .a{
-  color:#00d9d9;
+footer a{
+  color:#005959;
 }
 @media screen and (max-width:60em){
+  #main{
+    width:100%;
+  }
   figure.highlight{
     margin:1em;
   }
 }
 @media screen and (max-width:30em){
   #main{
-    width:100%;
     padding:2em .5em 3em .5em;
   }
   figure.highlight{
