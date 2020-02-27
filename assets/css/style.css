@@ -49,6 +49,7 @@ header .logo:hover{
   box-shadow:8em 4em 15em -15em var(--fg-color, #222),
             -8em 4em 15em -15em var(--fg-color, #222);
   border-radius: 0 0 8em 8em / 0 0 6em 6em;
+  line-height:1.5;
 }
 h1{
   font-size:3em;
@@ -87,6 +88,9 @@ footer{
     border-radius: 120% 4em 120% 4em / 4em 120% 4em 120%;
     text-align: center;
 }
+footer .a{
+  color:#00d9d9;
+}
 @media screen and (max-width:60em){
   figure.highlight{
     margin:1em;
@@ -114,6 +118,10 @@ footer{
   border:1px solid var(--highlight, #005959);
   box-shadow:  inset .25em .25em .5em #616161,
               .25em .25em .5em rgba(0,0,0,0.5);
+  line-height:1.3;
+}
+code{
+  font-family: 'Source Code Pro', monospace;
 }
 code.highlighter-rouge{
   background:#ccc;
