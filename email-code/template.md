@@ -178,19 +178,19 @@ I always like to define a body class on the body element, this is because someti
 Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people appoly these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use a `<table>`.
 
 So taking a closer look at the attributes;
-### role="article"
+### `role="article"`
 This is an accessibility enhancement, when navigating with a screen reader this will define the content as an article which the user will understand as something that can stand alone outside the context of the rest of the page.
 
-### aria-roledescription="email"
+### `aria-roledescription="email"`
 We define this as stand alone content but it will be described as a article which may not be the best name for what the content is, so here we change that to say this is an email.
 
-### aria-label="email name"
+### `aria-label="email name"`
 So we've said this is stand along content, we've said the content type is email now we give that a title.  I'd recommend using something like the subject line, or perhaps say who the email is from.
 
-### lang="en"
+### `lang="en"`
 This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
 
-### font-size:1rem
+### `font-size: 1rem`
 Some email clients may force a font-size on your email content. This resets it to be relative to the users settings so better for accessibility.  Ideally all other units in the email should be `em` so they are relative to this.
 
 Unfortunately rem units don't work everywhere if you want to find out more look at [email client support for rem units](https://www.caniemail.com/features/css-unit-rem/) and [browser support for rem units](https://caniuse.com/#feat=rem)

@@ -7,7 +7,7 @@
 /* - - - - - - - - - */
 
 html{
-  --bg-color: #ddd;
+  --bg-color: #eee;
   --fg-color: #222;
   --highlight: #005959;
   background: var(--bg-color, #eee);
