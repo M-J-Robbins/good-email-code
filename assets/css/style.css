@@ -51,7 +51,7 @@ header .logo:hover{
 #main{
   width:90%;
   max-width: 80em;
-  padding: 2em 2em 3em 2em;
+  padding: 0 2em 3em 2em;
   margin: 0 auto;
   box-shadow:8em 4em 15em -15em var(--fg-color, #222),
             -8em 4em 15em -15em var(--fg-color, #222);
@@ -108,7 +108,7 @@ footer a{
 }
 @media screen and (max-width:30em){
   #main{
-    padding:2em .5em 3em .5em;
+    padding:0 .5em 3em .5em;
   }
   figure.highlight{
     margin:0;
