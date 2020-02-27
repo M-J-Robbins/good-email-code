@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Code+Pro&display=swap');
+
+/* Try and remove these another way  */
+.highlight .lines {
+    display: none;
+}
+/* - - - - - - - - - */
+
 html{
   --bg-color: #ddd;
   --fg-color: #222;
