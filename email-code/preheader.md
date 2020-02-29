@@ -18,9 +18,9 @@ If you don't have to consider mail.ru you can use a simpler version of this code
 {% endhighlight %}
 
 ##  Mail.ru
-The mail.ru email client won't show text in the preheader if it's set to `display:none`, `visibility: hidden`, or has a `hidden` attribute.
+The mail.ru email client won't show text in the preheader if it's set to `display:none`, `visibility: hidden`, or has a `hidden` attribute. It will just jump to the first piece of visible content.
 
-For this we set the div to not take up any height space, and to hide the content that would overflow `max-height:0;overflow:hidden;`.  Then for MSO Outlook we can use the specific MSO code `mso-hide:all;`. And finally as we want this code to be hidden in the email, we also want it hidden for screen readers so we add `aria-hidden="true"`.
+To get this working in mail.ru but still hidden from email clients we set the div to not take up any height space, and to hide the content that would overflow `max-height:0;overflow:hidden;`.  Then for MSO Outlook we can use the specific MSO code `mso-hide:all;`. And finally as we want this code to be hidden in the email, we also want it hidden for screen readers so we add `aria-hidden="true"`.
 
 ## Preheader spacing hack
 If you want to use a short preheader then the rest of the space of the preheader will pull in content from the rest of your email.  To stop this happening we can fill the remaining space with... spaces.  For this just add a number of spaces with `&#847;` between them, like this `&#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;`.  Just add as many as you need to fill up the space.  People also use `&zwnj;` or `&#8204;` but from my tests those don't add any space on mail.ru, but if `&#847;` is giving you issues these may be worth a try.
