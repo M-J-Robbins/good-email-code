@@ -12,7 +12,7 @@ Yup it's that simple.
 
 Ok well there are a few other things worth mentioning.
 
-##Mail.ru
+##  Mail.ru
 The mail.ru email client won't show text in the preheader if it's set to `display:none`, `visibility: hidden`, or has a `hidden` attribute.
 
 So if you want to make it work in mail.ru we can use this code
