@@ -6,7 +6,7 @@ Just a quick note to start with as I like to be a pedant, this is not a button. 
 
 ## The code
 {% highlight html %}
-<a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+<a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;text-underline-color:#333">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
 </a>
 {% endhighlight %}
 
@@ -30,6 +30,9 @@ There is quite a lot going on in here, if you want to just copy and paste the co
   Because outlook doesn't respect padding very well we need to make a few changes to get this working, first up is to reset the padding using `mso-padding-alt`
 
 
+### Set underline colour for Windows mail
+  It appears that Windows Mail doesn't respect `text-decoration: none;` or the MSO specific value of `text-underline: none` so we can't remove the underline.  We can however change the colour of it to match the background so we add `text-underline-color:#333`.
+
 ### Add left and right padding
   {% highlight html %}
   <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
@@ -40,7 +43,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
   We add `letter-spacing:` to the amount of padding we want, and a `&nbsp;` so that spacing has something to apply to.
 
-  By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` take up no added space by setting `mso-font-width:-100%`
+  By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` take up no added space by setting `mso-font-width:-100%`.
 
 
 ### Add bottom padding

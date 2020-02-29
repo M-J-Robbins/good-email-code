@@ -71,6 +71,14 @@ h3{
 h2,h3,h4,h5,h6{
   margin:2em 0 1em 0;
 }
+h1 code.highlighter-rouge,
+h2 code.highlighter-rouge,
+h3 code.highlighter-rouge,
+h4 code.highlighter-rouge {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
 a{
   color: var(--highlight, #005959);
 }
