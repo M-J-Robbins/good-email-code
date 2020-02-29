@@ -1,6 +1,6 @@
 # Preheader
 
-This is a text snippet that appears under the subject line in the inbox but is hidden from the from the email when it's opened.
+This is a text snippet that appears under the subject line in the inbox but is hidden from the main email content when it's opened.
 
 ## The code
 {% highlight html %}
