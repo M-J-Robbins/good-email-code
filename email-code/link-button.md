@@ -1,12 +1,14 @@
 # Link - button
 
-**Pedantic Semantic:**
-Just a quick note to start with as I like to be a pedant, this is not a button.  Here I've named it *Link - button* as this is a link that is styles like a button.  Quite often in the email world we talk about buttons, when actually we mean links.  In email it's rare to use a `<button>` but really that is the only thing we should call a button and a `<a>` is a link (or possible an anchor as that's that the `<a>` stands for).  For a designer this could be a button if they are only concerned with the look and not the function.
+**Pedantic Semantics:**
+Just a quick note to start with as I like to be a pedant, this is not a button.  Here I've named it *Link - button* as this is a link, that is styles like a button.  
+
+Quite often in the email world we talk about buttons, when actually we mean links.  In email it's rare to use a `<button>` but really that is the only thing we should call a button and a `<a>` is a link _(or possible an anchor as that's that the `<a>` stands for)_.  When talking about design this could be referred to as a button because that's talking purely about visuals and not about function.  But as you can tell from this site, i don't know much about design, just code, so it's a link!
 
 
 ## The code
 {% highlight html %}
-<a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;text-underline-color:#333">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+<a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;text-underline-color:#333"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
 </a>
 {% endhighlight %}
 
@@ -27,7 +29,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
   {% highlight css %}
   mso-padding-alt:0;
   {% endhighlight %}
-  Because outlook doesn't respect padding very well we need to make a few changes to get this working, first up is to reset the padding using `mso-padding-alt`
+  Because outlook doesn't respect padding very well we need to make a few changes to get this working, first up is to reset the padding using `mso-padding-alt:0`.
 
 
 ### Set underline colour for Windows mail
@@ -43,7 +45,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
   We add `letter-spacing:` to the amount of padding we want, and a `&nbsp;` so that spacing has something to apply to.
 
-  By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` take up no added space by setting `mso-font-width:-100%`.
+  By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` zero width by setting `mso-font-width:-100%`.
 
 
 ### Add bottom padding
@@ -67,21 +69,21 @@ If there is a space or new line between the conditional comment `<!--[if mso]> <
 
 
 ## Height and width
-This code uses padding to create the size of the design rather than height and width.  This is to give a more consistent rendering across email clients.  Where as most email clients will support height and width Outlook will not.
+This code uses padding to create the size of the design rather than height and width.  This is to give a more consistent rendering across email clients.  Where as most email clients will support height and width MSO Outlook will not.
 
 ### Height
-To add height just add a `height` to the `<a>` styles and for Outlook, add `line-height` or the same value to one of the `<i>` elements.
+To add height just add a `height` to the `<a>` styles and for Outlook, add `line-height` of the same value to one of the `<i>` elements.
 
 ### Width
-To add width just add a `width` to the `<a>` styles and for Outlook we can't do anything so you have to reply on the `letter-spacing` tick.  For example if you want to do `width:100%;` you'd need to estimate a `px` value of what that might be for Outlook.
+To add width just add a `width` to the `<a>` styles and for Outlook we can't do anything so you have to reply on the `letter-spacing` tick.  For example if you want to do `width:100%;` you'd need to estimate a `px` value of what that might be for Outlook.  Be carful not to over estimate the values for Outlook as you want to avoid [text wrapping](#text-wrapping).
 
 
 ## Background image
-Add `background-image` to the `<a>` styles.  For Outlook set a `background-color` as a fallback or use [VML button](https://buttons.cm).
+Add `background-image` to the `<a>` styles.  For Outlook set a `background-color` as a fallback or use a [VML button](https://buttons.cm).
 
 
 ## Border radius
-Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square or use [VML button](https://buttons.cm).
+Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square or use a [VML button](https://buttons.cm).
 
 
 ## Text wrapping

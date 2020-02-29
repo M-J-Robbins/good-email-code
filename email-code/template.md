@@ -40,7 +40,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
 </body>
 </html>
 {% endhighlight %}
-If you want to just copy and paste that code you are welcome to, just be sure to edit the content in the lang attributes, charset, title, aria-label.  
+If you want to just copy and paste that code you are welcome to, just be sure to edit the content in the `lang` attributes, `charset`, `title`, `aria-label`.
 
 If you are interested in the reasons behind why each part of the code is there, read on and I'll break it down in more detail.
 
@@ -48,9 +48,9 @@ If you are interested in the reasons behind why each part of the code is there, 
 {% highlight html %}
 <!DOCTYPE html>
 {% endhighlight %}
-Here we're using an HTML5 Doctype.  I still see a lot of people using HTML4 but I'd always recommend HTML5.  Not every email client will respect the doctype you set, some will remove it and use their own, but that is mostly HTML5, so if we set HTML5 for the few that doo look for it we get more consistent rendering.  
+Here we're using an HTML5 Doctype.  Not every email client will respect the doctype you set, some will remove it and use their own, but that is mostly HTML5 anyway. There are small rendering differences between HTML4 and HTML5, the most common one email devs notice is, you can't set a `<td>` to `display:block` in HTML4.
 
-Rémi Parmentier has written a really great article about [Which doctype should you use in HTML emails](https://emails.hteumeuleu.com/which-doctype-should-you-use-in-html-emails-cd323fdb793c).  If you want to know more I'd strongly recommend reading that.
+Rémi Parmentier has written a really great article about [which doctype should you use in HTML emails](https://emails.hteumeuleu.com/which-doctype-should-you-use-in-html-emails-cd323fdb793c).  If you want to know more I'd strongly recommend reading that.
 
 ## HTML element
 {% highlight html %}
@@ -59,14 +59,16 @@ Rémi Parmentier has written a really great article about [Which doctype should 
 The `<html>` tag defines the document as HTML format, however if the files is saves as `.html` then this is assumed anyway so it's not really needed.  However what is needed are the attributes set on in.
 
 ### Lang
-This sets the language of the email, it's important to set as this can affect the way email clients, browsers and screen readers and other assitive technology interpret your content. You can use multiple languages in the same email but it's important to only set one as the default.  After that you can place a lang attribute on any element where the language changes from the default.
+This sets the language of the email, it's important to set as this can affect the way email clients, browsers, screen readers and other assistive technology interpret your content. You can use multiple languages in the same email but it's important to only set one as the default.  After that you can place a lang attribute on any element where the language changes from the default.
+
+Here I've set `lang="en"` to set the content in English, however you can get more granular if you like and set `en-GB` for British English or `en-US` for American English.
 
 As email clients often strip the `<html>` element it's also important to set a lang on the [Wrapping element](#wrapping-element).
 
-Read more on the [w3school lang attribute page](https://www.w3schools.com/tags/att_global_lang.asp).
+Read more on the [w3school lang attribute page](https://www.w3schools.com/tags/att_global_lang.asp), they also have a useful [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
 
 ## Meta
-There are a number of meta elements that we set here so lets look at them individually.
+There are a number of meta elements set here so lets look at them individually.
 
 ### charset
 {% highlight html %}
@@ -74,7 +76,7 @@ There are a number of meta elements that we set here so lets look at them indivi
 {% endhighlight %}
 This sets the character encoding standard which can limit the character that are used.  Unlike the lang attribute we can only set one charset for the file.
 
-I need to set some time to look into this more but generally i believe utf-8 should cover most cases.
+I need to set some time to look into this more but generally I believe utf-8 should cover most cases.
 
 Be aware that the email headers may override what is set in the meta.
 
@@ -92,7 +94,7 @@ As the years go on I think it's getting safer and safer to remove this meta tag.
 {% highlight html %}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 {% endhighlight %}
-The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the page is first loaded by the browser.
+The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the email is first loaded.
 
 ### Format detection
 {% highlight html %}
@@ -104,8 +106,7 @@ The viewport element gives the browser and email client instructions on how to c
 In theory these prevent email clients automatically detecting and generating links out of phone numbers, dates, addresses and email addresses.
 However support is low, I've only ever seen it work for phone numbers on the Outlook iOS app.  I'd recommend including these anyway as it's a hint to the email clients that this is something we want.
 
-There is also a debate about weather this is a user experience enhancement that users want and that it shouldn't be blocked.  But I think there are too many issues with the auto detection to reply on it so I feel like it should be blocked.
-
+There is an argument that we shouldn't use these as the auto linking helps users.  However I feel there are too many issues with the auto detection to reply on it, if I add a phone number I will add a link myself. If I include numbers for another reason (order number etc.) I don't want them linking to a phone number.
 
 ### x-apple-disable-message-reformatting
 {% highlight html %}
@@ -121,12 +122,12 @@ There are more details on [Apple auto-scaling emails bug](https://github.com/hte
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
 {% endhighlight %}
-These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renames to `color-scheme` so for now we include both to get more as the old name is supported by WebKit, Safari, and Mail in macOS 10.14.4.
+These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renames to `color-scheme` so for now we include both to get more as the old name is supported by Safari, and Mail in macOS 10.14.4.
 
 The `content` values are
-* light dark — tells the email clients that both light and dark styles are coded and ready to use.
 * light - tells the email client that only light styles are provided
-* light only - tells the email clients that only light mode styles are ready to use and not to try and transform light styles.
+* light only - tells the email clients that only light mode styles are ready to use and not to try and transform them to dark.
+* light dark — tells the email clients that both light and dark styles are coded and ready to use.
 * light dark only — tells the email clients that light and dark styles are ready to use and not to try and transform light styles.
 
 It's best to set this with logic depending on if dark styles are included in the code. But if you can't place that logic I'd opt for `light dark`.
@@ -136,7 +137,7 @@ It's best to set this with logic depending on if dark styles are included in the
 {% highlight html %}
 <title>Email title</title>
 {% endhighlight %}
-The title element give a title to your document, this will be seen in the browser tab, if a user selects to view the email in a browser.  I have previously seen the title show in a preview for the old default Android client, it's possible that something like that may happen again.
+The title element give a title to your document, this will be seen in the browser tab if a user selects to view the email in a browser.  I have previously seen the title show in a preview for the old default Android client, it's possible that something like that may happen again.
 
 ## XML
 {% highlight html %}
@@ -150,9 +151,9 @@ The title element give a title to your document, this will be seen in the browse
 <![endif]-->
 {% endhighlight %}
 This code helps rendering on Windows versions of Outlook desktop.
-`<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop.
-`<o:AllowPNG/>` This improves support for PNG images.
-`<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows machines that have higher than standard resolution  monitors.
+* `<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop.
+* `<o:AllowPNG/>` This improves support for PNG images.
+* `<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have chosen to increase the DPI.
 
 ## Style
 {% highlight html %}
@@ -163,7 +164,7 @@ This code helps rendering on Windows versions of Outlook desktop.
   }
 </style>
 {% endhighlight %}
-This is essentially a duplicate of the [meta color-scheme](#color-scheme). At time of writing this only really works in Apple Mail which supports both methods but in the interest of future proofing I'm including both.  There is also a potential argument to apply this to the wrapping element too.
+This is essentially a duplicate of the [meta color-scheme](#color-scheme). At time of writing this only really works in Apple Mail which supports both methods but in the interest of future proofing I'm including both.  
 
 ## Body
 {% highlight html %}
@@ -175,17 +176,17 @@ I always like to define a body class on the body element, this is because someti
 {% highlight html %}
 <div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:1rem">
 {% endhighlight %}
-Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people appoly these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use a `<table>`.
+Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people apply these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use it on a `<table>`.
 
 So taking a closer look at the attributes;
 ### `role="article"`
-This is an accessibility enhancement, when navigating with a screen reader this will define the content as an article which the user will understand as something that can stand alone outside the context of the rest of the page.
+This is an accessibility enhancement, when navigating with a screen reader this will place the email into the landmarks menu and define the content as an article.  Although it may not be an article as such, the definition here is something that can stand alone outside the context of the rest of the page. And email fits that description.
 
 ### `aria-roledescription="email"`
-We define this as stand alone content but it will be described as a article which may not be the best name for what the content is, so here we change that to say this is an email.
+As I mentioned previously, article may not be the best word to describe the content, so this will rename it to email.  This is a custom name so we can use anything here but I wouldn't advise using anything else apart from maybe translating it to match the language of your content.
 
 ### `aria-label="email name"`
-So we've said this is stand along content, we've said the content type is email now we give that a title.  I'd recommend using something like the subject line, or perhaps say who the email is from.
+So we've said this is stand along content, we've said the content type is email now we give that a title.  To keep it simple I'd recommend using the subject line if you can dynamically insert that or perhaps say who the email is from.
 
 ### `lang="en"`
 This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.

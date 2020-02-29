@@ -53,8 +53,8 @@ header .logo:hover{
   max-width: 80em;
   padding: 0 2em 3em 2em;
   margin: 0 auto;
-  box-shadow:8em 4em 15em -15em var(--fg-color, #222),
-            -8em 4em 15em -15em var(--fg-color, #222);
+  box-shadow:10em 4em 15em -15em var(--fg-color, #222),
+            -10em 4em 15em -15em var(--fg-color, #222);
   border-radius: 0 0 8em 8em / 0 0 6em 6em;
   line-height:1.5;
 }
