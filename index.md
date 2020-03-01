@@ -1,4 +1,4 @@
-# Welcome to the arrogantly names library of, Good Email Code
+# Welcome to the arrogantly named library of, Good Email Code
 I always enjoy writing and talking about email code so I decided to set up this site to share code and explain the reasons behind everything I'm doing.  You are welcome to simply copy and paste code or you can read up and learn the theory behind it.
 
 The code here is what I would call best practice (other may disagree) and my theory behind that is.

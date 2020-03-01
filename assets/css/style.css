@@ -118,6 +118,9 @@ footer a{
   #main{
     padding:0 .5em 3em .5em;
   }
+  h1{
+    font-size:2.5em;
+  }
   figure.highlight{
     margin:0;
   }

@@ -90,13 +90,13 @@ It also enables media queries to work on some versions of windows phone.
 
 As the years go on I think it's getting safer and safer to remove this meta tag.
 
-### Viewport
+### viewport
 {% highlight html %}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 {% endhighlight %}
 The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the email is first loaded.
 
-### Format detection
+### format-detection
 {% highlight html %}
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="date=no">
