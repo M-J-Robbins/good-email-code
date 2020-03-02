@@ -65,6 +65,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
 
 ## Code formatting
+
 If there is a space or new line between the conditional comment `<!--[if mso]> <![endif]-->` and the `<span> </span>` then extra padding will be added to the link button.  This could be an issue with some ESPs that will reformat your code before sending or sharing code with other developers who like to tidy code to a more readable format.
 
 
@@ -75,7 +76,7 @@ This code uses padding to create the size of the design rather than height and w
 To add height just add a `height` to the `<a>` styles and for Outlook, add `line-height` of the same value to one of the `<i>` elements.
 
 ### Width
-To add width just add a `width` to the `<a>` styles and for Outlook we can't do anything so you have to reply on the `letter-spacing` tick.  For example if you want to do `width:100%;` you'd need to estimate a `px` value of what that might be for Outlook.  Be carful not to over estimate the values for Outlook as you want to avoid [text wrapping](#text-wrapping).
+To add width just add a `width` to the `<a>` styles and for Outlook we can't do anything so you have to reply on the `letter-spacing` trick.  For example if you want to do `width:100%;` you'd need to estimate a `px` value of what that might be for Outlook.  Be carful not to over estimate the values for Outlook as you want to avoid [text wrapping](#text-wrapping).
 
 
 ## Background image

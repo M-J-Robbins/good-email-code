@@ -55,7 +55,6 @@ header .logo:hover{
   margin: 0 auto;
   box-shadow:10em 4em 15em -15em var(--fg-color, #222),
             -10em 4em 15em -15em var(--fg-color, #222);
-  border-radius: 0 0 8em 8em / 0 0 6em 6em;
   line-height:1.5;
 }
 h1{
@@ -97,7 +96,7 @@ footer{
     background: #000;
     color: #eee;
     padding: 2em;
-    transform: rotate(-1deg) skew(-1deg);
+    transform: rotate(-2deg) skew(-4deg) translateY(-2em);
     box-shadow: 0 0 0.5em #333;
     border: .25em solid currentColor;
     border-radius: 120% 4em 120% 4em / 4em 120% 4em 120%;
