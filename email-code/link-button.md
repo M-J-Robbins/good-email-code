@@ -64,7 +64,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
   If you don't have left or right padding then you'll need to add the `<i>` element to get the top padding, keep the `mso-font-width:-100%;` but no need to include the `letter-spacing`
 
 
-##Code formatting
+## Code formatting
 
 If there is a space or new line between the conditional comment `<!--[if mso]> <![endif]-->` and the `<span> </span>` then extra padding will be added to the link button.  This could be an issue with some ESPs that will reformat your code before sending or sharing code with other developers who like to tidy code to a more readable format.
 
