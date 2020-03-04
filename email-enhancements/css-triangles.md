@@ -58,10 +58,15 @@ This defines a customer shape that we're going to draw, there are also a number 
 The path gives the coordinates of the shape.
 
 `m` defines the stating point of the line. Here were' not defining a position just `m,` so that will start of the default top left position `0,0`
+
 `l` draws a line, from our start position.
+
 `1000,0` moves the line 1000 from the left and 0 from the top.
+
 `500,1000` sets the next point 500 from the left and 1000 from the top.
+
 `x` returns the line back to the start point set in the `m`.
+
 `e` stops drawing.
 
 To help you out a bit, here are the paths for each direction;
