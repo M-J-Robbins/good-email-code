@@ -56,28 +56,22 @@ This defines a customer shape that we're going to draw, there are also a number 
 
 ### `path="m,l1000,0 500,1000xe"`
 The path gives the coordinates of the shape.
-
-`m` defines the stating point of the line. Here were' not defining a position just `m,` so that will start of the default top left position `0,0`
-
-`l` draws a line, from our start position.
-
-`1000,0` moves the line 1000 from the left and 0 from the top.
-
-`500,1000` sets the next point 500 from the left and 1000 from the top.
-
-`x` returns the line back to the start point set in the `m`.
-
-`e` stops drawing.
+* `m` defines the stating point of the line. Here were' not defining a position just `m,` so that will start of the default top left position `0,0`
+* `l` draws a line, from our start position.
+* `1000,0` moves the line 1000 from the left and 0 from the top.
+* `500,1000` sets the next point 500 from the left and 1000 from the top.
+* `x` returns the line back to the start point set in the `m`.
+* `e` stops drawing.
 
 To help you out a bit, here are the paths for each direction;
-* Down `m,l1000,0 500,1000xe`
-* Up `m 500,0 l1000,1000 0,1000xe`
-* Left `m 0,500 l1000,0 1000,1000xe`
-* Right `m,l1000,500 0,1000xe`
-* Top right `m,l1000,0 0,1000xe`
-* Top left `m,l1000,0 1000,1000xe`
-* Bottom right `m 1000,0 l1000,1000 0,1000xe`
-* Bottom left `m,l1000,1000 0,1000xe`
+* Down - `m,l1000,0 500,1000xe`
+* Up - `m 500,0 l1000,1000 0,1000xe`
+* Left - `m 0,500 l1000,0 1000,1000xe`
+* Right - `m,l1000,500 0,1000xe`
+* Top right - `m,l1000,0 0,1000xe`
+* Top left - `m,l1000,0 1000,1000xe`
+* Bottom right - `m 1000,0 l1000,1000 0,1000xe`
+* Bottom left - `m,l1000,1000 0,1000xe`
 
 ### `style="width:64px;height:32px;"`
 This sets the height and the width of the shape. It will stretch and distort like an `<img>` rather than fit to the size like an `<svg>`.  I've also switched the `em` to `px` here as VML seems to have issues with the size of em.
