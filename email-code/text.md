@@ -73,6 +73,7 @@ These are purely typographic and pass no semantic meaning.
 This is purely typographic and passes no semantic meaning. It renders the text 1 font-size smaller than the current setting.
 
 
+_More to come..._
 
 
 <div style="display:none">
@@ -90,6 +91,8 @@ https://browserdefaultstyles.com/
 <q cite="cite">quote</q>
 <blockquote>blockquote</blockquote>
 <cite>cite</cite> <br>
+
+<mark>mark</mark>
 
 <code>code</code>
 <pre>pre      space</pre>
