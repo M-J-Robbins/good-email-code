@@ -20,6 +20,7 @@ In the code sample above I've set some default styles to match typical user agen
 
 
 
+<div style="display:none">
 <template>
 ```
 https://browserdefaultstyles.com/
@@ -58,3 +59,4 @@ https://browserdefaultstyles.com/
 
 ```
 </template>
+</div>
