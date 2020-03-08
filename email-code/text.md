@@ -72,7 +72,7 @@ These are purely typographic and pass no semantic meaning.
 {% endhighlight %}
 This is purely typographic and passes no semantic meaning. It renders the text 1 font-size smaller than the current setting.
 
-
+<br><br>
 _More to come..._
 
 
