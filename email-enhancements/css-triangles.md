@@ -48,8 +48,10 @@ Or you can just set the border on 2 sides
 
 For MSO Outlook, we have to use VML([Vector Markup Language](https://docs.microsoft.com/en-us/windows/win32/vml/web-workshop---specs---standards----introduction-to-vector-markup-language--vml-)) to get the same effect.  VML is a deprecated language used for drawing shapes, similar to SVG.  We can actually draw a number of shapes with VML I'd like to write about this more in the future but for now we'll focus on the simple triangle.
 
-
 Big thanks to [Stig](https://twitter.com/stigm) who helped me out with this original code back in my 2014 article.
+
+*Please note* to get VML to work you need to Outlook specific `xmlns:v="urn:schemas-microsoft-com:vml"` and `xmlns:o="urn:schemas-microsoft-com:office:office"` applied to your `<html>` element as described in the [email template HTMl element](https://www.goodemailcode.com/email-code/template#html-element) article.  If for some reason you can't add that to your HTML element then you can apply it directly to each `<v:shape>` element.
+
 
 ### `<v:shape></v:shape>`
 This defines a customer shape that we're going to draw, there are also a number of predefined shapes `rect`, `roundrect`, `line`, `polyline`, `curve`, `arc`.
