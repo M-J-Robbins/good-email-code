@@ -58,7 +58,7 @@ Yahoo and AOL remove the `<ins>` element along with any styles, class or id. So 
 
 MSO version of Outlook add a `color` to the `<ins>` element, I've had a quick look and simply apply a `color` inline doesn't override it, so needs a little more testing.
 
-Be carful when underlining text as this is often a visual queue for a hyperlink and may lead confuse the reader.
+Be carful when underlining text as this is often a visual queue for a hyperlink and may confuse the reader.
 
 ### Offset
 {% highlight html %}
