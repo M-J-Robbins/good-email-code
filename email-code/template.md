@@ -10,10 +10,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="format-detection" content="date=no">
-  <meta name="format-detection" content="address=no">
-  <meta name="format-detection" content="email=no">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <meta name="x-apple-disable-message-reformatting">
   <meta name="color-scheme" content="light dark only">
   <meta name="supported-color-schemes" content="light dark only">
@@ -98,10 +95,7 @@ The viewport element gives the browser and email client instructions on how to c
 
 ### format-detection
 {% highlight html %}
-<meta name="format-detection" content="telephone=no">
-<meta name="format-detection" content="date=no">
-<meta name="format-detection" content="address=no">
-<meta name="format-detection" content="email=no">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 {% endhighlight %}
 In theory these prevent email clients automatically detecting and generating links out of phone numbers, dates, addresses and email addresses.
 However support is low, I've only ever seen it work for phone numbers on the Outlook iOS app.  I'd recommend including these anyway as it's a hint to the email clients that this is something we want.
