@@ -12,8 +12,8 @@ This is a simple stripped back basic template that I'd use for every email I sen
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <meta name="x-apple-disable-message-reformatting">
-  <meta name="color-scheme" content="light dark only">
-  <meta name="supported-color-schemes" content="light dark only">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>Email title</title>
   <!--[if mso]>
   <xml>
