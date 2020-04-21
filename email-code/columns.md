@@ -133,7 +133,9 @@ And if you want to pull one column out and leave the others side by side you can
 }
 {% endhighlight %}
 
-You can also use `display: table-caption` along with `display:table-header-group` and `display:table-footer-group` to do some complex reordering of multiple columns.  `caption-side: top;` will sit above `display:table-header-group` and `caption-side: bottom;` will sit below `display:table-footer-group`.
+You can also use `display: table-caption` along with `display:table-header-group` and `display:table-footer-group` to do some complex reordering of multiple columns.  
+
+`caption-side: top;` will sit above `display:table-header-group` and `caption-side: bottom;` will sit below `display:table-footer-group`.
 
 
 <div style="display:none">
