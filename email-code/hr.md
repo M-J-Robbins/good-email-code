@@ -6,7 +6,7 @@ A basic horizontal rule can be done with a simple `<hr>` element.  However if yo
 <hr style="border-width: 0; background: #000; color: #000; height:1em">
 {% endhighlight %}
 
-The `<hr>` default colour is set by the border.  To simplify things and to get it to work consistently we're going to start by removing that `border-width: 0` then we need to set our custom colour using `background: #000` and to get it working in Outlook we use `color: #000`.  Because we've removed the boarder we now need to give it some height to see that colour showing so here I've added `height:1em`
+The `<hr>` default colour is set by the border.  To simplify things and to get it to work consistently we're going to start by removing that `border-width: 0` then we need to set our custom colour using `background: #000` and to get it working in Outlook we use `color: #000`.  Because we've removed the border we now need to give it some height to see that colour showing so here I've added `height:1em`
 
 That's it, pretty simple but there are a few other things you can add if you like.
 
