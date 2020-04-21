@@ -79,8 +79,60 @@ Again if we remove all the conditional comment and HTML code it looks much simpl
 
 Here we have a table with 2 columns or 50% width.
 
+### Additional columns
+Using this method you can add as many columns as you like just repeat this part of the code as many times as you like and adjust the width values.  
+{% highlight html %}
+<!--[if true]>
+  <td width="50%">
+<![endif]-->
+<!--[if !true]><!-->
+  <div style="display:table-cell;width:50%">
+<!--<![endif]-->
+    Column 1 content
+<!--[if true]>
+  </td>
+<![endif]-->
+<!--[if !true]><!-->
+  </div>
+<!--<![endif]-->
+{% endhighlight %}
+
+You don't actually need to define a width, if left undefined it will be generated automatically. This can work well for a responsive layout if you want one column fixed (maybe containing an image) and one column fluid (maybe containing text).
+
+### Responsive stacking
+Columns don't work so well on small viewports so it's likely you'll want to stack them.  To do this you simply add a class to the column div then inside a media query you can set them to `display:block`. Remember to add `!important` if you have inline styles set.
+{% highlight css %}
+.column{
+  display:block !important;
+  width:100% !important;
+}
+{% endhighlight %}
+
+You can also reorder the content by using `display:table-header-group` on the content you want sent to the top and `display:table-footer-group` on content sent to the bottom.
+
+{% highlight css %}
+.column-top{
+  display:table-header-group !important;
+  width:100% !important;
+}
+.column-bottom{
+  display:table-footer-group !important;
+  width:100% !important;
+}
+{% endhighlight %}
+
+And if you want to pull one column and leave the others side by side you can use `display: table-caption` along with `caption-side` to place it at the top or bottom.
+{% highlight css %}
+.column-bottom{
+  width: 100% !important;
+  display: table-caption !important;
+  caption-side: bottom;
+}
+{% endhighlight %}
+
 ### T-online
 Unfortunatly T-online will render all conditional comments, so here it will show both the MSO and the HTML version.  To prevent this we first close the MSO table using `<!--[if false]></td></tr></table><![endif]-->` this conditional comment using `false` will not render for Outlook.  Depending on the styling we may still see a part of that table so we add `all:unset;opacity:0;` to the table styles.
+
 
 <div style="display:none">
 <template>
