@@ -59,11 +59,11 @@ If you want to position from the right instead of the left then use `margin-righ
 I've also set `display:inline-block` so these margins are placed against the parent `faux-absolute` div rather than combining with it.
 
 ### The Outlook bit
-For Outlook we can actually use regular CSS absolute positioning, which may surprise you to have this more advance CSS support in Outlook.  However there is a catch.  Outlook does support absolute positioning but only when done inside VML.
+For Outlook we can actually use regular CSS absolute positioning, which may surprise you to have this more advanced CSS support in Outlook.  However there is a catch.  Outlook does support absolute positioning but only when done inside VML.
 
 So here inside conditional comments `<!--[if mso]><![endif]-->` we've set a very basic VML shape `<v:rect>` initially I used `<v:shape>` but that didn't work on Windows 10 Mail.  This shape is set to `stroked="false" filled="false"` so it has no outline or background, and set to `mso-width-percent: 1000;` which rather confusingly means 100% not 1000%.  No height is needed here.
 
-I then set `position:absolute; top:80px; left:16px;` just as if we were building a web page.  However I should point out `em` units don't work inside VML so I've switched to `px`.
+I then set `position:absolute; top:80px; left:16px;` just as if we were building a web page.  However I should point out that `em` units don't work inside VML so I've switched to `px`.
 
 ### The image
 I've included an image in this code partly to have something for our absolute positioned text to appear over, but also to demonstrate a potential issue.
@@ -72,6 +72,7 @@ In Outlook mobile apps, if an image width is set to be wider than the viewport, 
 
 
 
-## Additional options
-* You may want to only partly overlap your content, in which case you can adjust the `max-height:0;`
-* You may want to use `max-width:0;` as well or instead for some use cases.  
+## Related content
+I hope that was helpful now go and check out
+* Rémi Parmentier...
+* Steven Sayo...
