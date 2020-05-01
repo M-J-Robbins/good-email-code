@@ -81,15 +81,15 @@ I've also set `display:inline-block` so these margins are placed against the par
 
 ### The Outlook bit
 {% highlight html %}
-	<!--[if mso]>
+<!--[if mso]>
 	<v:rect xmlns:v="urn:schemas-microsoft-com:vml" stroked="false" filled="false" style="mso-width-percent: 1000; position:absolute; top:80px; left:16px;">
 	<v:textbox inset="0,0,0,0">
-	<![endif]-->
-		Faux Absolute Position content
-	<!--[if mso]>
+<![endif]-->
+	Faux Absolute Position content
+<!--[if mso]>
 	</v:textbox>
 	</v:rect>
-	<![endif]-->
+<![endif]-->
 {% endhighlight %}
 
 For Outlook we can actually use regular CSS absolute positioning, which may surprise you to have this more advanced CSS support in Outlook.  However there is a catch.  Outlook does support absolute positioning but only when done inside VML.
