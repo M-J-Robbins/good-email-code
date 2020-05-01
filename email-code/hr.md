@@ -14,7 +14,10 @@ That's it, pretty simple but there are a few other things you can add if you lik
 The default is `width:100%` but you can use what suits your style.  Consider if you use a fixed width it may be good to also add a `max-width` so this stays responsive `width:500px; max-width:80%`.
 
 ### Margin
-You can adjust the space around with a margin, either in long hand or short hand format.
+You can adjust the space around with a margin, either in long hand or short hand format.  However MSO Outlooks don't support it when applied directly to the `<hr>` so to get it working there we need to add the margin to a wrapping `<div>`.
+{% highlight html %}
+<div style="margin:20px"><hr style="border-width: 0; background: #000; color: #000; height:1em"></div>
+{% endhighlight %}
 
 ### Align
 By default it will be aligned center, but with an `align=""` attribute you can set it to align left or right.
