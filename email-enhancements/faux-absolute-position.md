@@ -3,7 +3,7 @@ I originally wrote about this back in 2016 on the old Rebel site. More recently 
 
 You can read their articles here:
 * *Rémi Parmentier ()[]*
-* *Steven Sayo (Email Absolute Positioning.)[https://medium.com/@sayo1337/efd2f2f09ed4]*
+* *Steven Sayo [Email Absolute Positioning](https://medium.com/@sayo1337/efd2f2f09ed4)*
 
 
 ## The code
@@ -100,7 +100,7 @@ So here inside conditional comments `<!--[if mso]><![endif]-->` we've set a very
 
 I then set `position:absolute; top:80px; left:16px;` just as if we were building a web page.  However I should point out that `em` units don't work inside VML so I've switched to `px`.
 
-*NB* VML has some accessibility issue.  (Links are not keyboard accessible when inside VML)[https://github.com/hteumeuleu/email-bugs/issues/77] so be carful about the content you use inside this.  If you leave the VML off then the text will sit on top of the image.
+*NB* VML has some accessibility issue.  [Links are not keyboard accessible when inside VML](https://github.com/hteumeuleu/email-bugs/issues/77) so be carful about the content you use inside this.  If you leave the VML off then the text will sit on top of the image.
 
 ### The image
 {% highlight css %}
@@ -120,4 +120,4 @@ In Outlook mobile apps, if an image width is set to be wider than the viewport, 
 ## Related content
 I hope that was helpful now go and check out
 * Rémi Parmentier...
-* Steven Sayo (Email Absolute Positioning.)[https://medium.com/@sayo1337/efd2f2f09ed4]
+* Steven Sayo [Email Absolute Positioning](https://medium.com/@sayo1337/efd2f2f09ed4)
