@@ -18,7 +18,6 @@ This is a simple stripped back basic template that I'd use for every email I sen
   <!--[if mso]>
   <xml>
   <o:OfficeDocumentSettings>
-    <o:AllowPNG/>
     <o:PixelsPerInch>96</o:PixelsPerInch>
   </o:OfficeDocumentSettings>
   </xml>
@@ -138,7 +137,6 @@ The title element give a title to your document, this will be seen in the browse
 <!--[if mso]>
 <xml>
   <o:OfficeDocumentSettings>
-    <o:AllowPNG/>
     <o:PixelsPerInch>96</o:PixelsPerInch>
   </o:OfficeDocumentSettings>
 </xml>
@@ -146,7 +144,6 @@ The title element give a title to your document, this will be seen in the browse
 {% endhighlight %}
 This code helps rendering on Windows versions of Outlook desktop.
 * `<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop.
-* `<o:AllowPNG/>` This improves support for PNG images.
 * `<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have chosen to increase the DPI.
 
 ## Style
