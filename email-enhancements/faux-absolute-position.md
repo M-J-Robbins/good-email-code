@@ -1,9 +1,7 @@
 # Faux Absolute Position
-I originally wrote about this back in 2016 on the old Rebel site. More recently it has come up in a few conversations on (email geek slack)[https://email.geeks.chat/]. Shortly after I started work on this article I realised 2 other email geeks, Rémi Parmentier, Steven Sayo were writing their own too, so we decided to team up and cross reference each other.
+I originally wrote about this back in 2016 on the old Rebel site. More recently it has come up in a few conversations on (email geek slack)[https://email.geeks.chat/]. Shortly after I started work on this article I realised [Steven Sayo](https://twitter.com/Sayo1337) was also writing about this, so we decided to team up and cross reference each other.
 
-You can read their articles here:
-* *Rémi Parmentier ()[]*
-* *Steven Sayo [Email Absolute Positioning](https://medium.com/@sayo1337/efd2f2f09ed4)*
+You can read Stevens article here: *[Email Absolute Positioning](https://medium.com/@sayo1337/efd2f2f09ed4)*
 
 
 ## The code
@@ -118,6 +116,4 @@ In Outlook mobile apps, if an image width is set to be wider than the viewport, 
 
 
 ## Related content
-I hope that was helpful now go and check out
-* Rémi Parmentier...
-* Steven Sayo [Email Absolute Positioning](https://medium.com/@sayo1337/efd2f2f09ed4)
+I hope that was helpful now go and check out [Email Absolute Positioning](https://medium.com/@sayo1337/efd2f2f09ed4) by Steven Sayo.
