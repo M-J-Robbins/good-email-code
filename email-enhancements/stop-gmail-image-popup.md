@@ -1,17 +1,17 @@
 # Stopping Gmail image popup
 
-Sending emails with images in is very common, probably the vast majority of HTML emails have an `<img>` inside it somewhere.
+Sending emails with images in is very common, I'd guess that the vast majority of HTML emails have an `<img>` inside them somewhere.
 
-When these emailed are opened in Gmail, it will display a download arrow when hovered and open the image in a lightbox when clicked.
+When these emailed are opened in Gmail, it will often display a download arrow when hovered and open the image in a lightbox when clicked.
 
-Personally I don't see this as a problem and in some cases is a nice feature.
+Personally I don't see this as a problem and in some cases is a nice feature, I tend to leave this as is.
 
-But if you want to stop it there are a few ways around this.  
-* Use a small image, Gmail only applies this to images of a certain size. - But small images will have lower resolution
+However if you want to stop it there are a few ways around this.  
+* Use a small image, Gmail only applies this to images of a certain size. - But small images will have lower resolution.
 * Add a link to the image.  Gmail won't apply this to linked images. - But a link might not makes sense here.
-* Use some code to hide the arrow. Some variation on `img + .a6S{display:none}`. - But this only removes the download icon, the cursor still shows a pointer and the image is still clickable.
+* Use some code to hide the arrow. Some variation on `img + .a6S{display:none}`. - But this only removes the download icon, the cursor still shows as a pointer anda click still open the lightbox.
 
-When chatting to [Jay](https://twitter.com/emailjay_) on [twitter](https://twitter.com/M_J_Robbins/status/1276554228710989825) about how they used the [faux absolute position](../email-enhancements/faux-absolute-position) technique in the [Email Weekly newsletter](http://emailweekly.co/) I realised that technique could also be used to solve this Gmail issue.
+When chatting to [Jay](https://twitter.com/emailjay_) on [twitter](https://twitter.com/M_J_Robbins/status/1276554228710989825) the other day, about how they used the [faux absolute position](../email-enhancements/faux-absolute-position) technique in the [Email Weekly newsletter](http://emailweekly.co/). I realised that a simplified version of this  technique could also be used to solve this Gmail issue.
 
 ## The Code
 {% highlight html %}
