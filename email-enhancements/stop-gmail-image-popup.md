@@ -27,7 +27,7 @@ Here I'm setting the `max-height` to create the [faux absolute position](../emai
 ### `max-width:600px;padding-bottom:50%;opacity:0`
 Inside that div I'm again setting the `max-width` to match that of the image.  instead of adding `height` I'm using `padding-bottom`.  Doing it this way means the height adjusts responsively for smaller viewports.  
 
-To get the padding value the formula is `width / height * 100`.  And because Gmail supports `calc` you could even code this as `padding-bottom:calc(100% * 300 / 600);`, calc works particularly well when your calculation ends up with a recurring decimal _33.33333333333333%_.
+To get the padding value the formula is `width / height * 100`.  And because Gmail supports `calc` you could even code this as `padding-bottom:calc(100% * 300 / 600);`, calc works particularly well when your calculation ends up with a recurring decimal _33.33333333333333%_ .
 
 `opacity:0` is used here to increase the `z-index` so that our overlay sits on top of the image and not behind it.
 
@@ -39,5 +39,9 @@ To make sure this is covering the image at all times, try increasing the opacity
 
 If you need the cover to be centre aligned try adding `margin:0 auto;` to the outer div.  Or for right aligned add `margin-left:auto;`
 
-## Accessibility
+
+## Accessibility
+
 I feel like there may be some accessibility concerns with stopping a mouse user being able to click on an image.   I'm not sure what that might be yet, but if you know of anything, please let me know.
+
+It's worth noting that keyboard and screen reader users are still able to trigger the pop up.
