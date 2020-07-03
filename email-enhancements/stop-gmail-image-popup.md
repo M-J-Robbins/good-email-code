@@ -27,7 +27,7 @@ Here I'm setting the `max-height` to create the [faux absolute position](../emai
 ### `max-width:600px;padding-bottom:50%;opacity:0`
 Inside that div I'm again setting the `max-width` to match that of the image.  instead of adding `height` I'm using `padding-bottom`.  Doing it this way means the height adjusts responsively for smaller viewports.  
 
-To get the padding value the formula is `width / height * 100`.  And because Gmail supports `calc` you could even do this as `padding-bottom:calc(100% * 300 / 600);`.
+To get the padding value the formula is `width / height * 100`.  And because Gmail supports `calc` you could even code this as `padding-bottom:calc(100% * 300 / 600);`, calc works particularly well when your calculation ends up with a recurring decimal _33.33333333333333%_.
 
 `opacity:0` is used here to increase the `z-index` so that our overlay sits on top of the image and not behind it.
 
