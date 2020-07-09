@@ -4,23 +4,14 @@ This is a text snippet that appears under the subject line in the inbox but is h
 
 ## The code
 {% highlight html %}
-<div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">
-  Preheader text...
-</div>
-{% endhighlight %}
-
-### Simple version
-If you don't have to consider mail.ru you can use a simpler version of this code
-{% highlight html %}
 <div style="display:none">
   Preheader text...
 </div>
 {% endhighlight %}
 
-##  Mail.ru
-The mail.ru email client won't show text in the preheader if it's set to `display:none`, `visibility: hidden`, or has a `hidden` attribute. It will just jump to the first piece of visible content.
+It really is that simple.
 
-To get this working in mail.ru but still hidden from email clients we set the div to not take up any height space, and to hide the content that would overflow `max-height:0;overflow:hidden;`.  Then for MSO Outlook we can use the specific MSO code `mso-hide:all;`. And finally as we want this code to be hidden in the email, we also want it hidden for screen readers so we add `aria-hidden="true"`.
+Previously have been a number of issue with support for `display:none;`. For example when tested in October 2019 Mail.ru would hide content from the preheader as well as the email when set to `display:none`, `visibility:hidden`, or using a `hidden` attribute.  And I was recommending using `<div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true">` but that appears to be fixed now (July 2020), so we can just use the simplified version.
 
 ## Preheader spacing hack
 If you want to use a short preheader then the rest of the space of the preheader will pull in content from the rest of your email.  To stop this happening we can fill the remaining space with... spaces.  For this just add a number of spaces with `&#847;` between them, like this `&#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;`.  Just add as many as you need to fill up the space.  People also use `&zwnj;` or `&#8204;` but from my tests those don't add any space on mail.ru, but if `&#847;` is giving you issues these may be worth a try.
