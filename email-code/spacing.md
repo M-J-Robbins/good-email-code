@@ -16,14 +16,14 @@ To get it working in MSO Outlooks we are using `letter-spacing` to create the si
 
 In a lot of cases this extra space is probably acceptable, however if you want to remove it and get a more exact space you can add `mso-font-width:-100%;` to remove the space in MSO Outlooks, and `font-size:1px` to reduce the space in HTML email clients.  If you need it to be 100% exact then use `display:inline-block;width:30px`.
 
+*em* values can be used here too, however you'll need to move the `font-size:1%` onto another element wrapping the `&#8202;` inside the spacer.
+
 *Outlook 2013* seems to have some issues depending on the elements that are being spaced. If you have this issue, try changing `<i>` to `<span>`.
 
 *IBM Notes 9* requires 2 characters to apply the spacing but then other clients apply it at twice the width.  If you need to support that, I'd recommend setting margin or padding on the items you want to space then apply the spacer for MSO outlooks only.
 {% highlight html %}
 <i style="display:none;mso-hide:none;letter-spacing:50px;mso-font-width:-100%;">&#8202;</i>
 {% endhighlight %}
-
-*em* values can be used here too, however you'll need to move the `font-size:1%` onto another element wrapping the `&#8202;` inside the spacer.
 
 
 
