@@ -27,7 +27,7 @@ In a lot of cases this extra space is probably acceptable, however if you want t
 
 
 
-### Vertical Spacer
+## Vertical Spacer
 
 ### The Code
 {% highlight html %}
