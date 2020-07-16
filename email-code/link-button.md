@@ -87,9 +87,10 @@ Add `background-image` to the `<a>` styles.  For Outlook set a `background-color
 Add `border-radius` to the `<a>` styles.  For Outlook the corners will be square or use a [VML button](https://buttons.cm).
 
 
-## Text wrapping
-Text will wrap normally in all clients apart from MSO Outlook.  As MSO Outlook is a desktop client we don't need to worry about responsive layouts, the Outlook apps are not MSO so they wrap as expected.  There is perhaps a usecase for a 2 line link button on desktop but I'm yet to find a way for that to work in MSO Outlook.
 
 ## Potential issues
+### Text wrapping
+Text will wrap normally in all clients apart from MSO Outlook.  As MSO Outlook is a desktop client we don't need to worry about responsive layouts, the Outlook apps are not MSO so they wrap as expected.  There is perhaps a usecase for a 2 line link button on desktop but I'm yet to find a way for that to work in MSO Outlook.
+
 ### mso-line-height-rule
 If you are setting `mso-line-height-rule: exactly;` on a parent element that houses your link button, then you may see some issue with height in MSO Outlook. In which case try removing it or resetting it to `mso-line-height-rule: at-least`.
