@@ -9,7 +9,7 @@ If you are still having issue then you can try these methods.
 
 ### The Code
 {% highlight html %}
-<i style="letter-spacing:30px;mso-font-width:-100%;display:inline-block;width:30px">&#8202;</i>
+<i style="letter-spacing:50px;mso-font-width:-100%;display:inline-block;width:50px">&#8202;</i>
 {% endhighlight %}
 
 To get it working in MSO Outlooks we are using `letter-spacing` to create the size of this spacer. And for `letter-spacing` to work we need a letter for it to work off.  In this case we are using a _"Hair Space"_ `&#8202;`.  This is the thinest character I found so it only adds a very tiny amount of space onto the 30px specified in the `letter-spacing`.  To remove that spacing from MSO Outlooks we can use `mso-font-width:-100%;`
@@ -21,7 +21,7 @@ For HTML email clients we can add `display:inline-block;width:30px`.
 
 ### The Code
 {% highlight html %}
-<div style="line-height:50px;height:200px;">&#8202;</div>
+<div style="line-height:50px;height:50px;">&#8202;</div>
 {% endhighlight %}
 
-Again we need to insert a character, this time to have something for the `line-height` to respond to and stop the `<div>` from collapsing.  Gmail app on Android adds a little extra space here so setting a fixed `height` the same as the `line-height` brings that into line. 
+Again we need to insert a character, this time to have something for the `line-height` to respond to and stop the `<div>` from collapsing.  Gmail app on Android adds a little extra space here so setting a fixed `height` the same as the `line-height` brings that into line.
