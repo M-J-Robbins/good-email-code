@@ -111,8 +111,10 @@ Columns don't work so well on small viewports so it's likely you'll want to stac
 }
 {% endhighlight %}
 
+### Reverse stacking
+*N.B* We can reorder display but we can't reorder the DOM.  This means anyone using a screen reader or tabbed input will follow to flow of the code not the design on the page.  Where possible it's best to keep the order of content on the page to match the order in the code. If you still want to reorder the content then read on.
+
 You can also reorder the content by using `display:table-header-group` on the column you want sent to the top and `display:table-footer-group` on column sent to the bottom.
-*N.B We can reorder display but we can't reorder the DOM.  This means anyone using a screen reader or tabbed input will follow to flow of the code not the design on the page.  Where possible it's best to keep the order of content on the page to match the order in the code. If you still want to reorder the content then read on.*
 
 {% highlight css %}
 .column-top{
