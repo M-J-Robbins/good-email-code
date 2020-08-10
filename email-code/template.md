@@ -16,11 +16,13 @@ This is a simple stripped back basic template that I'd use for every email I sen
   <meta name="supported-color-schemes" content="light dark">
   <title>Email title</title>
   <!--[if mso]>
-  <xml>
-  <o:OfficeDocumentSettings>
-    <o:PixelsPerInch>96</o:PixelsPerInch>
-  </o:OfficeDocumentSettings>
-  </xml>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
   <![endif]-->
   <style>
     :root {
@@ -135,16 +137,19 @@ The title element give a title to your document, this will be seen in the browse
 ## XML
 {% highlight html %}
 <!--[if mso]>
-<xml>
-  <o:OfficeDocumentSettings>
-    <o:PixelsPerInch>96</o:PixelsPerInch>
-  </o:OfficeDocumentSettings>
-</xml>
+<noscript>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+</noscript>
 <![endif]-->
 {% endhighlight %}
 This code helps rendering on Windows versions of Outlook desktop.
-* `<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop.
-* `<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have chosen to increase the DPI.
+* `<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop. Although T-online also renders the code.
+* `<noscript>` Stops the text `96` showing in T-Online.
+* `<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have manually chosen to increase the DPI.
 
 ## Style
 {% highlight html %}
