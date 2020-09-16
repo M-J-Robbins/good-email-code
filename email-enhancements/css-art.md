@@ -26,9 +26,9 @@ We just need a `height`, `width` to define the size and a `background` so we can
 {% highlight html %}
 <div style="height:2em;width:2em;background:red;border-radius:50%"></div>
 {% endhighlight %}
-Here we're just adding a `border-radius` to make it into a circle.  We have quite a few options here, we can set up to 8 values on a single element, each of the 4 corners can have a setting on each side `border-radius:0 50% 10px 5px / 5px 10px 15px 20%`.
+Here we're just adding a `border-radius` to make it into a circle.  We have quite a few options here, we can set up to 8 values on a single element creating _elliptical corners_, with each of the 4 corners having a setting on each edge `border-radius:0 50% 10px 5px / 5px 10px 15px 20%`.
 
-Border radius has pretty good support across email clients a few that don't support it are `gmx`, `wed.de` and older versions of IBM Notes.  It's also worth mentioning that Yahoo and AOL will only support one value on each corner and doesn't support the `/` separator.  So for this I'm limiting myself to only 4 values.
+Border radius has pretty good support across email clients a few that don't support it are `gmx`, `wed.de` and older versions of IBM Notes.  It's also worth mentioning that Yahoo and AOL don't support the `/` separator (although we could use long hand styles there).  So for this I'm limiting myself to only 4 values.
 
 ### Triangle
 <div style="border:2em solid transparent;border-top-color:red;border-bottom:none;display:inline-block"></div>
