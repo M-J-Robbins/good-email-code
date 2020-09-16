@@ -178,11 +178,13 @@ I wanted to see how far I can push this and try and create something impressive.
 
 I found a picture of a Rickenbacker 4001 bass guitar online (I wanted to draw my own bass but I didn't have a photo to hand when I started, so just grabbed a photo online).   To help with the drawing I set the photo as a background image on the frame and slowly added shapes on top of it (269 shapes to be exact), it's pretty much like tracing the image.
 
-<p class="codepen" data-height="800" data-theme-id="dark" data-default-tab="result" data-user="M_J_Robbins" data-slug-hash="ab39c5b4f2ea1f2a606e24c96ae936be" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Email CSS Drawing - Rickenbacker 4001 ">
-  <span>See the Pen <a href="https://codepen.io/M_J_Robbins/pen/ab39c5b4f2ea1f2a606e24c96ae936be">
-  Email CSS Drawing - Rickenbacker 4001 </a>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<div class="inserted-code">
+  <p class="codepen" data-height="800" data-theme-id="dark" data-default-tab="result" data-user="M_J_Robbins" data-slug-hash="ab39c5b4f2ea1f2a606e24c96ae936be" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Email CSS Drawing - Rickenbacker 4001 ">
+    <span>See the Pen <a href="https://codepen.io/M_J_Robbins/pen/ab39c5b4f2ea1f2a606e24c96ae936be">
+    Email CSS Drawing - Rickenbacker 4001 </a>
+  </p>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</div>
 
 
 ## Practical uses
