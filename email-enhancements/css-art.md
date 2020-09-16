@@ -121,7 +121,7 @@ First we define a large triangle. `<u style="border:1.75em solid transparent;bor
 </div>
 
 Then we just add in 1 more triangle and we have a 5 point star using negative space.
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;     box-sizing: content-box;" role="img" aria-label="5 point star icon">
+<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:white     box-sizing: content-box;" role="img" aria-label="5 point star icon">
   <div style="max-height:0;">
     <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
   </div>
