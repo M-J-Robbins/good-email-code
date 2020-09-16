@@ -82,7 +82,7 @@ Now we have that working we can position a second triangle on top of it using th
 </div>
 {% endhighlight %}
 
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;" role="img" aria-label="6 pont star icon">
+<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;    box-sizing: content-box;" role="img" aria-label="6 pont star icon">
   <div style="max-height:0;max-width:0;">
     <u style="border:2em solid transparent;border-bottom:3.5em solid gold;border-top:none;display:inline-block;margin-left:.5em;"></u>
   </div>
@@ -111,7 +111,7 @@ To get a little more out of the limited resources available to us, we can use vi
 
 First we define a large triangle. `<u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>` then we overlay a smaller triangle that matches our background colour to create a cut out `<u style="border:1.75em solid transparent;margin-top:3.5em;border-bottom:1em solid white;border-top:none;display:inline-block"></u>`  Here I've changed the background of the frame so it's easier to see the cut out.
 
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:#ccc;" role="img" aria-label="5 point star icon">
+<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:#ccc;     box-sizing: content-box;" role="img" aria-label="5 point star icon">
   <div style="max-height:0;">
     <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
   </div>
@@ -121,7 +121,7 @@ First we define a large triangle. `<u style="border:1.75em solid transparent;bor
 </div>
 
 Then we just add in 1 more triangle and we have a 5 point star using negative space.
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;" role="img" aria-label="5 point star icon">
+<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;     box-sizing: content-box;" role="img" aria-label="5 point star icon">
   <div style="max-height:0;">
     <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
   </div>
@@ -220,7 +220,7 @@ margin-top:2.3em !important;
 background:#000 !important;
 }
 </style>
-<div class="watching" style="font-size:5em;border:.05em solid #000;margin:0 auto;height:5em;width:5em;border-radius:50%;background:yellow" role="img" aria-label="watching icon">
+<div class="watching" style="font-size:5em;border:.05em solid #000;margin:0 auto;height:5em;width:5em;border-radius:50%;background:yellow;     box-sizing: content-box;" role="img" aria-label="watching icon">
   <div class="top-right" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
   <div class="top-left" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
   <div class="bottom-right" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
@@ -269,7 +269,7 @@ Because this is all done in code you can change the colours in the images based 
 }
 </style>
 
-<div class="sunmoon" style="font-size:5em;display:block;margin:0 auto;height:5em;width:5em;padding:.5em;vertical-align:middle;" role="img" aria-label="sun/moon icon">
+<div class="sunmoon" style="font-size:5em;display:block;margin:0 auto;height:5em;width:5em;padding:.5em;vertical-align:middle;     box-sizing: content-box;" role="img" aria-label="sun/moon icon">
   <div style="max-height:0;">
     <u style="display:inline-block;height:3em;width:3em;background:yellow;border:.2em solid orange;border-radius:50%;margin:.8em 0 0 .8em" class="sun"></u>
   </div>
