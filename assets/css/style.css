@@ -29,6 +29,9 @@ html{
 *{
   box-sizing:border-box;
 }
+.inserted-code, .inserted-code *{
+  box-sizing: content-box;
+}
 header{
   text-align:center;
 }
