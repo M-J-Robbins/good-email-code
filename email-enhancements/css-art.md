@@ -61,9 +61,11 @@ In web we'd use `position:absolute` here but that doesn't have great support in 
   </div>
 </div>
 {% endhighlight %}
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;" role="img" aria-label="6 point star icon">
-  <div style="max-height:0;max-width:0;">
-    <u style="border:2em solid transparent;border-top:3.5em solid gold;border-bottom:none;display:inline-block;margin-left:.5em;margin-top:1.2em;"></u>
+<div class="inserted-code">
+  <div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;" role="img" aria-label="6 point star icon">
+    <div style="max-height:0;max-width:0;">
+      <u style="border:2em solid transparent;border-top:3.5em solid gold;border-bottom:none;display:inline-block;margin-left:.5em;margin-top:1.2em;"></u>
+    </div>
   </div>
 </div>
 
@@ -82,12 +84,14 @@ Now we have that working we can position a second triangle on top of it using th
 </div>
 {% endhighlight %}
 
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;    box-sizing: content-box;" role="img" aria-label="6 pont star icon">
-  <div style="max-height:0;max-width:0;">
-    <u style="border:2em solid transparent;border-bottom:3.5em solid gold;border-top:none;display:inline-block;margin-left:.5em;"></u>
-  </div>
-  <div style="max-height:0;max-width:0;">
-    <u style="border:2em solid transparent;border-top:3.5em solid gold;border-bottom:none;display:inline-block;margin-left:.5em;margin-top:1.2em;"></u>
+<div class="inserted-code">
+  <div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;" role="img" aria-label="6 pont star icon">
+    <div style="max-height:0;max-width:0;">
+      <u style="border:2em solid transparent;border-bottom:3.5em solid gold;border-top:none;display:inline-block;margin-left:.5em;"></u>
+    </div>
+    <div style="max-height:0;max-width:0;">
+      <u style="border:2em solid transparent;border-top:3.5em solid gold;border-bottom:none;display:inline-block;margin-left:.5em;margin-top:1.2em;"></u>
+    </div>
   </div>
 </div>
 
@@ -111,25 +115,30 @@ To get a little more out of the limited resources available to us, we can use vi
 
 First we define a large triangle. `<u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>` then we overlay a smaller triangle that matches our background colour to create a cut out `<u style="border:1.75em solid transparent;margin-top:3.5em;border-bottom:1em solid white;border-top:none;display:inline-block"></u>`  Here I've changed the background of the frame so it's easier to see the cut out.
 
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:#ccc;     box-sizing: content-box;" role="img" aria-label="5 point star icon">
-  <div style="max-height:0;">
-    <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
-  </div>
-  <div style="max-height:0;">
-    <u style="border:1.75em solid transparent;margin-top:3.5em;border-bottom:1em solid white;border-top:none;display:inline-block"></u>
+<div class="inserted-code">
+  <div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:#ccc;" role="img" aria-label="5 point star icon">
+    <div style="max-height:0;">
+      <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="border:1.75em solid transparent;margin-top:3.5em;border-bottom:1em solid white;border-top:none;display:inline-block"></u>
+    </div>
   </div>
 </div>
 
 Then we just add in 1 more triangle and we have a 5 point star using negative space.
-<div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:white     box-sizing: content-box;" role="img" aria-label="5 point star icon">
-  <div style="max-height:0;">
-    <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
-  </div>
-  <div style="max-height:0;">
-    <u style="border:1.75em solid transparent;margin-top:3.5em;border-bottom:1em solid white;border-top:none;display:inline-block"></u>
-  </div>
-  <div style="max-height:0;">
-    <u style="border:2.5em solid transparent;border-top:2em solid gold;border-bottom:none;display:inline-block;margin-top:1.5em;"></u>
+
+<div class="inserted-code">
+  <div style="border:1px solid #000;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:center;background:white;" role="img" aria-label="5 point star icon">
+    <div style="max-height:0;">
+      <u style="border:1.75em solid transparent;border-bottom:4.5em solid gold;border-top:none;display:inline-block"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="border:1.75em solid transparent;margin-top:3.5em;border-bottom:1em solid white;border-top:none;display:inline-block"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="border:2.5em solid transparent;border-top:2em solid gold;border-bottom:none;display:inline-block;margin-top:1.5em;"></u>
+    </div>
   </div>
 </div>
 
@@ -200,90 +209,93 @@ You could create a graph using this technique and update the graphic automatical
 ### Interactive images
 You can add hover or click styles to allow the user to interact with an image.
 
-<style>
-.watching u, .sunmoon u {transition:all 1s}
-.watching .top-left:hover ~ * .pupil{
-margin:0 !important;
-}
-.watching .top-right:hover ~ * .pupil{
-margin:0 0 0 .5em !important
-}
-.watching .bottom-left:hover ~ * .pupil{
-margin-left:0 !important
-}
-.watching .bottom-right:hover ~ * .pupil{
-margin-left:.5em !important
-}
-.watching:active u{
-height:.05em !important;
-margin-top:2.3em !important;
-background:#000 !important;
-}
-</style>
-<div class="watching" style="font-size:5em;border:.05em solid #000;margin:0 auto;height:5em;width:5em;border-radius:50%;background:yellow;     box-sizing: content-box;" role="img" aria-label="watching icon">
-  <div class="top-right" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
-  <div class="top-left" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
-  <div class="bottom-right" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
-  <div class="bottom-left" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
-  <div style="max-height:0;max-width:0">
-    <u style="display:inline-block;height:2em;width:1em;background:#fff;border:.05em solid #000;border-radius:50%;margin:1em 0 0 1em; overflow:hidden">
-      <u style="display:inline-block;height:1em;width:.5em;background:#000;border-radius:50%;margin:1em 0 0 .25em;" class="pupil">
-        <u style="display:block;height:.5em;width:.25em;background:#fff;border-radius:50%;margin-right:.25em;"></u>
+<div class="inserted-code">
+  <style>
+  .watching u, .sunmoon u {transition:all 1s}
+  .watching .top-left:hover ~ * .pupil{
+  margin:0 !important;
+  }
+  .watching .top-right:hover ~ * .pupil{
+  margin:0 0 0 .5em !important
+  }
+  .watching .bottom-left:hover ~ * .pupil{
+  margin-left:0 !important
+  }
+  .watching .bottom-right:hover ~ * .pupil{
+  margin-left:.5em !important
+  }
+  .watching:active u{
+  height:.05em !important;
+  margin-top:2.3em !important;
+  background:#000 !important;
+  }
+  </style>
+  <div class="watching" style="font-size:5em;border:.05em solid #000;margin:0 auto;height:5em;width:5em;border-radius:50%;background:yellow;" role="img" aria-label="watching icon">
+    <div class="top-right" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
+    <div class="top-left" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
+    <div class="bottom-right" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
+    <div class="bottom-left" style="width:50%;height:50%;float:right;opacity:0.9;"></div>
+    <div style="max-height:0;max-width:0">
+      <u style="display:inline-block;height:2em;width:1em;background:#fff;border:.05em solid #000;border-radius:50%;margin:1em 0 0 1em; overflow:hidden">
+        <u style="display:inline-block;height:1em;width:.5em;background:#000;border-radius:50%;margin:1em 0 0 .25em;" class="pupil">
+          <u style="display:block;height:.5em;width:.25em;background:#fff;border-radius:50%;margin-right:.25em;"></u>
+        </u>
       </u>
-    </u>
-  </div>
-  <div style="max-height:0;max-width:0">
-    <u style="display:inline-block;height:2em;width:1em;background:#fff;border:.05em solid #000;border-radius:50%;margin:1em 0 0 3em;overflow:hidden">
-      <u style="display:inline-block;height:1em;width:.5em;background:#000;border-radius:50%;margin:1em 0 0 .25em;" class="pupil">
-        <u style="display:block;height:.5em;width:.25em;background:#fff;border-radius:50%;margin-right:.25em;"></u>
+    </div>
+    <div style="max-height:0;max-width:0">
+      <u style="display:inline-block;height:2em;width:1em;background:#fff;border:.05em solid #000;border-radius:50%;margin:1em 0 0 3em;overflow:hidden">
+        <u style="display:inline-block;height:1em;width:.5em;background:#000;border-radius:50%;margin:1em 0 0 .25em;" class="pupil">
+          <u style="display:block;height:.5em;width:.25em;background:#fff;border-radius:50%;margin-right:.25em;"></u>
+        </u>
       </u>
-    </u>
+    </div>
   </div>
 </div>
 
 ### Dark mode
 Because this is all done in code you can change the colours in the images based on `prefers-color-scheme`.
 
-<style>
-@media (prefers-color-scheme: dark){
-  .sky{
-    background:#1d2854 !important;
+<div class="inserted-code">
+  <style>
+  @media (prefers-color-scheme: dark){
+    .sky{
+      background:#1d2854 !important;
+    }
+    .sun{
+      background:#eee !important;
+      border-color:#fff #fff #ddd #ddd !important;
+    }
+    .ring{
+      border:1em dotted #e1e1e1 !important;
+      height:1em !important;
+      width:1em !important;
+      margin:1em 0 0 1em !important;
+    }
+    .sun-eye{
+      background: #d1d1d1 !important;
+      border-bottom:0.1em solid #444;
+      border-top:0.05em dashed #888;
+      height:.4em !important;
+      border-radius:50% !important;
+    }
   }
-  .sun{
-    background:#eee !important;
-    border-color:#fff #fff #ddd #ddd !important;
-  }
-  .ring{
-    border:1em dotted #e1e1e1 !important;
-    height:1em !important;
-    width:1em !important;
-    margin:1em 0 0 1em !important;
-  }
-  .sun-eye{
-    background: #d1d1d1 !important;
-    border-bottom:0.1em solid #444;
-    border-top:0.05em dashed #888;
-    height:.4em !important;
-    border-radius:50% !important;
-  }
-}
-</style>
-
-<div class="sunmoon" style="font-size:5em;display:block;margin:0 auto;height:5em;width:5em;padding:.5em;vertical-align:middle;     box-sizing: content-box;" role="img" aria-label="sun/moon icon">
-  <div style="max-height:0;">
-    <u style="display:inline-block;height:3em;width:3em;background:yellow;border:.2em solid orange;border-radius:50%;margin:.8em 0 0 .8em" class="sun"></u>
+  </style>
+  <div class="sunmoon" style="font-size:5em;display:block;margin:0 auto;height:5em;width:5em;padding:.5em;vertical-align:middle;" role="img" aria-label="sun/moon icon">
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:3em;width:3em;background:yellow;border:.2em solid orange;border-radius:50%;margin:.8em 0 0 .8em" class="sun"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:3em;width:3em;border: .4em orange dotted;border-radius:50%;margin:.6em 0 0 .6em" class="ring"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:.7em;width:.9em;background:#000;border-radius:1% 1% 50% 50%;margin:1.85em 0 0 1.6em;" class="sun-eye"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:.7em;width:.9em;background:#000;border-radius:1% 1% 50% 50%;margin:1.85em 0 0 2.5em;" class="sun-eye"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:1em;width:1.5em;border-bottom: .1em #000 solid;border-radius:50%;margin:2.25em 0 0 1.75em"></u>
+    </div>
+      <div style="width:5em;height:5em;background:skyblue" class="sky"></div>
   </div>
-  <div style="max-height:0;">
-    <u style="display:inline-block;height:3em;width:3em;border: .4em orange dotted;border-radius:50%;margin:.6em 0 0 .6em" class="ring"></u>
-  </div>
-  <div style="max-height:0;">
-    <u style="display:inline-block;height:.7em;width:.9em;background:#000;border-radius:1% 1% 50% 50%;margin:1.85em 0 0 1.6em;" class="sun-eye"></u>
-  </div>
-  <div style="max-height:0;">
-    <u style="display:inline-block;height:.7em;width:.9em;background:#000;border-radius:1% 1% 50% 50%;margin:1.85em 0 0 2.5em;" class="sun-eye"></u>
-  </div>
-  <div style="max-height:0;">
-    <u style="display:inline-block;height:1em;width:1.5em;border-bottom: .1em #000 solid;border-radius:50%;margin:2.25em 0 0 1.75em"></u>
-  </div>
-    <div style="width:5em;height:5em;background:skyblue" class="sky"></div>
 </div>
