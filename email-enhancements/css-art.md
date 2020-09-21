@@ -340,4 +340,3 @@ Because this is all done in code you can easily change the colours in the images
     <div style="width:5em;height:5em;background:skyblue" class="sky"></div>
   </div>
 </div>
-</div>
