@@ -254,7 +254,7 @@ You can add hover or click styles to allow the user to interact with an image.
 </div>
 
 ### Dark mode
-Because this is all done in code you can change the colours in the images based on `prefers-color-scheme`.
+Because this is all done in code you can easily change the colours in the images based on `prefers-color-scheme`, or even change the image completely.
 
 <div class="inserted-code">
   <style>
