@@ -256,32 +256,54 @@ You can add hover or click styles to allow the user to interact with an image.
 ### Dark mode
 Because this is all done in code you can easily change the colours in the images based on `prefers-color-scheme`, or even change the image completely.
 
-<div class="inserted-code">
+<div class="inserted-code" style="text-align:center">
   <style>
-  @media (prefers-color-scheme: dark){
-    .sky{
-      background:#1d2854 !important;
+    @media (prefers-color-scheme: dark){
+      .sunmoon .sky{
+        background:#1d2854 !important;
+      }
+      .sunmoon .sun{
+        background:#eee !important;
+        border-color:#fff #fff #ddd #ddd !important;
+      }
+      .sunmoon .ring{
+        border:1em dotted #e1e1e1 !important;
+        height:1em !important;
+        width:1em !important;
+        margin:1em 0 0 1em !important;
+      }
+      .sunmoon .sun-eye{
+        background: #d1d1d1 !important;
+        border-bottom:0.1em solid #444;
+        border-top:0.05em dashed #888;
+        height:.4em !important;
+        border-radius:50% !important;
+      }
     }
-    .sun{
-      background:#eee !important;
-      border-color:#fff #fff #ddd #ddd !important;
+    @media (prefers-color-scheme: light){
+      .sunmoon2 .sky{
+        background:#1d2854 !important;
+      }
+      .sunmoon2 .sun{
+        background:#eee !important;
+        border-color:#fff #fff #ddd #ddd !important;
+      }
+      .sunmoon2 .ring{
+        border:1em dotted #e1e1e1 !important;
+        height:1em !important;
+        width:1em !important;
+        margin:1em 0 0 1em !important;
+      }
+      .sunmoon2 .sun-eye{
+        background: #d1d1d1 !important;
+        border-bottom:0.1em solid #444;
+        border-top:0.05em dashed #888;
+        height:.4em !important;
+        border-radius:50% !important;
+      }
     }
-    .ring{
-      border:1em dotted #e1e1e1 !important;
-      height:1em !important;
-      width:1em !important;
-      margin:1em 0 0 1em !important;
-    }
-    .sun-eye{
-      background: #d1d1d1 !important;
-      border-bottom:0.1em solid #444;
-      border-top:0.05em dashed #888;
-      height:.4em !important;
-      border-radius:50% !important;
-    }
-  }
   </style>
-  <div class="sunmoon" style="font-size:5em;display:block;margin:0 auto;height:5em;width:5em;padding:.5em;vertical-align:middle;" role="img" aria-label="sun/moon icon">
+  <div class="sunmoon" style="font-size:5em;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:left;" role="img" aria-label="sun/moon icon">
     <div style="max-height:0;">
       <u style="display:inline-block;height:3em;width:3em;background:yellow;border:.2em solid orange;border-radius:50%;margin:.8em 0 0 .8em" class="sun"></u>
     </div>
@@ -297,6 +319,25 @@ Because this is all done in code you can easily change the colours in the images
     <div style="max-height:0;">
       <u style="display:inline-block;height:1em;width:1.5em;border-bottom: .1em #000 solid;border-radius:50%;margin:2.25em 0 0 1.75em"></u>
     </div>
-      <div style="width:5em;height:5em;background:skyblue" class="sky"></div>
+    <div style="width:5em;height:5em;background:skyblue" class="sky"></div>
   </div>
+  <div class="sunmoon2" style="font-size:5em;display:inline-block;height:5em;width:5em;padding:.5em;vertical-align:middle;text-align:left;" role="img" aria-label="sun/moon icon">
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:3em;width:3em;background:yellow;border:.2em solid orange;border-radius:50%;margin:.8em 0 0 .8em" class="sun"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:3em;width:3em;border: .4em orange dotted;border-radius:50%;margin:.6em 0 0 .6em" class="ring"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:.7em;width:.9em;background:#000;border-radius:1% 1% 50% 50%;margin:1.85em 0 0 1.6em;" class="sun-eye"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:.7em;width:.9em;background:#000;border-radius:1% 1% 50% 50%;margin:1.85em 0 0 2.5em;" class="sun-eye"></u>
+    </div>
+    <div style="max-height:0;">
+      <u style="display:inline-block;height:1em;width:1.5em;border-bottom: .1em #000 solid;border-radius:50%;margin:2.25em 0 0 1.75em"></u>
+    </div>
+    <div style="width:5em;height:5em;background:skyblue" class="sky"></div>
+  </div>
+</div>
 </div>
