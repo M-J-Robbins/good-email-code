@@ -54,7 +54,7 @@ Rémi Parmentier has written a really great article about [which doctype should 
 {% highlight html %}
 <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 {% endhighlight %}
-The `<html>` tag defines the document as HTML format, however if the files is saves as `.html` then this is assumed anyway so it's not really needed.  However what is needed are the attributes set on in.
+The `<html>` tag defines the document as HTML format, however if the file is saved as `.html` then this is assumed anyway so it's not really needed.  However what is needed are the attributes set on in.
 
 ### Lang
 This sets the language of the email, it's important to set as this can affect the way email clients, browsers, screen readers and other assistive technology interpret your content. You can use multiple languages in the same email but it's important to only set one as the default.  After that you can place a lang attribute on any element where the language changes from the default.
@@ -117,7 +117,7 @@ There are more details on [Apple auto-scaling emails bug](https://github.com/hte
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
 {% endhighlight %}
-These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renames to `color-scheme` so for now we include both to get more as the old name is supported by Safari, and Mail in macOS 10.14.4.
+These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renamed to `color-scheme` so for now we include both to get more as the old name is supported by Safari, and Mail in macOS 10.14.4.
 
 The `content` values are
 * light - tells the email client that only light styles are provided
@@ -179,10 +179,10 @@ So taking a closer look at the attributes;
 This is an accessibility enhancement, when navigating with a screen reader this will place the email into the landmarks menu and define the content as an article.  Although it may not be an article as such, the definition here is something that can stand alone outside the context of the rest of the page. And email fits that description.
 
 ### `aria-roledescription="email"`
-As I mentioned previously, article may not be the best word to describe the content, so this will rename it to email.  This is a custom name so we can use anything here but I wouldn't advise using anything else apart from translating it to match the language of your content.  If you are unable to translate this to match your content I'd recommend leaving it off. 
+As I mentioned previously, article may not be the best word to describe the content, so this will rename it to email.  This is a custom name so we can use anything here but I wouldn't advise using anything else apart from translating it to match the language of your content.  If you are unable to translate this to match your content I'd recommend leaving it off.
 
 ### `aria-label="email name"`
-So we've said this is stand along content, we've said the content type is email now we give that a title.  To keep it simple I'd recommend using the subject line if you can dynamically insert that or perhaps say who the email is from.
+So we've said this is stand-alone content, we've said the content type is email now we give that a title.  To keep it simple I'd recommend using the subject line if you can dynamically insert that or perhaps say who the email is from.
 
 ### `lang="en"`
 This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
