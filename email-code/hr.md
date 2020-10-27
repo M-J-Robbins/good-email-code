@@ -13,6 +13,8 @@ That's it, pretty simple but there are a few other things you can add if you lik
 ### Width
 The default is `width:100%` but you can use what suits your style.  Consider if you use a fixed width it may be good to also add a `max-width` so this stays responsive `width:500px; max-width:80%`.
 
+Please note, Windows 10 mail has a minimum width of `4`. If a lower value is set it will default to 4.
+
 ### Margin
 You can adjust the space around with a margin, either in long hand or short hand format.  However MSO Outlooks don't support it when applied directly to the `<hr>` so to get it working there we need to add the margin to a wrapping `<div>`.
 {% highlight html %}
