@@ -71,6 +71,9 @@ Here we've added an element before the SVG with a class of `before-svg` this is 
 
 To show the fallback we use a CSS sibling selector to see if `before-svg` is a direct sibling of `after-svg` that looks like this `.before-svg + .after-svg` this will only be true if the `<svg>` element has been removed.
 
+### Embedded SVG support
+<iframe src="https://embed.caniemail.com/html-svg/" title="Embedded SVG support from caniemail.com"></iframe>
+
 ## External SVG
 External SVG's are linked just like any other image in the `src` of an `<img>` element. However they are not supported across all email clients so we need a work around.
 
