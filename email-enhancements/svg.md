@@ -51,15 +51,15 @@ There is a bit of a work around here but it means putting the fallback code in t
 <div class="before-svg"></div>
 <svg width="150" height="150" role="img">
   <title>Alt text</title>
-	<switch>
-		<g>
+  <switch>
+    <g>
       <circle cx="75" cy="75" r="75" fill="red" />
     </g>
-		<foreignObject>
-			<p style="font-size:50px">SVG Fallback</p>
+    <foreignObject>
+      <p style="font-size:50px">SVG Fallback</p>
       <img src="https://dummyimage.com/100x100/00FF00/fff&text=fallback" alt="alt text">
-		</foreignObject>
-	</switch>
+    </foreignObject>
+  </switch>
 </svg>
 <div class="after-svg" style="display:none">
   <p style="font-size:50px">SVG Fallback</p>
