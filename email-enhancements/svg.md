@@ -12,15 +12,15 @@ This includes the code for the image inside the HTML, this means the image can s
 {% highlight html %}
 <svg width="150" height="150" role="img">
   <title>Alt text</title>
-	<switch>
-		<g>
+  <switch>
+    <g>
       <circle cx="75" cy="75" r="75" fill="red" />
     </g>
-		<foreignObject>
-			<p style="font-size:50px">SVG Fallback</p>
+    <foreignObject>
+      <p style="font-size:50px">SVG Fallback</p>
       <img src="https://dummyimage.com/100x100/00FF00/fff&text=fallback" alt="alt text">
-		</foreignObject>
-	</switch>
+    </foreignObject>
+  </switch>
 </svg>
 {% endhighlight %}
 
