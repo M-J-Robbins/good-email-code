@@ -71,8 +71,12 @@ Here we've added an element before the SVG with a class of `before-svg` this is 
 
 To show the fallback we use a CSS sibling selector to see if `before-svg` is a direct sibling of `after-svg` that looks like this `.before-svg + .after-svg` this will only be true if the `<svg>` element has been removed.
 
+<details>
+<summary>
 ### Embedded SVG support
+</summary>
 <iframe src="https://embed.caniemail.com/html-svg/" style="width:100%;height:19em;" title="Embedded SVG support from caniemail.com"></iframe>
+</details>
 
 ## External SVG
 External SVG's are linked just like any other image in the `src` of an `<img>` element. However they are not supported across all email clients so we need a work around.
@@ -85,7 +89,11 @@ Here we are setting a safer image format (jpg, gif, png) as the default then usi
 
 `srceset` has slightly less support than just using an SVG in an `<img>` but there are 2 advantages to this technique. Firstly it's very simple with minimal code so easy to add. And secondly this will only ever download one image, either the png or the svg.  An alternate approach which I used in the past was to have 2 `<img>` elements and swap them with CSS but this means that both images are downloaded.
 
+<details>
+<summary>
 ### External SVG support
+</summary>
 <iframe src="https://embed.caniemail.com/image-svg/" style="width:100%;height:19em;" title="External SVG support from caniemail.com"></iframe>
+</details>
 
 <!-- ## Base64 SVG -->
