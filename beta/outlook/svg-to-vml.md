@@ -25,6 +25,8 @@ Because these are vector images, they can be scaled to any size, so we need to d
 **SVG viewBox:** The SVG `viewbox` has 4 values min-x, min-y, width and height, for now we'll ignore the first 2 and assume they are both set to `0`.
 **VML coordsize:** VML `coordsize` only has 2 values width and height, so these should match the last 2 values of the `viewbox`.
 
+I need to read more into it but `coordorigin` may be comparable to the first 2 values for `viewbox`.
+
 ### Image size
 We can set the actual size of our image with `width` and `height` in the `style` attribute.  This works the same in both formats `style="width:1000px;height:500px"`.
 
@@ -36,16 +38,24 @@ VML will converted to an `<img>` when it's displayed in Outlook, so we can simpl
 ## Line
 **SVG**
 {% highlight html %}
-<line />
+<line x1="10" y1="20" x2="100" y2="200" stroke="#ff0000" stroke-width="2"/>
 {% endhighlight %}
 
 **VML**
 {% highlight html %}
-<v:line />
+<v:line from="10,20" to="100,200" strokecolor="#ff0000" strokeweight="2pt"/>
 {% endhighlight %}
-### Line element
-### Line size
 
+### Line size
+The line size and colour are done as a stroke in both SVG and VML.  SVG uses `stroke-width` VML uses `strokeweight`, with VML we need to specify a unit on the `strokeweight` so I've also added `pt` however this is not a relative unit so may need adjusting if the shape size is changed.
+
+### Line colour
+The colour of the line is set as `stroke` in SVG, with VML it's expanded a little to `strokecolor`.
+
+### Line position
+SVG starts the line with `x1` and `y1` to define the start point from the left and top and ends the line with `x2` and `y2` to define the start point from the left and top.
+
+VML combines the X and Y coordinates, so we set 2 values in `from` (X then Y) and 2 values in `to` (X then Y).
 
 
 ## Square
@@ -58,7 +68,6 @@ VML will converted to an `<img>` when it's displayed in Outlook, so we can simpl
 {% highlight html %}
 <v:rect />
 {% endhighlight %}
-### Square element
 ### Square size
 ### Square rounded corners
 ### Square position
@@ -114,6 +123,19 @@ SVG does positioning from the centre point of the circle, so again we need to do
 <v:shape path="M48 422 C48 250 453 250 453 422 L453 500 48 500 48 422 xe" fillcolor="#a8b3dc" stroked="f"/>
 {% endhighlight %}
 
+### Custom shape element
+SVG uses a `path` element with the coordinates defined in a `d` attribute, and VML uses a `v:shape` element with with the coordinates defined in a `path` attribute.
+
+### Custom shape path
+The path is defined with a combination of letters and numbers.  The numbers are in pairs and give coordinates `x y` and the letters give meaning to those.
+
+* `M` Move to. This sets the starting point. If you leave it off it will start at `0 0`.
+* `L` Line to.
+* `H` Horazontal line. This is a short cut that keeps the `y` coordinate. ######################################################################################################
+* `V` Vertical line.
+* `C` Curve. There are 6 values, think of them as 3 pairs of `x y`. The first pair control the start of the curve, the second pair control the end of the curve and the third pair set the end point.
+* `Z` `XE`
+
 
 
 ## Colour
@@ -137,3 +159,4 @@ There is some attempt to create alt text based on any text inside but it is far 
 
 
 ## Resources
+https://yqnn.github.io/svg-path-editor/ Can help with rounding numbers, and adjusting for viewbox with 4 values.
