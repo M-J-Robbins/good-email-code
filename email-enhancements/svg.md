@@ -83,7 +83,7 @@ External SVG's are linked just like any other image in the `src` of an `<img>` e
 
 Here we are setting a safer image format (jpg, gif, png) as the default then using the `srcset` attribute to enhance it to show the SVG where that is supported. The `1x` refers to retina screens that may be 2 or 3 times the pixel density.  Setting it to `1` means this will target all devices that support the SVG image format.
 
-`srceset` has slightly less support than just using an SVG in an `<img>` but there are 2 advantages to this technique. Firstly it's very simple with minimal code so easy to add. And secondly this will only ever download one image, either the png or the svg.  An alternate approach which I used in the past was to have 2 `<img>` elements and swap them with CSS but this means that both images are downloaded.
+`srcset` has slightly less support than just using an SVG in an `<img>` but there are 2 advantages to this technique. Firstly it's very simple with minimal code so easy to add. And secondly this will only ever download one image, either the png or the svg.  An alternate approach which I used in the past was to have 2 `<img>` elements and swap them with CSS but this means that both images are downloaded.
 
 ### External SVG support
 <iframe src="https://embed.caniemail.com/image-svg/" width="600" height="400" class="caniemail" title="External SVG support from caniemail.com"></iframe>
