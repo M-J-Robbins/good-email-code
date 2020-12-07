@@ -2,10 +2,10 @@
 
 Scalable Vector Graphics or SVG, is a markup language for creating vector based images.  Because these images are created in code rather than pixels they can scale to any size without pixelating.  This is the same way fonts can look clear at any size.  And because it's code you can edit the image to change appearance to fit smaller viewports, change colours to fit with darkmode or even add hover effects.
 
-There are 2 ways to use SVG in your email, Embedded or External.  
+I'm going to cover 2 ways to use SVG in your email, [Embedded](#embedded-svg) and [External](#external-svg).
 
 ## Embedded SVG
-This includes the code for the image inside the HTML, this means the image can still be seen even with images disabled. Also it's worth noting that this also adds to the file size of the email so including a complicated image may oush teh file size over 100kb and potentially lead to issues with sending speed, deliverability and clipping in Gmail.
+This includes the code for the image inside the HTML, this means the image can still be seen even with images disabled. Also it's worth noting that this also adds to the file size of the email so including a complicated image may push the file size over 100kb and potentially lead to issues with sending speed, deliverability and clipping in Gmail.
 
 
 ### The code
@@ -28,7 +28,7 @@ This includes the code for the image inside the HTML, this means the image can s
 To help this work with assistive technology, I've set a `role="img"` on the `<svg>` tag and included a `<title>` inside it where I have set the alt text.  If your image is purely decorative and adds no meaningful information then you can leave both of these off.
 
 ### `<switch>`
-This will evaluates its direct child elements in order, and will render the first valid one it finds. The rest will then be ignored. I've added the `<g>` element to group together all the svg elements we're adding.  In this example code it's only one so it's not really needed but when doing a shape wth more then one part this is essential [MDN referance](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/switch).
+This will evaluates its direct child elements in order, and will render the first valid one it finds. The rest will then be ignored. I've added the `<g>` element to group together all the svg elements we're adding.  In this example code it's only using one element so it's not really needed but when doing a shape with more then one part this is essential [MDN referance](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/switch).
 
 
 ### `<foreignObject>`
@@ -67,7 +67,7 @@ There is a bit of a work around here but it means putting the fallback code in t
 </div>
 {% endhighlight %}
 
-Here we've added an element before the SVG with a class of `before-svg` this is just to help detect of the svg has been removed.  Then we duplicate our fallback code again in a div set to `<div class="after-svg" style="display:none">` so this will be hidden by default.
+Here we've added an element before the SVG with a class of `before-svg` this is just to help detect of the SVG has been removed.  Then we duplicate our fallback code again in a div set to `<div class="after-svg" style="display:none">` so this will be hidden by default.
 
 To show the fallback we use a CSS sibling selector to see if `before-svg` is a direct sibling of `after-svg` that looks like this `.before-svg + .after-svg` this will only be true if the `<svg>` element has been removed.
 
