@@ -85,6 +85,30 @@ Here we are setting a safer image format (jpg, gif, png) as the default then usi
 
 `srcset` has slightly less support than just using an SVG in an `<img>` but there are 2 advantages to this technique. Firstly it's very simple with minimal code so easy to add. And secondly this will only ever download one image, either the png or the svg.  An alternate approach which I used in the past was to have 2 `<img>` elements and swap them with CSS but this means that both images are downloaded.
 
+### External SVG styles
+We can also add styles inside external SVG's including media queries to change appearance.
+
+{% highlight html %}
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    rect {fill: #a00;}
+    @media (prefers-color-scheme: dark) {
+      rect {fill: #fab;}
+    }
+    @media screen and (max-width: 600px){
+      rect{rx: 50%;}
+    }
+  </style>
+  <rect width="50" height="50" rx="5"/>
+</svg>
+{% endhighlight %}
+
+
+in this example when the image is viewed in dark mode it will change from dark red to light pink.  
+
+When the image is below 600px wide it will become a circle. Remember, this is the size of the image, not the size of the viewport.  It can be likened more to using media queries in an iframe. Also Firefox can be a little off here in the above example it applies the 600px media query at 300px.
+
+
 ### External SVG support
 <iframe src="https://embed.caniemail.com/image-svg/" width="600" height="400" class="caniemail" title="External SVG support from caniemail.com"></iframe>
 
