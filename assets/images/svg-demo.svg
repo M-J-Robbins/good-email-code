@@ -1,12 +1,18 @@
-<svg width="150" height="150" role="img" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <title>Alt text</title>
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
   <style>
-    @media screen and (max-width:600px){
-      .foo{rx:75;ry:75}
+    rect {
+      fill: #a00;
     }
-    @media screen and (prefers-color-scheme: dark){
-      .foo{fill:#fab;}
+    @media (prefers-color-scheme: dark) {
+      rect {
+        fill: #fab;
+      }
+    }
+    @media screen and (max-width: 600px){
+      rect{
+        rx: 50%;
+      }
     }
   </style>
-  <rect x="0" y="0" width="150" height="150" fill="#a00" class="foo" />
+  <rect width="50" height="50" rx="5"/>
 </svg>
