@@ -1,0 +1,12 @@
+<svg width="150" height="150" role="img" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Alt text</title>
+  <style>
+    @media screen and (max-width:30em){
+      .foo{rx:75;ry:75}
+    }
+    @media screen and (prefers-color-scheme: dark){
+      .foo{fill:#fab;}
+    }
+  </style>
+  <rect x="0" y="0" width="150" height="150" fill="#a00" class="foo" />
+</svg>
