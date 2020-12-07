@@ -35,7 +35,7 @@ This will evaluates its direct child elements in order, and will render the firs
 This is used to embed non-svg code.  In our example that means HTML  Because we're using the `<switch>` element this will be ignored if the SVG code renders.  However the content will still be downloaded, so if you have an `<img>` element in there the request to download will still be sent [MDN referance](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject).
 
 
-### Concast
+### Comcast
 Comcast will strip out the entire code block.
 
 There is a bit of a work around here but it means putting the fallback code in twice.
