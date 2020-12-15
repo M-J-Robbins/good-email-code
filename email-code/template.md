@@ -10,7 +10,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
   <meta name="x-apple-disable-message-reformatting">
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark">
@@ -96,9 +96,9 @@ The viewport element gives the browser and email client instructions on how to c
 
 ### format-detection
 {% highlight html %}
-<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
 {% endhighlight %}
-In theory these prevent email clients automatically detecting and generating links out of phone numbers, dates, addresses and email addresses.
+In theory these prevent email clients automatically detecting and generating links out of phone numbers, dates, addresses, email addresses and url's.
 However support is low, I've only ever seen it work for phone numbers on the Outlook iOS app.  I'd recommend including these anyway as it's a hint to the email clients that this is something we want.
 
 There is an argument that we shouldn't use these as the auto linking helps users.  However I feel there are too many issues with the auto detection to reply on it, if I add a phone number I will add a link myself. If I include numbers for another reason (order number etc.) I don't want them linking to a phone number.
