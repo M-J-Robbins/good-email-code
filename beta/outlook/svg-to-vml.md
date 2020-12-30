@@ -1,6 +1,8 @@
 # SVG to VML
 From my extensive research ([this wikipedia post](https://en.wikipedia.org/wiki/Vector_Markup_Language)) the SVG specification is, in part, based off the VML spec.  When comparing the two formats, there are a lot of similarities so I've written up this brief guide to help you manually convert SVG to VML.
 
+If you're interested in using SVG in email I have a post about [SVG in email](email-enhancements/svg).
+
 ## Wrapper
 Both formats can have an outer wrapper, however the VML wrapper is optional. If you're only inserting a single VML element you can do it without a wrapper.
 
@@ -20,12 +22,12 @@ Both formats can have an outer wrapper, however the VML wrapper is optional. If 
 This specifies the xml namespace for a document. This is optional in both cases but for VML if it's not on the shape, then it must be added to the HTML tag  `<html xmlns:v="urn:schemas-microsoft-com:vml">`
 
 ### Viewport size
-Because these are vector images, they can be scaled to any size, so we need to define the dimensions of the space we're working in. Think of it like the artboard size or canvas size.  So if we place something 10 from the top and 10 from the left, it'll be relevant to the sizes we define here.
+Because these are vector images, they can be scaled to any size, so we need to define the dimensions of the space we're working in. I like to think of it like the artboard size or canvas size that you would use in design software.  So if we place something 10 from the top and 10 from the left, it'll be relevant to the sizes we define here.
 
 **SVG viewBox:** The SVG `viewbox` has 4 values min-x, min-y, width and height, for now we'll ignore the first 2 and assume they are both set to `0`.
 **VML coordsize:** VML `coordsize` only has 2 values width and height, so these should match the last 2 values of the `viewbox`.
 
-I need to read more into it but `coordorigin` may be comparable to the first 2 values for `viewbox`.
+I need to read more into it but it looks like `coordorigin` may be comparable to the first 2 values for `viewbox`.
 
 ### Image size
 We can set the actual size of our image with `width` and `height` in the `style` attribute.  This works the same in both formats `style="width:1000px;height:500px"`.
@@ -33,7 +35,7 @@ We can set the actual size of our image with `width` and `height` in the `style`
 ### alt text
 SVG has a couple of options for alt text, we can use `<title>alt text</title>` inside the `<svg>` wrapper.  Or we can use `role="img"` to define this as an image and `aria-label="alt text"` for the alt text.
 
-VML will converted to an `<img>` when it's displayed in Outlook, so we can simply use `alt="alt text"` here.
+VML will converted to an `<img>` when it's displayed in Outlook, so we can simply add `alt="alt text"` to the wrapper.
 
 ## Line
 **SVG**
