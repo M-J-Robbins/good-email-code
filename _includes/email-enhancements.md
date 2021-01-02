@@ -3,3 +3,4 @@
 * [CSS Triangles](email-enhancements/css-triangles) - A triangle shape, made with code to avoid using an image.
 * [CSS Art](email-enhancements/css-art) - Creating images with CSS.
 * [SVG in email](email-enhancements/svg) - Using embedded or external SVG's in an email. 
+* [SVG to VML](email-enhancements/svg-to-vml) - How to manually convert an SVG image into a VML image.

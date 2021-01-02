@@ -174,9 +174,9 @@ If you need to set a transparent background with VML, you can use `fillcolor="no
 VML will always add a stroke by default.  SVG does not.  In the above examples I've added `stroked="f"` to remove the stroke. However if you want to use it in VML you can either leave that off or set it to `stroked="true"` then set the colour with `strokecolor="red"` and the thickness with `strokeweight="10"`.
 
 ## Accessibility 
-The most important thing to remember is VML is an image. So try not to include text inside it and if you do keep it minamal.
+The most important thing to remember is VML is an image. So try adn treat is as such.  This includes not adding text inside the VML and if you do have to add text keep it minamal and add an `alt` attribute.
 
-I believe Outlook will actually renders the VML as an image and displays it in an `<img>` element. So you can see it but you can't interact with it.  This means any links inside the VML aren't clickable for any users. But you can add an `href` to the outermost element to make the whole object a link.
+I believe Outlook will actually renders the VML as an image and displays it in an `<img>` element. So you can see it on the screen but you can't interact with it and assistive technology will just pick it up as an image.  This means any links inside the VML aren't clickable for any users. But you can add an `href` to the outermost element to make the whole object a link.
 
 Outlook does make some attempt to create alt text based on any text inside the VML but it is far from reliable and it will add the element name which can make things confusing.  To get around this you can add an `alt` attribute to the outer element to pass alt text.
 
