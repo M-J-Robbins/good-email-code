@@ -62,7 +62,7 @@ However this doesn't cover Windows Mail, to get that as well we need to make som
     <!-- email content in here -->
   </div>
   <!--[if true]>
-  </td></tr></table>
+  </td></tr><td></td></table>
   <![endif]-->
 </div>
 {% endhighlight %}
