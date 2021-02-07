@@ -49,7 +49,7 @@ Unfortunately `rem` units don’t yet have full support in email clients so for 
 Ideally we want to return the font size to `1rem` however some email clients don’t support `rem` and in some the default `rem` value can be very small (12px in Applemail) so we will set a minimum and some fallbacks.
 
 {% highlight html %}
-<div style=”font-size:16px; font-size:1rem; font-size:max(16px, 1rem)”>
+<div style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
 {% endhighlight %}
 
 I’m going to look at these values in reverse order as that’s what the priority order is;
@@ -91,8 +91,8 @@ There’s certainly a good argument for moving everything to `em` if a user has 
 As I mentioned the value of `1em` can change through the email. This can be seen as both a pro and a con of using `em` units.
 
 {% highlight html %}
-<h1 style=”font-size:2em; margin:1em 0”>Heading</h1>
-<p style=”font-size:1em; margin:1em 0”>Paragraph</p>
+<h1 style="font-size:2em; margin:1em 0">Heading</h1>
+<p style="font-size:1em; margin:1em 0">Paragraph</p>
 {% endhighlight %}
 
 In this example if the user root font is set to 16px then the paragraph has a margin of `16px 0` but the heading is `32px 0` even though it’s the same code.  It’s likely you’d want more spacing around a heading but it can take a while to adjust to it.
@@ -103,9 +103,9 @@ Another good example if we have an email with a highlighted section where we wan
 ### Attributes
 `em` units don’t work inside attributes, the unit is effectively removed from the code and rendered as if no unit were used, which in defaults to `px`.
 
-So setting `width=”10em”` with render as `10px` not `10em`.  But this is a minor issue as we can set styles in the `style` attribute which does support `em`.
+So setting `width="10em"` with render as `10px` not `10em`.  But this is a minor issue as we can set styles in the `style` attribute which does support `em`.
 
 ### VML
 VML has the same issue as attributes, even if you set a size in a `style` attribute it will still render as `px`
 
-So setting `style=”width:10em”` with render as `10px` not `10em`.
+So setting `style="width:10em"` with render as `10px` not `10em`.
