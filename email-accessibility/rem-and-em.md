@@ -33,7 +33,7 @@ However, the default size in clients tends to vary a bit more. Looking at popula
 | Thunderbird             |   17px |
 | Android                 |   14px |
 | Gmail webmail & Android |   13px |
-| Gmail iOS               |   16pc |
+| Gmail iOS               |   16px |
 | Samsung                 |   16px |
 | Concast                 |   13px |
 | Freenet                 |   16px |
@@ -48,7 +48,9 @@ Unfortunately `rem` units don’t yet have full support in email clients so for 
 
 Ideally we want to return the font size to `1rem` however some email clients don’t support `rem` and in some the default `rem` value can be very small (12px in Applemail) so we will set a minimum and some fallbacks.
 
+{% highlight html %}
 <div style=”font-size:16px; font-size:1rem; font-size:max(16px, 1rem)”>
+{% endhighlight %}
 
 I’m going to look at these values in reverse order as that’s what the priority order is;
 
@@ -88,8 +90,10 @@ There’s certainly a good argument for moving everything to `em` if a user has 
 ## Inherited values
 As I mentioned the value of `1em` can change through the email. This can be seen as both a pro and a con of using `em` units.
 
+{% highlight html %}
 <h1 style=”font-size:2em; margin:1em 0”>Heading</h1>
 <p style=”font-size:1em; margin:1em 0”>Paragraph</p>
+{% endhighlight %}
 
 In this example if the user root font is set to 16px then the paragraph has a margin of `16px 0` but the heading is `32px 0` even though it’s the same code.  It’s likely you’d want more spacing around a heading but it can take a while to adjust to it.
 
