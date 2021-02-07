@@ -15,3 +15,7 @@ With all that in mind, look at these cool things I've written.
 ## Email enhancements
 
 {% include email-enhancements.md %}
+
+## Email accessibility
+
+{% include email-accessibility.md %}
