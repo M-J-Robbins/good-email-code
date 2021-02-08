@@ -32,7 +32,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
   </style>
 </head>
 <body class="body">
-  <div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:1rem">
+  <div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
     <!-- email content in here -->
   </div>
 </body>
@@ -170,7 +170,7 @@ I always like to define a body class on the body element, this is because someti
 
 ## Wrapping element
 {% highlight html %}
-<div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:1rem">
+<div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
 {% endhighlight %}
 Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people apply these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use it on a `<table>`.
 
@@ -187,9 +187,9 @@ So we've said this is stand-alone content, we've said the content type is email 
 ### `lang="en"`
 This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
 
-### `font-size: 1rem`
-Some email clients may force a font-size on your email content. This resets it to be relative to the users settings so better for accessibility.  Ideally all other units in the email should be `em` so they are relative to this.
+### `font-size:16px; font-size:1rem; font-size:max(16px, 1rem)`
+Some email clients may force a font-size on your email content. This resets it to be relative to the users settings so better for accessibility.
 
 Most email clients and web browsers use a default font-size of 16px or larger but Apple mail uses a default of 12px. If you want to increase this default but still respect the the user settings then you can use `font-size:1rem; font-size:max(1rem, 16px)`.  If the user has a setting smaller than 16px then the font-size will be set to 16px, if it's larger then the rem value will be used.  If `max` isn't supported then it will fallback to the previous setting of `font-size:1rem;`.
 
-Unfortunately rem units don't work everywhere if you want to find out more look at [email client support for rem units](https://www.caniemail.com/features/css-unit-rem/) and [browser support for rem units](https://caniuse.com/#feat=rem)
+I've written up more about using `rem` and `em` units and how to convert your code from `px`, [Using Rem and Em units in email.](../email-accessibility/rem-and-em).
