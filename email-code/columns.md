@@ -58,9 +58,9 @@ If you take all the outlook code out of this it's pretty simple.
 
 Here I've used `display:table` on the outer div and `display:table-cell` on the inner divs. You could also just define `display:inline-block` on the inner divs.  There are pros and cons to both approaches.
 
-*table-cell* Can auto fill the width of any columns that don't have width defined.  A height of all columns will be determined by the height of the tallest. This does require a media query of you want the columns to stack.
+**table-cell** Can auto fill the width of any columns that don't have width defined.  A height of all columns will be determined by the height of the tallest. This does require a media query of you want the columns to stack.
 
-*inline-block*  Can stack columns without any code in the head.  Elements that are inline-block have additional spacing added to them, this mean 2 columns set at 50% width will actually flow onto the next line.  There are fixes for this but they are delicate and can broken by email client or ESP support.  One advantage for this method is columns can stack without media queries.
+**inline-block**  Can stack columns without any code in the head.  Elements that are inline-block have additional spacing added to them, this mean 2 columns set at 50% width will actually flow onto the next line.  There are fixes for this but they are delicate and can broken by email client or ESP support.  One advantage for this method is columns can stack without media queries.
 
 ### The MSO Outlook part
 Again if we remove all the conditional comment and HTML code it looks much simpler
