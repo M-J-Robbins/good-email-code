@@ -17,12 +17,12 @@ Columns, laying out content beside other content, seems so simple but is one of 
     <div style="display:table-cell;width:50%">
   <!--<![endif]-->
       Column 1 content
-  <!--[if true]>
-    </td>
-  <![endif]-->
   <!--[if !true]><!-->
     </div>
   <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
   <!--[if true]>
     <td width="50%">
   <![endif]-->
@@ -30,12 +30,12 @@ Columns, laying out content beside other content, seems so simple but is one of 
     <div style="display:table-cell;width:50%">
   <!--<![endif]-->
       Column 2 content
-  <!--[if true]>
-    </td>
-  <![endif]-->
   <!--[if !true]><!-->
     </div>
   <!--<![endif]-->
+  <!--[if true]>
+    </td>
+  <![endif]-->
 </div>
 <!--[if true]>
   </tr>
@@ -79,6 +79,9 @@ Again if we remove all the conditional comment and HTML code it looks much simpl
 
 Here we have a table with 2 columns or 50% width.
 
+You may also need to add in `cellspacing="0" cellpadding="0"` or `style="border-collapse: collapse;
+  padding:0;"` on the `<table>` if you haven't cover that in your CSS. 
+
 ### T-online
 Unfortunately T-online will render all conditional comments, so here it will show both the MSO and the HTML version.  To prevent this we first close the MSO table using `<!--[if false]></td></tr></table><![endif]-->` this conditional comment using `false` will not render for Outlook.  Depending on the styling we may still see a part of that table so we add `all:unset;opacity:0;` to the table styles.
 
@@ -92,12 +95,12 @@ Using this method you can add as many columns as you like just repeat this part 
   <div style="display:table-cell;width:10%">
 <!--<![endif]-->
     Column 1 content
-<!--[if true]>
-  </td>
-<![endif]-->
 <!--[if !true]><!-->
   </div>
 <!--<![endif]-->
+<!--[if true]>
+  </td>
+<![endif]-->
 {% endhighlight %}
 
 You don't actually need to define a width, if left undefined it will be generated automatically. This can work well for a responsive layout if you want one column fixed (maybe containing an image) and one column fluid (maybe containing text).
