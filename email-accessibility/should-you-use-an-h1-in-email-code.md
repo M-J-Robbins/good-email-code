@@ -58,7 +58,7 @@ Really this is the only important question, what is best for the users?
 
 Doing a bit of research I found this [Webaim survey from 2017](https://webaim.org/projects/screenreadersurvey7/#heading) which asked 1792 screen reader users;
 
-_*“Which of the following page heading structures is easiest for you?”*_
+**“Which of the following page heading structures is easiest for you?”**
  * One first level heading that contains the site name - 6.6%
  * One first level heading that contains the document title - 60.0%
  * Two first level headings, one for the site name and one for the document title	33.3%
