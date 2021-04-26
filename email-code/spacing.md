@@ -24,4 +24,4 @@ For HTML email clients we can add `display:inline-block;width:30px`.
 <div style="line-height:50px;height:50px;">&#8202;</div>
 {% endhighlight %}
 
-Again we need to insert a character, this time to have something for the `line-height` to respond to and stop the `<div>` from collapsing.  Gmail app on Android adds a little extra space here so setting a fixed `height` the same as the `line-height` brings that into line.
+Again we need to insert a character, this time to have something for the `line-height` to respond to and stop the `<div>` from collapsing, I've used `&#8202;` again for consistency with the horizontal spacer, but other characters should work too.  Gmail app on Android adds a little extra space here so setting a fixed `height` the same as the `line-height` brings that in line.
