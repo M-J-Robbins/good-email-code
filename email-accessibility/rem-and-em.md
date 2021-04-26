@@ -1,5 +1,11 @@
 # Using rem and em units in email
 
+There are a number of different units that can be used to set sizes in CSS these can be grouped into absolute and relative.  
+
+Absolute units don't ever change and are good for consistency but lack flexibility.  These include `px`(pixels), `pt`(points), `pc`(picas), `cm`(centimetres), `in`(inches) and more.
+
+Relative units are more flexible as they are based of something else. These include `vw`(viewport width), `vh`(viewport height), `lh`(current line height) and more but the ones we're interested in for accessibility are `rem` and `em`.
+
 ## What are EM units and REM units
 `em` units are equal to the current font size, the name comes from the width of an uppercase M. So if you have a `font-size:16px` set then `1em` would be equal to `16px`. If you were then to change that to  `font-size: 20px` for a heading, `1em` would be equal to `20px`.
 
