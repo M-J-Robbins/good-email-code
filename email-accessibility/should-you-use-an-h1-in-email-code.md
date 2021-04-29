@@ -1,5 +1,6 @@
 # Should you use an `<h1>` in email code?
 Short answer, yes.
+
 Long answer...
 
 I’m writing this following on from a couple of really interesting twitter conversation you can see here [twitter conversation 1]( https://twitter.com/Paul_Airy/status/1384824287945764866) and
@@ -25,7 +26,9 @@ I ran some quick tests on webmail clients and found that most webmail clients do
  * mail.ru
  * yandex
  * rambler
+
 But there are a few that do
+
  * la poste - Adds an `<h1>` to the logo
  * 163.com - Adds an `<h1>` to the logo
  * proton mail - Adds an `<h1>` to the email subject line
@@ -66,6 +69,7 @@ Doing a bit of research I found this [Webaim survey from 2017](https://webaim.or
 Similar results were found in the [survey from 2010](https://webaim.org/projects/screenreadersurvey3/#headings)
 
 To me, this suggests that having the document tile as an `<h1>`’s is the most important thing. Users would rather not have the site name as an `<h1>` as well like  **la poste** and **163**  do, but we can’t control that.
+
 ## Conclusion
 There are only 4 email clients I've found (so far) where this is potentially an issue and their market share is small so adding an `<h1>` would only cause an issue for a small number of users whereas leaving it off will affect more users.
 
