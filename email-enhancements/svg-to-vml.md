@@ -3,7 +3,7 @@ From my extensive research ([this wikipedia post](https://en.wikipedia.org/wiki/
 
 This is not a quick or easy process but could be good if you wanted to convert your brand logo to VML so it will always show in MSO Outlook even with images turned off.  Someone more skilled than me could probably build a tool to convert SVG to VML automatically. If you know of such a tool or are planning to build one I'm love to know about it.
 
-If you're interested in SVG I also have a post about [using SVG in email](email-enhancements/svg).
+If you're interested in SVG I also have a post about [using SVG in email](../email-enhancements/svg).
 
 This article covers:
 * [Wrapper](#wrapper) - Creating a wrapper
@@ -12,7 +12,7 @@ This article covers:
 * [Circle](#circle) - Drawing a circle
 * [Custom shape](#custom-shape) - Drawing a custom shape
 * [Colour](#colour) - Adding colour to the shapes
-* [Stroke](#stroke) - Adding a stroke to the shapes 
+* [Stroke](#stroke) - Adding a stroke to the shapes
 * [Accessibility](#accessibility) - Accessibility considerations
 * [Resources](#resources)
 
@@ -80,17 +80,17 @@ VML combines the X and Y coordinates, so we set 2 values in `from` (X then Y) an
 <rect width="150" height="150" x="20" y="20" fill="#ff0000"/>
 {% endhighlight %}
 
-**VML** 
+**VML**
 {% highlight html %}
 <v:rect width="150" height="150" style="position: absolute; left:20; top:20" fillcolor="#ff0000" stroked="f"/>
 {% endhighlight %}
-### Square size 
+### Square size
 Can be done with `height` and `width` attributes or in a `style` attribute.  Either way it's a direct conversion from SVG to VML.
 
-### Square position 
+### Square position
 SVG uses the `x` and `y` attributes to position the square from the left and top.  For VML we can do this in a style attribute by setting `position: absolute` then converting `x` to `left` and `y` to `top`.
 
-### Square rounded corners 
+### Square rounded corners
 For SVG rounded corners are added with `rx` and `ry` attributes. These can either be numbers or percentage.
 
 For VML we need to change the elements from `<v:rect>` to `<v:roundrect>` then add an `arcsize` attribute.  The value can be a fraction or a percentage e.g `arcsize="0.2"` or `arcsize="20%"`.
@@ -153,10 +153,10 @@ SVG uses a `path` element with the coordinates defined in a `d` attribute, and V
 ### Custom shape path
 The path is defined with a combination of letters and numbers.  The numbers are in pairs and give coordinates `x y` and the letters give commands to those.
 
-VML can only use whole numbers so first we need to round these off. 
+VML can only use whole numbers so first we need to round these off.
 
 * `M` **Move to**. This sets the starting point and works the same for both formats.
-* `L` **Line to**. Draws a straight line between the previous set of corordinates given and all the following sets up until a new letter is used.  SVG will default to using `L` when nothing is defined but VML needs the `L` to be defined.  For example after a `C` which has 6 values, we need to add `L` to start drawing a line. 
+* `L` **Line to**. Draws a straight line between the previous set of corordinates given and all the following sets up until a new letter is used.  SVG will default to using `L` when nothing is defined but VML needs the `L` to be defined.  For example after a `C` which has 6 values, we need to add `L` to start drawing a line.
 * `H` **Horazontal line**. This is a short cut used with `L` that keeps the `y` coordinate. This is only in SVG, to convert it to VML you need to look at the value of the previous corordinates. So `100 200 H150` would keep the `200` value so would become  `100 200 150 200`.
 * `V` **Vertical line**. This is a short cut used with `L` that keeps the `x` coordinate. This is only in SVG, to convert it to VML you need to look at the value of the previous corordinates. So `100 200 V150` would keep the `100` value so would become  `100 200 100 150`.
 * `C` **Curve**. There are 6 values, think of them as 3 pairs of `x y`. The first pair control the start of the curve, the second pair control the end of the curve and the third pair set the end point.  This is the same for both VML and SVG.
@@ -173,7 +173,7 @@ If you need to set a transparent background with VML, you can use `fillcolor="no
 ## Stroke
 VML will always add a stroke by default.  SVG does not.  In the above examples I've added `stroked="f"` to remove the stroke. However if you want to use it in VML you can either leave that off or set it to `stroked="true"` then set the colour with `strokecolor="red"` and the thickness with `strokeweight="10"`.
 
-## Accessibility 
+## Accessibility
 The most important thing to remember is VML is an image. So try adn treat is as such.  This includes not adding text inside the VML and if you do have to add text keep it minamal and add an `alt` attribute.
 
 I believe Outlook will actually renders the VML as an image and displays it in an `<img>` element. So you can see it on the screen but you can't interact with it and assistive technology will just pick it up as an image.  This means any links inside the VML aren't clickable for any users. But you can add an `href` to the outermost element to make the whole object a link.
