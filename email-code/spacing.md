@@ -14,7 +14,7 @@ If you are still having issue then you can try these methods.
 
 To get it working in MSO Outlooks we are using `letter-spacing` to create the size of this spacer. And for `letter-spacing` to work we need a letter for it to work off.  In this case we are using a _"Hair Space"_ `&#8202;`.  This is the thinest character I found so it only adds a very tiny amount of space onto the 30px specified in the `letter-spacing`.  To remove that spacing from MSO Outlooks we can use `mso-font-width:-100%;`
 
-For HTML email clients we can add `display:inline-block;width:30px`.
+For HTML email clients we can add `display:inline-block;width:50px`.
 
 
 ## Vertical Spacer
@@ -25,3 +25,14 @@ For HTML email clients we can add `display:inline-block;width:30px`.
 {% endhighlight %}
 
 Again we need to insert a character, this time to have something for the `line-height` to respond to and stop the `<div>` from collapsing, I've used `&#8202;` again for consistency with the horizontal spacer, but other characters should work too.  Gmail app on Android adds a little extra space here so setting a fixed `height` the same as the `line-height` brings that in line.
+
+
+## Horizontal & Vertical Spacer
+
+## The Code
+{% highlight html %}
+<i style="letter-spacing:50px;mso-font-width:-100%;display:inline-block;width:50px;
+font-size:0px;mso-text-raise:50px;height:50px;">&#8202;</i>
+{% endhighlight %}
+
+This is mostly the same as the horizontal spacer but we're adding `mso-text-raise` to set the hight for Outlook, and using `font-size:0px` to remove the additional hight we would get from having the `&#8202;`.  And using `height` for all the HTML email clients.
