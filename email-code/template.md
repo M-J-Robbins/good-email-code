@@ -2,10 +2,11 @@
 
 This is a simple stripped back basic template that I'd use for every email I send.
 
+
 ## The code
 {% highlight html %}
 <!DOCTYPE html>
-<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,13 +33,13 @@ This is a simple stripped back basic template that I'd use for every email I sen
   </style>
 </head>
 <body class="body">
-  <div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
+  <div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
     <!-- email content in here -->
   </div>
 </body>
 </html>
 {% endhighlight %}
-If you want to just copy and paste that code you are welcome to, just be sure to edit the content in the `lang` attributes, `charset`, `title`, `aria-label`.
+If you want to just copy and paste that code you are welcome to, just be sure to edit the content in the `lang`, `dir` attributes, `charset`, `title`, `aria-label`.
 
 If you are interested in the reasons behind why each part of the code is there, read on and I'll break it down in more detail.
 
@@ -52,7 +53,7 @@ Rémi Parmentier has written a really great article about [which doctype should 
 
 ## HTML element
 {% highlight html %}
-<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 {% endhighlight %}
 The `<html>` tag defines the document as HTML format, however if the file is saved as `.html` then this is assumed anyway so it's not really needed.  However what is needed are the attributes set on in.
 
@@ -64,6 +65,9 @@ Here I've set `lang="en"` to set the content in English, however you can get mor
 As email clients often strip the `<html>` element it's also important to set a lang on the [Wrapping element](#wrapping-element).
 
 Read more on the [w3school lang attribute page](https://www.w3schools.com/tags/att_global_lang.asp), they also have a useful [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
+
+### dir
+This sets the language direction either as left to right (`ltr`) or right to left (`rtl`).
 
 ## Meta
 There are a number of meta elements set here so lets look at them individually.
@@ -170,7 +174,7 @@ I always like to define a body class on the body element, this is because someti
 
 ## Wrapping element
 {% highlight html %}
-<div role="article" aria-roledescription="email" aria-label="email name" lang="en" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
+<div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
 {% endhighlight %}
 Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people apply these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use it on a `<table>`.
 
@@ -184,8 +188,8 @@ As I mentioned previously, article may not be the best word to describe the cont
 ### `aria-label="email name"`
 So we've said this is stand-alone content, we've said the content type is email now we give that a title.  To keep it simple I'd recommend using the subject line if you can dynamically insert that or perhaps say who the email is from.
 
-### `lang="en"`
-This is a duplication of the [lang](#lang) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
+### `lang="en" dir="ltr"`
+These are a duplication of the [lang](#lang) & [dir](#dir) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
 
 ### `font-size:16px; font-size:1rem; font-size:max(16px, 1rem)`
 Some email clients may force a font-size on your email content. This resets it to be relative to the users settings so better for accessibility.
