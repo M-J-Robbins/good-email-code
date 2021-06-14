@@ -8,7 +8,7 @@ Quite often in the email world we talk about buttons, when actually we mean link
 
 ## The code
 {% highlight html %}
-<a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;text-underline-color:#333"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+<a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;text-underline-color:#333"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
 </a>
 {% endhighlight %}
 
@@ -37,7 +37,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
 ### Add left and right padding
   {% highlight html %}
-  <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+  <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
   {% endhighlight %}
   Inside the link either side of the text we add an `<i>` element, the element isn't relevant it's just something small and can take the style.
 
@@ -46,6 +46,8 @@ There is quite a lot going on in here, if you want to just copy and paste the co
   We add `letter-spacing:` to the amount of padding we want, and a `&nbsp;` so that spacing has something to apply to.
 
   By adding the `&nbsp;` we've just increased the padding a little so the value is now more than the desired amount, to remove that extra space we make the `&nbsp;` zero width by setting `mso-font-width:-100%`.
+
+  T-Online will render code in MSO comments, so will end up with double padding.  We can fix this by adding a `hidden` attribute so T-Online will remove the `<i>` element but Outlook will ignore this.
 
 
 ### Add bottom padding
@@ -57,7 +59,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
 ### Add top padding
   {% highlight html %}
-  <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]-->
+  <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]-->
   {% endhighlight %}
   In the `<i>` we have added for either the left or right padding we add `mso-text-raise` again using `pt` units but this time adding both the top and bottom padding together, this plus the height of the `nbsp;` adds to the total height of our design.
 
