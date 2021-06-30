@@ -4,3 +4,4 @@
 * [CSS Art](email-enhancements/css-art) - Creating images with CSS.
 * [SVG in email](email-enhancements/svg) - Using embedded or external SVG's in an email. 
 * [SVG to VML](email-enhancements/svg-to-vml) - How to manually convert an SVG image into a VML image.
+* [Picture](email-enhancements/picture) - How to use the `<picture>` element. 
