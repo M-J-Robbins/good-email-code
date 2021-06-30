@@ -43,6 +43,7 @@ This defines a media condition (similar to a media query), so you could, for exa
 </picture>
 {% endhighlight %}
 
+##### Dark Mode
 But where this is really cool is you can use it for other enhancements, like dark mode.
 {% highlight html %}
 <picture>
@@ -51,6 +52,7 @@ But where this is really cool is you can use it for other enhancements, like dar
 </picture>
 {% endhighlight %}
 
+##### Reduced Motion
 And it's great for using as an accessibility enhancement for things like reduced motion.
 {% highlight html %}
 <picture>
