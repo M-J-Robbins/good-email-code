@@ -3,10 +3,10 @@
 # Picture
 
 The picture element allows us to define a number of different sources for an image.  This can be really useful for things like,
- * Using differnt image formats that aren't supported everywhere.  
+ * Using different image formats that aren't supported everywhere.  
  * Changing images for smaller viewports.
  * Changing images for dark mode.
- * Swaping an annimated image to a static image for users who prefer reduced motion. Anf sf
+ * Swapping an animated image to a static image for users who prefer reduced motion.
 
 ## The code
 {% highlight html %}
@@ -32,7 +32,7 @@ This sets the alternate image src.  However as it uses `srcset` rather than `src
 #### type
 This defines the image type, in the above example I'm using a webP image.  WebP is a great image format, it can do animation and has far better compression than a gif (to be fair the gif format was last updated in 1989 so it's done well to last this long).  However webP is not supported everywhere just yet, so using `type="image/webp"` we can suggest to switch to this image if it's supported, otherwise it will fallback to another `<source>` that is supported or go back to the fallback set in the `<img>`.
 
-Here is a [list of image file types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)  you can referance.
+Here is a [list of image file types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)  you can reference.
 
 #### media
 This defines a media condition (similar to a media query), so you could, for example change an image on viewports less than 500px using this code.
@@ -103,5 +103,5 @@ You can wrap that code inside a media query or use some CSS [email client target
 
 
 ## `<picture>` support
-The `<picture>` element doesn't work everywhere but the fallback to the `<img>` is solid so I'd say it's pretty safe to use.  If you spot anywhere where the fallback ins't working, please let me know and I'll add a note.
+The `<picture>` element doesn't work everywhere but the fallback to the `<img>` is solid so I'd say it's pretty safe to use.  If you spot anywhere where the fallback isn't working, please let me know and I'll add a note.
 <iframe src="https://embed.caniemail.com/html-picture/" width="600" height="400" class="caniemail" title="picture element support from caniemail.com"></iframe>
