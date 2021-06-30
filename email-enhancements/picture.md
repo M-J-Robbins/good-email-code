@@ -1,8 +1,12 @@
-<div class="updated">Last Updated: <time datetime="2021-06-29">29<sup>th</sup> June 2021</time></div>
+<div class="updated">Last Updated: <time datetime="2021-06-30">30<sup>th</sup> June 2021</time></div>
 
 # Picture
 
-The picture element allows us to define a number of differnt sources for an image.
+The picture element allows us to define a number of different sources for an image.  This can be really useful for things like,
+ * Using differnt image formats that aren't supported everywhere.  
+ * Changing images for smaller viewports.
+ * Changing images for dark mode.
+ * Swaping an annimated image to a static image for users who prefer reduced motion. Anf sf
 
 ## The code
 {% highlight html %}
@@ -14,19 +18,19 @@ The picture element allows us to define a number of differnt sources for an imag
 
 There are 3 main parts to the code
  * `<picture>` this acts as a wrapper to the content.
- * `<source>` this gives alturnate options to use for the image `src`, we can add more than one option here if we like.
- * `<img>` this is the default image.  If the none of the `<source>` elements match our needs or if `<picture>` isn't supported this acts as a standard `<img>` element.  We should add our `class` and `style` attributes here and as with any image it's important to include an `alt=""` attribute.  These attributes apply to all versions of the image.
+ * `<source>` this gives alternate options to use for the image `src`, we can add more than one option here if we like.
+ * `<img>` this is the default image.  If none of the `<source>` elements match our needs or if `<picture>` isn't supported this acts as a standard `<img>` element.  We should add our `class` and `style` attributes here and as with any image it's important to include an `alt=""` attribute.  These attributes apply to all versions of the image.
 
 ### `<source>`
 The `<source>` element is used to give other options to use for the `<img>` so we need to give some hints to say which image is the best to use.  This is done with 3 attributes `srcset` `type` and `media`.
 
 #### srcset
-This sets the alturnate image src.  However as it uses `srcset` rather than `src` we can do a little more with it too and include a comma-separated list of image sources with either a width descriptor to define the source image width or a pixel density descriptor for high-DPI screens.
+This sets the alternate image src.  However as it uses `srcset` rather than `src` we can do a little more with it too and include a comma-separated list of image sources with either a width descriptor to define the source image width or a pixel density descriptor for high-DPI screens.
 `<source srcset="image-300.png 300w, image-600.png 600w, image-2x.png 2x">`
 
 
 #### type
-This defines the image type, in the above example I'm use a webP image.  WebP is a great image format, it can do animation and has far better compression that a gif (to be fair the gif format was last updated in 1989 so it's done well to last this long).  However webP is not supported everywhere just yet, so using `type="image/webp"` we can suggest to switch to this image if it's supported, otherwise it will fallback to another `<source>` that is supported or go back to the fallback set in the `<img>`.
+This defines the image type, in the above example I'm using a webP image.  WebP is a great image format, it can do animation and has far better compression than a gif (to be fair the gif format was last updated in 1989 so it's done well to last this long).  However webP is not supported everywhere just yet, so using `type="image/webp"` we can suggest to switch to this image if it's supported, otherwise it will fallback to another `<source>` that is supported or go back to the fallback set in the `<img>`.
 
 Here is a [list of image file types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)  you can referance.
 
@@ -70,34 +74,34 @@ We can add a little extra support by wrapping our picture element with a span so
 </span>
 {% endhighlight %}
 
-Then adding some CSS to show an alturnate image.  
+Then adding some CSS to show an alternate image.  
 {% highlight html %}
 <style>
 span.picture-fallback{
-	display: inline-block;
-	background-image:url(css-image.png);
+  display: inline-block;
+  background-image:url(css-image.png);
   background-repeat:no-repeat;
   background-size:contain;
 }
 span.picture-fallback img{
-	opacity: 0;
+  opacity: 0;
 }
 span.picture-fallback picture img{
-	opacity: 1;
+  opacity: 1;
 }
 </style>
 {% endhighlight %}
 
-Here we set the span to be `display: inline-block;` and set a `background-image`.
+Here we set the span to be `display: inline-block;` and set our new image as a `background-image`.
 
-We then set the orriginal image to be `opacity: 0;` I'm using this instead of `display:none` so we can use the same `height` and `width` of the orriginal `<img>`.
+We then set the original image to be `opacity: 0;` I'm using this instead of `display:none` so we can use the same `height` and `width` of the original `<img>`.
 
-Finally we put the image back if the picture tag is supported `span.picture-fallback picture img`.
+Finally we put the image back if the picture tag is supported `span.picture-fallback picture img{opacity: 1;}`.
 
 You can wrap that code inside a media query or use some CSS [email client targeting](https://howtotarget.email/) to make sure it only applies where you want it to.
 
 
 
 ## `<picture>` support
-The `<picture>` element doesn't work everywhere btu the fallback to the `<img>` is solid
+The `<picture>` element doesn't work everywhere but the fallback to the `<img>` is solid so I'd say it's pretty safe to use.  If you spot anywhere where the fallback ins't working, please let me know and I'll add a note.
 <iframe src="https://embed.caniemail.com/html-picture/" width="600" height="400" class="caniemail" title="picture element support from caniemail.com"></iframe>
