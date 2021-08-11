@@ -1,3 +1,4 @@
+<div class="updated">Last Updated: <time datetime="2021-08-11">11<sup>th</sup> August 2021</time></div>
 # hr - The Horizontal rule
 A basic horizontal rule can be done with a simple `<hr>` element.  However if you want to style it a little there are a few things to look for.
 
@@ -16,16 +17,18 @@ The default is `width:100%` but you can use what suits your style.  Consider if 
 Please note, Windows 10 mail has a minimum width of `4`. If a lower value is set it will default to 4.
 
 ### Margin
-You can adjust the space around with a margin, either in long hand or short hand format.  However MSO Outlooks don't support it when applied directly to the `<hr>` so to get it working there we need to add the margin to a wrapping `<div>`.
+You can adjust the space around with a margin, either in long hand or short hand format.  However MSO Outlooks don't support left/right margin when applied directly to the `<hr>` so to get it working there we need to add the margin to a wrapping `<div>`.
 {% highlight html %}
-<div style="margin:20px"><hr style="border-width: 0; background: #000; color: #000; height:1em"></div>
+<div style="margin:0 20px"><hr style="margin:50px 0;border-width: 0; background: #000; color: #000; height:1em"></div>
 {% endhighlight %}
+
+Although often it may be easier to use `width` if it's a suitable alturnative.
 
 ### Align
 By default it will be aligned center, but with an `align=""` attribute you can set it to align left or right.
 
 
 ## Other uses
-You can also use this as a spacer if you set the colours to match the background.
+You could use this as a spacer if you set the colours to match the background. Although the [email spacer](../email-code/spacing) elements tend to work better.
 
 You can do a vertical rule, by simply setting the height larger than the width.
