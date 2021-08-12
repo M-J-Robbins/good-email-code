@@ -1,3 +1,4 @@
+<div class="updated">Last Updated: <time datetime="2021-02-08">8<sup>th</sup> February 2021</time></div>
 # Using rem and em units in email
 
 There are a number of different units that can be used to set sizes in CSS these can be grouped into absolute and relative.  
