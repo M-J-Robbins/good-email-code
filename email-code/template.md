@@ -11,7 +11,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
   <meta name="x-apple-disable-message-reformatting">
   <meta name="color-scheme" content="light dark">
@@ -95,9 +95,9 @@ As the years go on I think it's getting safer and safer to remove this meta tag.
 
 ### viewport
 {% highlight html %}
-<meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 {% endhighlight %}
-The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the email is first loaded.  `user-scalable=yes` allows the user to adjust the scale (pinch and zoom).
+The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1` sets the initial zoom level when the email is first loaded.  `user-scalable=yes` allows the user to adjust the scale (pinch and zoom).
 
 ### format-detection
 {% highlight html %}
