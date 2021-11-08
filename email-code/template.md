@@ -200,8 +200,6 @@ I've written up more about using `rem` and `em` units and how to convert your co
 {% highlight html %}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 {% endhighlight %}
-This tells the browser which version of IE to render with.  In theory this would only apply to webmail clients opening in IE 9 or below (although meta tags are likely to be stripped from webmail), emails viewed in browser in IE 9 or below and Outlook 2000-2003 for windows. 
+This told the browser which version of IE to render with.  In theory this would only apply to webmail clients opening in IE 9 or below (although meta tags are likely to be stripped from webmail), emails viewed in browser in IE 9 or below and Outlook 2000-2003 for windows. 
 
-It also enables media queries to work on some versions of windows phone.
-
-As the years go on I think it's getting safer and safer to remove this meta tag.
+It also enabled media queries to work on some versions of windows phone.
