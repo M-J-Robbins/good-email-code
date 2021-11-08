@@ -1,4 +1,4 @@
-<div class="updated">Last Updated: <time datetime="2021-06-24">24<sup>th</sup> June 2021</time></div>
+<div class="updated">Last Updated: <time datetime="2021-11-08">8<sup>th</sup> November 2021</time></div>
 # Email Template
 
 This is a simple stripped back basic template that I'd use for every email I send.
@@ -10,7 +10,6 @@ This is a simple stripped back basic template that I'd use for every email I sen
 <html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=yes">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
   <meta name="x-apple-disable-message-reformatting">
@@ -79,19 +78,10 @@ There are a number of meta elements set here so lets look at them individually.
 {% endhighlight %}
 This sets the character encoding standard which can limit the character that are used.  Unlike the lang attribute we can only set one charset for the file.
 
-I need to set some time to look into this more but generally I believe utf-8 should cover most cases.
+Generally I would always use `utf-8` which covers almost all of the characters and symbols in the world.
 
 Be aware that the email headers may override what is set in the meta.
 
-### http-equiv
-{% highlight html %}
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-{% endhighlight %}
-This tells the browser which version of IE to render with.  In theory this would only apply to webmail clients opening in IE 9 or below (although meta tags are likely to be stripped from webmail), emails viewed in browser in IE 9 or below and Outlook 2000-2003 for windows.  
-
-It also enables media queries to work on some versions of windows phone.
-
-As the years go on I think it's getting safer and safer to remove this meta tag.
 
 ### viewport
 {% highlight html %}
@@ -124,11 +114,13 @@ There are more details on [Apple auto-scaling emails bug](https://github.com/hte
 {% endhighlight %}
 These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renamed to `color-scheme` so for now we include both to get more as the old name is supported by Safari, and Mail in macOS 10.14.4.
 
-The `content` values are
+The `content` values include
 * light - tells the email client that only light styles are provided
+* dark - tells the email client that only dark styles are provided
 * light only - tells the email clients that only light mode styles are ready to use and not to try and transform them to dark.
+* dark only - tells the email clients that only dark mode styles are ready to use and not to try and transform them to dark.
 * light dark — tells the email clients that both light and dark styles are coded and ready to use.
-* light dark only — tells the email clients that light and dark styles are ready to use and not to try and transform light styles.
+* light dark only — tells the email clients that light and dark styles are ready to use and not to try and transform any styles.
 
 It's best to set this with logic depending on if dark styles are included in the code. But if you can't place that logic I'd opt for `light dark`.
 
@@ -198,3 +190,18 @@ Some email clients may force a font-size on your email content. This resets it t
 Most email clients and web browsers use a default font-size of 16px or larger but Apple mail uses a default of 12px. If you want to increase this default but still respect the the user settings then you can use `font-size:1rem; font-size:max(1rem, 16px)`.  If the user has a setting smaller than 16px then the font-size will be set to 16px, if it's larger then the rem value will be used.  If `max` isn't supported then it will fallback to the previous setting of `font-size:1rem;`.
 
 I've written up more about using `rem` and `em` units and how to convert your code from `px`, [Using Rem and Em units in email.](../email-accessibility/rem-and-em).
+
+
+## Depreciated 
+
+### http-equiv
+**_[statcounter.com](https://gs.statcounter.com/) suggest that in October 2021 global usage of IE9 was 0.09% and WindowsPhone is 0.01%._**
+
+{% highlight html %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% endhighlight %}
+This tells the browser which version of IE to render with.  In theory this would only apply to webmail clients opening in IE 9 or below (although meta tags are likely to be stripped from webmail), emails viewed in browser in IE 9 or below and Outlook 2000-2003 for windows. 
+
+It also enables media queries to work on some versions of windows phone.
+
+As the years go on I think it's getting safer and safer to remove this meta tag.
