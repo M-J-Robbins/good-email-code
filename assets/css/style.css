@@ -165,9 +165,6 @@ footer a{
   #main{
     width:100%;
   }
-  figure.highlight{
-    margin:1em;
-  }
 }
 @media screen and (max-width:30em){
   #main{
@@ -176,7 +173,7 @@ footer a{
   h1{
     font-size:2.5em;
   }
-  figure.highlight{
+  .highlight{
     margin:0;
   }
   .highlight, p{
@@ -187,6 +184,9 @@ footer a{
   }
 }
 /* Syntax highlighting */
+.highlight {
+  margin:1em;
+}
 .highlight pre {
   background-color: #272822;
   padding:1em;
@@ -227,8 +227,8 @@ code.highlighter-rouge{
 .highlight .style-attr{color:#a6e22e}
 .highlight .tag{color:#a7925a}
 
-.highlight .attr-equals{color:}
-.highlight .style{color:;}
+/* .highlight .attr-equals{color:}
+.highlight .style{color:;} */
 
 
 /* This is what I had orriginally not sure why the naming keeps changing but in case it changes back it's worth saving this */

@@ -5,7 +5,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
 
 
 ## The code
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -38,23 +38,23 @@ This is a simple stripped back basic template that I'd use for every email I sen
   </div>
 </body>
 </html>
-{% endhighlight %}
+```
 If you want to just copy and paste that code you are welcome to, just be sure to edit the content in the `lang`, `dir` attributes, `charset`, `title`, `aria-label`.
 
 If you are interested in the reasons behind why each part of the code is there, read on and I'll break it down in more detail.
 
 ## Doctype
-{% highlight html %}
+```html
 <!DOCTYPE html>
-{% endhighlight %}
+```
 Here we're using an HTML5 Doctype.  Not every email client will respect the doctype you set, some will remove it and use their own, but that is mostly HTML5 anyway. There are small rendering differences between HTML4 and HTML5, the most common one email devs notice is, you can't set a `<td>` to `display:block` in HTML4.
 
 Rémi Parmentier has written a really great article about [which doctype should you use in HTML emails](https://emails.hteumeuleu.com/which-doctype-should-you-use-in-html-emails-cd323fdb793c).  If you want to know more I'd strongly recommend reading that.
 
 ## HTML element
-{% highlight html %}
+```html
 <html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-{% endhighlight %}
+```
 The `<html>` tag defines the document as HTML format, however if the file is saved as `.html` then this is assumed anyway so it's not really needed.  However what is needed are the attributes set on in.
 
 ### Lang
@@ -73,9 +73,9 @@ This sets the language direction either as left to right (`ltr`) or right to lef
 There are a number of meta elements set here so lets look at them individually.
 
 ### charset
-{% highlight html %}
+ ```html
 <meta charset="utf-8">
-{% endhighlight %}
+ ```
 This sets the character encoding standard which can limit the character that are used.  Unlike the lang attribute we can only set one charset for the file.
 
 Generally I would always use `utf-8` which covers almost all of the characters and symbols in the world.
@@ -84,34 +84,34 @@ Be aware that the email headers may override what is set in the meta.
 
 
 ### viewport
-{% highlight html %}
+ ```html
 <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=yes">
-{% endhighlight %}
+ ```
 The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the email is first loaded.  `user-scalable=yes` allows the user to adjust the scale (pinch and zoom).
 
 ### format-detection
-{% highlight html %}
+ ```html
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
-{% endhighlight %}
+ ```
 In theory these prevent email clients automatically detecting and generating links out of phone numbers, dates, addresses, email addresses and url's.
 However support is low, I've only ever seen it work for phone numbers on the Outlook iOS app.  I'd recommend including these anyway as it's a hint to the email clients that this is something we want.
 
 There is an argument that we shouldn't use these as the auto linking helps users.  However I feel there are too many issues with the auto detection to reply on it, if I add a phone number I will add a link myself. If I include numbers for another reason (order number etc.) I don't want them linking to a phone number.
 
 ### x-apple-disable-message-reformatting
-{% highlight html %}
+ ```html
 <meta name="x-apple-disable-message-reformatting">
-{% endhighlight %}
+ ```
 As the name suggests this is specific to Apple.  It appears Apple were trying to fix the display of non-responsive email in their iOS email client, however when encountering a responsive email they would display at half the width of the screen and zoomed out.  This meta tag prevents the Apple fix and relies on the developer to make the email responsive.
 
 There are more details on [Apple auto-scaling emails bug](https://github.com/hteumeuleu/email-bugs/issues/18) on the email bugs repo.
 
 
 ### color-scheme
-{% highlight html %}
+ ```html
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
-{% endhighlight %}
+ ```
 These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renamed to `color-scheme` so for now we include both to get more as the old name is supported by Safari, and Mail in macOS 10.14.4.
 
 The `content` values include
@@ -126,13 +126,13 @@ It's best to set this with logic depending on if dark styles are included in the
 
 
 ## Title
-{% highlight html %}
+ ```html
 <title>Email title</title>
-{% endhighlight %}
+ ```
 The title element give a title to your document, this will be seen in the browser tab if a user selects to view the email in a browser.  I have previously seen the title show in a preview for the old default Android client, it's possible that something like that may happen again.
 
 ## XML
-{% highlight html %}
+ ```html
 <!--[if mso]>
 <noscript>
   <xml>
@@ -142,33 +142,33 @@ The title element give a title to your document, this will be seen in the browse
   </xml>
 </noscript>
 <![endif]-->
-{% endhighlight %}
+ ```
 This code helps rendering on Windows versions of Outlook desktop.
 * `<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop. Although T-online also renders the code.
 * `<noscript>` Stops the text `96` showing in T-Online.
 * `<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have manually chosen to increase the DPI.
 
 ## Style
-{% highlight html %}
+ ```html
 <style>
   :root {
     color-scheme: light dark;
     supported-color-schemes: light dark;
   }
 </style>
-{% endhighlight %}
+ ```
 This is essentially a duplicate of the [meta color-scheme](#color-scheme). At time of writing this only really works in Apple Mail which supports both methods but in the interest of future proofing I'm including both.  
 
 ## Body
-{% highlight html %}
+ ```html
 <body class="body">
-{% endhighlight %}
+ ```
 I always like to define a body class on the body element, this is because sometimes when an email renders the `<body>` element is converted to a `<div>`.  It is also useful for targeting certain email clients.
 
 ## Wrapping element
-{% highlight html %}
+ ```html
 <div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:16px; font-size:1rem; font-size:max(16px, 1rem)">
-{% endhighlight %}
+ ```
 Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people apply these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use it on a `<table>`.
 
 So taking a closer look at the attributes;
@@ -197,9 +197,9 @@ I've written up more about using `rem` and `em` units and how to convert your co
 ### http-equiv
 **_[statcounter.com](https://gs.statcounter.com/) suggest that in October 2021 global usage of IE9 was 0.09% and WindowsPhone is 0.01%._**
 
-{% highlight html %}
+ ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-{% endhighlight %}
+ ```
 This told the browser which version of IE to render with.  In theory this would only apply to webmail clients opening in IE 9 or below (although meta tags are likely to be stripped from webmail), emails viewed in browser in IE 9 or below and Outlook 2000-2003 for windows. 
 
 It also enabled media queries to work on some versions of windows phone.
