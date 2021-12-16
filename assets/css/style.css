@@ -161,28 +161,6 @@ footer{
 footer a{
   color:#00d9d9;
 }
-@media screen and (max-width:60em){
-  #main{
-    width:100%;
-  }
-}
-@media screen and (max-width:30em){
-  #main{
-    padding:0 .5em 3em .5em;
-  }
-  h1{
-    font-size:2.5em;
-  }
-  .highlight{
-    margin:0;
-  }
-  .highlight, p{
-    overflow-wrap: break-word;
-  }
-  iframe.caniemail{
-    height: 30em;
-  }
-}
 /* Syntax highlighting */
 .highlight {
   margin:1em;
@@ -298,3 +276,27 @@ code.highlighter-rouge{
 .highlight .gu { color: #b7b39f; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+
+@media screen and (max-width:60em){
+  #main{
+    width:100%;
+  }
+}
+@media screen and (max-width:30em){
+  #main{
+    padding:0 .5em 3em .5em;
+  }
+  h1{
+    font-size:2.5em;
+  }
+  .highlight{
+    margin:0;
+  }
+  .highlight, p{
+    overflow-wrap: break-word;
+  }
+  iframe.caniemail{
+    height: 30em;
+  }
+}
