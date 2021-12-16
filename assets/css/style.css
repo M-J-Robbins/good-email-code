@@ -282,6 +282,9 @@ code.highlighter-rouge{
   #main{
     width:100%;
   }
+  .highlight{
+    margin:0;
+  }
 }
 @media screen and (max-width:30em){
   #main{
@@ -289,9 +292,6 @@ code.highlighter-rouge{
   }
   h1{
     font-size:2.5em;
-  }
-  .highlight{
-    margin:0;
   }
   .highlight, p{
     overflow-wrap: break-word;
