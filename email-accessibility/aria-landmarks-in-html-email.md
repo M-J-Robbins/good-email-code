@@ -121,7 +121,7 @@ Here's a list of HTML5 semantic elements and their role equivalents to help you 
 
 
 ### Adding a label
-In email all landmarks should have a label, to do this add a `arai-label` attribute on the landmark.
+In email all landmarks should have a label, to do this add a `aria-label` attribute on the landmark.
 
 ```html
 <div role="navigation" aria-label="MyBrand email">
@@ -129,8 +129,20 @@ In email all landmarks should have a label, to do this add a `arai-label` attrib
 
 This will be read out as _"MyBrand email navigation"_ which helps to distinguish from the email client navigation, so the users knows what they are getting.
 
-It is also possibel to set a label by using the `aria-labelledby` attribute, this is used to referance an `id` attribute applied to another element.  However some email clients will edit the `id` value meaning the label no longer matches and won't be propperly connected to the landmark.
+#### `aria-labelledby`
+It is also possible to set a label by using the `aria-labelledby` attribute. however, I don't reccomend this for email.
 
+`aria-labelledby` is a "Relationship Attribute" this means it reference an `id` attribute applied to another element to get it's content. This is great for web however, a number of email clients including Yahoo, AOL, Outlook.com, will prefix the `id` value, meaning the label no longer matches and won’t be properly connected to the landmark. 
 
-
-It is also possible to set a label by using the `aria-labelledby` attribute, this is used to reference an `id` attribute applied to another element. However, some email clients will edit the `id` value, meaning the label no longer matches and won’t be properly connected to the landmark.
+So for example, this code where we can see the `aria-labelledby` matches the `id`.
+```html
+<div role="article" aria-labelledby="MyHeading">
+    <h1 id="MyHeading">This is my email</h1>
+</div>
+```
+Would become something like this and the `id` no longer matches the `aria-labelledby` so the article is left unlabelled.
+```html
+<div role="article" aria-labelledby="MyHeading">
+    <h1 id="yiv123456789MyHeading">This is my email</h1>
+</div>
+```
