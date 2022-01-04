@@ -55,7 +55,7 @@ From this description, users will be expecting the banner to be relative to the 
 
 As it’s likely a webmail page may already have a banner landmark, it’s advised to not include a second one in the email.
 
-Theoretically it is possible to include a `<header>` as long as it's inside another landmark as this should remove the role of `banner`. But seeing as support for `<header>` isn't great in email and the semantic meaning is removed when using it like this there no benefit to using it here.
+Theoretically it is possible to include a `<header>` as long as it's inside another landmark as this should remove the role of `banner`. But seeing as support for `<header>` isn't great in email and the semantic meaning is removed when using it like this, I don't currently see any benefit to using it here.
 
 ### ✖ Contentinfo `<footer>`
 [W3C Recommendation for contentinfo](https://www.w3.org/TR/wai-aria-1.1/#contentinfo)
@@ -68,7 +68,7 @@ Again this suggests it's more relevant to the email client rather than the email
 
 As it’s likely a webmail page may already have a contentinfo landmark, it’s advised to not include a second one in the email.
 
-Theoretically it is possible to include a `<footer>` as long as it's inside another landmark as this should remove the role of `contentinfo`. But seeing as support for `<footer>` isn't great in email and the semantic meaning is removed when using it like this there no benefit to using it here.
+Theoretically it is possible to include a `<footer>` as long as it's inside another landmark as this should remove the role of `contentinfo`. But seeing as support for `<footer>` isn't great in email and the semantic meaning is removed when using it like this, I don't currently see any benefit to using it here.
 
 ### ✖ Main `<main>`
 [W3C Recommendation for main](https://www.w3.org/TR/wai-aria-1.1/#main)
