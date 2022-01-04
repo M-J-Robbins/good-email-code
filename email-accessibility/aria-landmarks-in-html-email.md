@@ -1,4 +1,4 @@
-<div class="updated">Last Updated: <time datetime="2021-12-17">17<sup>th</sup> December 2021</time></div>
+<div class="updated">Last Updated: <time datetime="2021-12-17">3<sup>rd</sup> January 2022</time></div>
 
 # ARIA landmarks in Email
 
@@ -131,3 +131,6 @@ This will be read out as _"MyBrand email navigation"_ which helps to distinguish
 
 It is also possibel to set a label by using the `aria-labelledby` attribute, this is used to referance an `id` attribute applied to another element.  However some email clients will edit the `id` value meaning the label no longer matches and won't be propperly connected to the landmark.
 
+
+
+It is also possible to set a label by using the `aria-labelledby` attribute, this is used to reference an `id` attribute applied to another element. However, some email clients will edit the `id` value, meaning the label no longer matches and won’t be properly connected to the landmark.
