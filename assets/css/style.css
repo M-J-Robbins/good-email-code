@@ -67,6 +67,17 @@ html{
     background-color: #111;
   }
 }
+@media (prefers-reduced-transparency: reduce) {
+  html{
+    --main-bg-color: #eee;
+  }
+  @media (prefers-color-scheme: dark) {
+    html{
+      --main-bg-color: #333;
+    }
+  }
+}
+
 *{
   box-sizing:border-box;
 }
