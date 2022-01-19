@@ -1,9 +1,11 @@
+<div class="updated">Last Updated: <time datetime="2022-01-19">19<sup>th</sup> January 2022</time></div>
+
 # Link - button
 
 **Pedantic Semantics:**
 Just a quick note to start with as I like to be a pedant, this is not a button.  Here I've named it *Link - button* as this is a link, that is styles like a button.  
 
-Quite often in the email world we talk about buttons, when actually we mean links.  In email it's rare to use a `<button>` but really that is the only thing we should call a button and a `<a>` is a link _(or possible an anchor as that's that the `<a>` stands for)_.  When talking about design this could be referred to as a button because that's talking purely about visuals and not about function.  But as you can tell from this site, i don't know much about design, just code, so it's a link!
+Quite often in the email world we talk about buttons, when actually we mean links.  In email it's rare to use a `<button>` but really that is the only thing we should call a button and a `<a>` is a link _(or possible an anchor as that's that the `<a>` stands for)_.  When talking about design this could be referred to as a button because that's talking purely about visuals and not about function.  But as you can tell from this site, I don't know much about design, just code, so it's a link!
 
 
 ## The code
@@ -96,3 +98,20 @@ Text will wrap normally in all clients apart from MSO Outlook.  As MSO Outlook i
 
 ### mso-line-height-rule
 If you are setting `mso-line-height-rule: exactly;` on a parent element that houses your link button, then you may see some issue with height in MSO Outlook. In which case try removing it or resetting it to `mso-line-height-rule: at-least`.
+
+## `role="button"`
+I've seen a few emails where a link has `role="button"` applied to it.
+ 
+```html
+<a href="https://example.com/" role="button">Click this button</a>
+```
+ 
+**Don't do that!**
+ 
+As I mentioned at the top of this article, an `<a>` is a link, not a button.  For a button, we should use `<button>` (but that doesn't come up often in email).
+ 
+Changing the semantic meaning of a link can cause some pretty serious issues.
+ 
+Assistive technology users may not be able to find it in the links menu for the page.  And if they do find it and want to click on it, the shortcut for clicking may be different to what is expected or may not work at all.
+ 
+So rather than helping your users click through to your side, you may be actively blocking them from doing so.
