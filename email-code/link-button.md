@@ -9,28 +9,28 @@ Quite often in the email world we talk about buttons, when actually we mean link
 
 
 ## The code
-{% highlight html %}
+```html
 <a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block; mso-padding-alt:0;text-underline-color:#333"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><span style="mso-text-raise:15pt;">Link Text</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
 </a>
-{% endhighlight %}
+```
 
 There is quite a lot going on in here, if you want to just copy and paste the code you can. Editing the href and the colours should be pretty self explanatory however if you want to edit the padding then best to read up about that below.
 
 
 ### Start with web code
   We start with a pretty standard link button that we might use on the web
-  {% highlight html %}
+  ```html
   <a href="https://example.com/" style="background: #333; border: 2px solid #f00; text-decoration: none; padding: 15px 25px; color: #fff; border-radius: 4px; display:inline-block;">
     Link Text
   </a>
-  {% endhighlight %}
+  ```
   All of the styles here are optional except the `padding` and `display` without those it's a regular text link, which is also fine but that's not what we're looking at now. I've set `display` to `inline-block` so it flows with the text-align, but you could also use `block`.
 
 
 ### Reset padding for Outlook
-  {% highlight css %}
+  ```css
   mso-padding-alt:0;
-  {% endhighlight %}
+  ```
   Because outlook doesn't respect padding very well we need to make a few changes to get this working, first up is to reset the padding using `mso-padding-alt:0`.
 
 
@@ -38,9 +38,9 @@ There is quite a lot going on in here, if you want to just copy and paste the co
   It appears that Windows Mail doesn't respect `text-decoration: none;` or the MSO specific value of `text-underline: none` so we can't remove the underline.  We can however change the colour of it to match the background so we add `text-underline-color:#333`.
 
 ### Add left and right padding
-  {% highlight html %}
+  ```html
   <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
-  {% endhighlight %}
+  ```
   Inside the link either side of the text we add an `<i>` element, the element isn't relevant it's just something small and can take the style.
 
   This is wrapped in a conditional comment so it only shows to Outlook `<!--[if mso]> <![endif]-->`
@@ -53,16 +53,16 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
 
 ### Add bottom padding
-  {% highlight html %}
+  ```html
   <span style="mso-text-raise:15pt;">Link Text</span>
-  {% endhighlight %}
+  ```
   Inside the link we wrap the link text with a span and apply `mso-text-raise` if you are designing with `px` write it as `pt` but don't adjust the value.  Not sure why but this give a more exact match to other email clients.
 
 
 ### Add top padding
-  {% highlight html %}
+  ```html
   <!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]-->
-  {% endhighlight %}
+  ```
   In the `<i>` we have added for either the left or right padding we add `mso-text-raise` again using `pt` units but this time adding both the top and bottom padding together, this plus the height of the `nbsp;` adds to the total height of our design.
 
   If you don't have left or right padding then you'll need to add the `<i>` element to get the top padding, keep the `mso-font-width:-100%;` but no need to include the `letter-spacing`
