@@ -6,6 +6,8 @@ This is something that comes up from time to time. Is it ok to add text in image
 
 There is a bit of a misconception that all you need to do is add alt text and your code is now accessible. This is a bit of an oversimplification. Although missing (or badly written) alt text is one of the worst accessibility issues, it's not the only one.
 
+Below I’ve listed a few [accessibility issues](#accessibility-issues) along with a few [other issues](#other-issues) that are worth considering if you are going to include text in images. This probably isn't everything, if you have any more let me know.
+
 
 ## Accessibility issues
 
