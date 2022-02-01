@@ -7,8 +7,6 @@ This is something that comes up from time to time. Is it ok to add text in image
 There is a bit of a misconception that all you need to do is add alt text and your code is now accessible. This is a bit of an oversimplification. Although missing (or badly written) alt text is one of the worst accessibility issues, it's not the only one.
 
 
-Below I've listed a few [accessibility issues](#accessibility-issues) along with a few [other issues](#other-issues) that are worth considering if you are going to include text in images.  If you have any more issues 
-
 ## Accessibility issues
 
 
@@ -68,7 +66,7 @@ Accessibility is the main concern with text in images, but there are some other 
 If a user is trying to find your email, they may do a search for some of the content they remember seeing. Some email clients will include alt text in the search adn return your email, some won't. I've not done a lot of testing on this but Yahoo and AOL don't return results.
 
 ### Doesn’t work at all in find in page search
-When the email is open a user might use the find function (`ctrl + F` or `cmd + f`) to look for some content. But that does not include text in images or alt text.
+When the email is open a user might use the find function (`ctrl + f` or `cmd + f`) to look for some content. But that does not include text in images or alt text.
 
 ### Increases load time of the email
 Users have short attention spans, don't make them wait.
