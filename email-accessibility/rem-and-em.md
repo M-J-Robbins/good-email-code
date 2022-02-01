@@ -1,4 +1,4 @@
-<div class="updated">Last Updated: <time datetime="2022-01-14">14<sup>th</sup> January 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2022-02-01">1<sup>st</sup> February 2022</time></div>
 # Using rem and em units in email
 
 There are a number of different units that can be used to set sizes in CSS these can be grouped into absolute and relative.  
@@ -26,32 +26,46 @@ In the majority of web browsers the default value is `16px` as this is a good re
 However, the default size in clients tends to vary a bit more. Looking at popular email clients it ranges between 12px and 17px
 
 ### Default font size for email clients
+This is just to be used as a rough guide to show the range of sizes found. I have seen a few inconsistencies between tests I've run locally and via Litmus.
 
-| Email Client            | Default font size |
-| ----------------------- | ------ |
-| AOL                     |   13px |
-| Yahoo                   |   13px |
-| Applemail desktop       |   12px |
-| Applemail iPad/iPhone   |   17px |
-| IBM Notes               |   16px |
-| Outlook Windows         |   16px |
-| Outlook mac             |   14px |
-| Outlook Android         |   16px |
-| Outlook iOS             |   16px |
-| Outlook webmail and PWA |   15px |
-| Thunderbird             |   17px |
-| Android                 |   14px |
-| Gmail webmail           |   16px |
-| Gmail Android           |   16px |
-| Gmail iOS               |   16px |
-| Samsung                 |   16px |
-| Concast                 |   13px |
-| Freenet                 |   16px |
-| GMX and web.de          |   12px |
-| Mail.ru                 |   15px |
-| T-online                |   13px |
+I'm looking at 3 factors here;
+* **Default** this is taken form the user setting, equivalent to using `font-size: medium`
+* **Root** this is the root font-size, mostly this woudlbe the same as the default but could be overridden by the email client style's, equivalent to using `font-size: 1rem`
+* **Inherited** this is inherited from the email client styles, equivalent to adding plain text without any stylijng
+
+| Email Client            | Default | Root | Inherited |
+| ----------------------- | ------ | ------ | ------ |
+| AOL                     |   16px | N/A  | 12px |
+| Yahoo                   |   16px | N/A  | 13px |
+| Applemail desktop       |   12px | 12px | 12px |
+| Applemail iPad/iPhone   |   16px | 16px | 17px |
+| IBM Notes               |   16px | 16px | 16px |
+| Outlook Windows         |   18px | N/A  | 14px |
+| Outlook mac             |   14px | 14px | 14px |
+| Outlook Android         |   16px | 16px | 16px |
+| Outlook iOS             |   16px | 16px | 16px |
+| Outlook webmail and PWA |   16px | 16px | 15px |
+| Outlook PWA             |   16px | 16px | 15px |
+| Thunderbird             |   15px | 17px | 15px |
+| Android                 |   16px | 16px | 14px |
+| Gmail IMAP              |   16px | 16px | 12px |
+| Gmail webmail           |   16px | 16px | 13px |
+| Gmail Android           |   16px | 16px | 12px |
+| Gmail iOS               |   16px | 16px | 16px |
+| Samsung                 |   16px<sup>*</sup> | 16px<sup>*</sup> | 17px |
+| Concast                 |   16px | 16px | 13px |
+| Freenet webmail         |   16px | 16px | 16px |
+| Freenet Android         |   16px | 16px | 16px |
+| Freenet iOS.            |   16px | 16px | 23px |
+| GMX and web.de          |   12px | N/A  | 12px |
+| Mail.ru webmail         |   16px | 15px | 15px |
+| Mail.ru Android         |   16px | 16px | 17px |
+| Mail.ru iOS             |   16px | 16px | 15px |
+| T-online                |   16px | 16px | 13px |
 
 It’s worth noting that some of these defaults do change with the user settings already.
+
+<sup>*</sup> Samsung sets a minimum font-size of 17px so these values of 16px only work when used to generate font-size larger of 17px or larger.
 
 ## Resetting the font-size
 Unfortunately `rem` units don’t yet have full support in email clients so for now I’m recommending using `em` units inside the email. But also setting a default font-size on the parent  wrapping element to improve consistency and accessibility.
