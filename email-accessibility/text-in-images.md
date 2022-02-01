@@ -47,7 +47,9 @@ I use a text reader occasionally when there is a word I'm struggling to read. Al
 This can be used, to help keep place when reading or to look up the meaning of a word. I do this quite often too.
 
 ### Text styles are not editable
-Users can’t adjust the styling to make it easier to read, for example change the font, colour or size.
+There are a number of tools and browser extensions that allow a user to adjust the styling of text to make it easier for them to read. For example they may want to adjust the font, colour or size.   
+
+These work but altering the CSS, so will only work on HTML and can't change an image.
 
 ### Text is not translatable
 Translation tools typically don't look at images and won't be able to translate the content on the page.
