@@ -41,7 +41,8 @@ However, the default size in clients tends to vary a bit more. Looking at popula
 | Outlook webmail and PWA |   15px |
 | Thunderbird             |   17px |
 | Android                 |   14px |
-| Gmail webmail & Android |   13px |
+| Gmail webmail           |   16px |
+| Gmail Android           |   16px |
 | Gmail iOS               |   16px |
 | Samsung                 |   16px |
 | Concast                 |   13px |
