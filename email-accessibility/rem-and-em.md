@@ -44,7 +44,7 @@ I'm looking at 3 factors here;
 | Outlook mac             |   14px | 14px | 14px |
 | Outlook Android         |   16px | 16px | 16px |
 | Outlook iOS             |   16px | 16px | 16px |
-| Outlook webmail and PWA |   16px | 16px | 15px |
+| Outlook webmail         |   16px | 16px | 15px |
 | Outlook PWA             |   16px | 16px | 15px |
 | Thunderbird             |   15px | 17px | 15px |
 | Android                 |   16px | 16px | 14px |
