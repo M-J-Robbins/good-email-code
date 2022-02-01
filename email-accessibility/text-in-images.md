@@ -56,7 +56,7 @@ Translation tools typically don't look at images and won't be able to translate 
 Images can scale down, but the text can’t flow to a new line. This can lead to unreadably small text on small viewports.
 
 ### Viewing with zoom or magnify tools
-When the image is scaled up, the text will get blury making it harder to read. You could use very high res images but that causes other issues.
+When the image is scaled up, the text will get blurry making it harder to read. You could use very high-res images but that causes other issues.
 
   
 
