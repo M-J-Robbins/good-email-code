@@ -29,7 +29,7 @@ However, the default size in clients tends to vary a bit more. Looking at popula
 This is just to be used as a rough guide to show the range of sizes found. I have seen a few inconsistencies between tests I've run locally and via Litmus.
 
 I'm looking at 3 factors here;
-* **Default** this is taken form the user setting, equivalent to using `font-size: medium`
+* **Default** this is the default value in the user setting, equivalent to using `font-size: medium`
 * **Root** this is the root font-size, mostly this woudlbe the same as the default but could be overridden by the email client style's, equivalent to using `font-size: 1rem`
 * **Inherited** this is inherited from the email client styles, equivalent to adding plain text without any stylijng
 
@@ -65,7 +65,7 @@ I'm looking at 3 factors here;
 
 It’s worth noting that some of these defaults do change with the user settings already.
 
-<sup>*</sup> Samsung sets a minimum font-size of 17px so these values of 16px only work when used to generate font-size larger of 17px or larger.
+<sup>*</sup> Samsung sets a minimum font-size of 17px so these values of 16px only work when used to generate font-size greater than or wqual to 17px.  When used for other setting such as padding, margin, etc. there is no minimum size.
 
 ## Resetting the font-size
 Unfortunately `rem` units don’t yet have full support in email clients so for now I’m recommending using `em` units inside the email. But also setting a default font-size on the parent  wrapping element to improve consistency and accessibility.

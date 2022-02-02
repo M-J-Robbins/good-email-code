@@ -151,6 +151,20 @@ iframe.caniemail{
   height:20em;
   border:none;
 }
+table, td, th{
+  border:1px solid currentColor;
+  border-collapse: collapse;
+  padding:.3em;
+}
+thead th{
+  border-bottom-width:.3em;
+}
+tr:nth-child(even){
+  background-color:  #0001;
+}tr:nth-child(odd){
+  background-color:  #fff1;
+}
+
 
 hr.end{
   width: 50%;
