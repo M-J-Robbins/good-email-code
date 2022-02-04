@@ -187,7 +187,7 @@ These are a duplication of the [lang](#lang) & [dir](#dir) set on the HTML eleme
 ### `font-size:medium; font-size:max(16px, 1rem)`
 Some email clients may force a font-size on your email content. This resets it to be relative to the users settings so better for accessibility.
 
-Most email clients and web browsers use a default font-size of 16px or larger but Apple mail uses a default of 12px. If you want to increase this default but still respect the the user settings then you can use `font-size:medium; 1rem; font-size:max(1rem, 16px)`.  If the user has a setting smaller than 16px then the font-size will be set to 16px, if it's larger then the rem value will be used.  If `max` isn't supported then it will fallback to the previous setting of `font-size:medium;` which is the same as `font-size:1rem;` but with better support.
+Most email clients and web browsers use a default font-size of 16px or larger but Apple mail uses a default of 12px. If you want to increase this default but still respect the the user settings then you can use `font-size:medium; font-size:max(1rem, 16px)`.  If the user has a setting smaller than 16px then the font-size will be set to 16px, if it's larger then the rem value will be used.  If `max` isn't supported then it will fallback to the previous setting of `font-size:medium;` which is the same as `font-size:1rem;` but with better support.
 
 I've written up more about using `rem` and `em` units and how to convert your code from `px`, [Using Rem and Em units in email.](../email-accessibility/rem-and-em).
 
