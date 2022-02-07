@@ -1,4 +1,4 @@
-<div class="updated">Last Updated: <time datetime="2021-12-17">3<sup>rd</sup> January 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2022-02-07">7<sup>th</sup> February 2022</time></div>
 
 # ARIA landmarks in Email
 
@@ -115,14 +115,15 @@ Here's a list of HTML5 semantic elements and their role equivalents to help you 
 
 | HTML5     | Role          |
 |-----------|---------------|
-|`<article>`| Article       |
-|`<section>`| Region        |
-|`<nav>`    | Navigation    |
-|`<header>` | Banner        |
-|`<footer>` | Contentinfo   |
-|`<main>`   | Main          |
-|`<aside>`  | Complementary |
+|`<article>`| article       |
+|`<section>`| region        |
+|`<nav>`    | navigation    |
+|`<header>` | banner        |
+|`<footer>` | contentinfo   |
+|`<main>`   | main          |
+|`<aside>`  | complementary |
 
+Please note that these roles should always be set in lowercase, otherwise some assistive technologies may not be able to correctly parse the values. See [aria case sensitivity](https://www.w3.org/TR/html-aria/#case-sensitivity) for more detail.
 
 ### Adding a label
 In email all landmarks should have a label, to do this add a `aria-label` attribute on the landmark.
