@@ -49,7 +49,7 @@ This can be used, to help keep place when reading or to look up the meaning of a
 ### Text styles are not editable
 There are a number of tools and browser extensions that allow a user to adjust the styling of text to make it easier for them to read. For example they may want to adjust the font, colour or size.   
 
-These work but altering the CSS, so will only work on HTML and can't change an image.
+These work by altering the CSS, so will only work on HTML and can't change an image.
 
 ### Text is not translatable
 Translation tools typically don't look at images and won't be able to translate the content on the page.
@@ -67,7 +67,7 @@ When the image is scaled up, the text will get blurry making it harder to read. 
 Accessibility is the main concern with text in images, but there are some other things to think about as well.
 
 ### Doesn’t work very well in inbox search
-If a user is trying to find your email, they may do a search for some of the content they remember seeing. Some email clients will include alt text in the search adn return your email, some won't. I've not done a lot of testing on this but Yahoo and AOL don't return results.
+If a user is trying to find your email, they may do a search for some of the content they remember seeing. Some email clients will include alt text in the search and return your email, some won't. I've not done a lot of testing on this but Yahoo and AOL don't return results.
 
 ### Doesn’t work at all in find in page search
 When the email is open a user might use the find function (`ctrl + f` or `cmd + f`) to look for some content. But that does not include text in images or alt text.
