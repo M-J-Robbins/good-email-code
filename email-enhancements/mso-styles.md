@@ -14,6 +14,8 @@ There is quite a lot to cover, so I've broken it down into a few sections to hop
 * [MSO text styling](#mso-text-styling)
 * [MSO advanced text styling (Word Art)](#mso-text-styling)
 * [MSO box model](#mso-box-model)
+*  [MSO backgrounds](#mso-backgrounds)
+* MSO table styles(#mso-table-styles)
 more to follow...
 
 ## MSO text styling
@@ -116,6 +118,13 @@ Works just like `text-decoration-color`
 <p style="text-decoration:underline; text-underline-color: #FF0000">test</p>
 ```
 
+### mso-char-indent
+Works in a similar way to `text-indent`. This is the shrothand version of `mso-char-indent-count` (how many characters to indent by) and `mso-char-indent-size`(how big those characters are).  However the indent size dosn't work in Outlook so we can only set the count, but this works either as long hand or short hand.
+```html
+<p style="mso-char-indent: 2">test</p>
+<p style="mso-char-indent-count: 2">test</p>
+```
+
 ## MSO advanced text styles (Word Art)
 Back in the 90's if you want to create a poster for your school disco, you would do it in MS Word using Word Art.  If you're still loving this retro style then we can  recreate it in Outlook too. 
 
@@ -185,7 +194,16 @@ Works just like `margin-top` and `margin-bottom`. But doesn't work with left, ri
 Works just like `padding`.  Also supports longhand values `mso-padding-top-alt`, `mso-padding-right-alt`, `mso-padding-bottom-alt`, `mso-padding-left-alt` 
 
 ```html
-<p style="mso-margin-top-alt:1em;mso-margin-bottom-alt:1em;">test</p>
+<p style="mso-padding-top-alt:1em;mso-padding-bottom-alt:1em;background:red;border:1px solid;">test</p>
+```
+For padding to work on a `<p>` we also need to add a `border`.
+
+### mso-padding-between
+This only works when [`mso-border-between`](#mso-border-between) is set on a element. It sets the padding the 2 elements that Outlook has joined
+
+```html
+<p style="border:4px solid green;mso-border-between:4px dotted pink; mso-padding-between:50px">test</p>
+<p style="border:4px solid green;">test</p>
 ```
 
 ### mso-border-alt
@@ -193,6 +211,27 @@ Works just like `border`.  Also supports longhand values for sides `mso-border-t
 
 ```html
 <p style="mso-border-alt:4px solid green">test</p>
+```
+### mso-border-between
+Outlook will sometimes combine block level elements that are adjacent to eachother, which have matching border styles. For example if you have 2 `<p>` elements both with a border, you may only see an outer border around both elements and not between them.  To fix this we can set a border between them, this could also be set as a different value.
+
+```html
+<p style="border:4px solid green; mso-border-between:4px dotted pink;">test</p>
+<p style="border:4px solid green;">test</p>
+```
+
+This can be combined with [`mso-padding-between`](#mso-padding-between)
+
+This could also be useful on tables 
+```html
+<table style="border:1px solid green;mso-border-between:1px dashed red; mso-padding-between:50px">
+	<tr>
+		<td>test1</td><td>test2</td>
+	</tr>
+	<tr>
+		<td>test3</td><td>test4</td>
+	</tr>
+</table>
 ```
 
 ### mso-border-shadow
@@ -202,3 +241,88 @@ Similar to `box-shadow` but with less control.   This only works when a border i
 <p style="border:solid red 8px; mso-border-shadow:yes">test</p>
 ```
 
+## Backgrounds 
+
+### mso-shading
+Works just like `background-color` 
+```html
+<p style="mso-shading: red">test</p>
+```
+
+### mso-pattern
+This adds a simple predefined pattern.  This can also take the longhand form `mso-pattern-color` and `mso-pattern-style`
+
+The style options include;
+ `diag-cross`, `diag-stripe`, `gray-025`, `gray-0625`, `gray-075`, `gray-10`, `gray-125`, `gray-15`, `gray-175`, `gray-20`, `gray-225`, `gray-25`, `gray-275`, `gray-30`, `gray-325`, `gray-35`, `gray-375`, `gray-40`, `gray-425`, `gray-45`, `gray-475`, `gray-5`, `gray-50`, `gray-525`, `gray-55`, `gray-575`, `gray-60`, `gray-625`, `gray-65`, `gray-675`, `gray-70`, `gray-725`, `gray-75`, `gray-775`, `gray-80`, `gray-825`, `gray-85`, `gray-875`, `gray-90`, `gray-925`, `gray-95`, `gray-975`, `horz-cross`, `horz-stripe`, `none`, `reverse-diag-stripe`, `solid`, `thick-diag-cross`, `thin-diag-cross`, `thin-diag-stripe`, `thin-horz-cross`, `thin-horz-stripe`, `thin-reverse-diag-stripe`, `thin-vert-stripe`, `vert-stripe`
+
+```html
+<p style="mso-pattern:vert-stripe red">test</p>
+```
+```html	
+<p style="mso-pattern-color:red; mso-pattern-style: vert-stripe">test</p>
+```
+
+
+## MSO table styles
+### mso-cellspacing
+Works just like `cellspacing=""` attribute.  This can be set with a unit, in which case it will be treated as `px`
+```html
+<table style="mso-cellspacing:20px">
+	<tr>
+		<td>test</td>
+	</tr>
+</table>
+```
+
+### mso-cell-special
+I'm not too sure what this does but using `mso-cell-special: placeholder` will remove a `<td>` from the DOM.
+
+
+### mso-table-dir
+Similar to the `dir=""` attribute, this sets the language direction of the table.  Values are `normal` (left to right), `rtl` (right to left), `bidi` (bidirectional).
+
+```html
+<table style="mso-table-dir:bidi">
+	<tr>
+		<td>a</td><td>b</td>
+	</tr>
+</table>
+```
+
+### mso-table-tspace
+These are similar to `margin-top` but only when the table is floated with an `align="left"` or `align="right"` attribute. 
+```html
+<table style="mso-table-tspace:50px;" align="left">
+	<tr>
+		<td>test</td>
+	</tr>
+</table>
+```
+### mso-table-lspace
+These are similar to `margin-left` but only when the table is floated with an `align="left"` or `align="right"` attribute. 
+```html
+<table style="mso-table-lspace:50px;" align="left">
+	<tr>
+		<td>test</td>
+	</tr>
+</table>
+```
+### mso-table-rspace
+These are similar to `margin-right` but only when the table is floated with an `align="left"` or `align="right"` attribute. 
+```html
+<table style="mso-table-rspace:50px;" align="left">
+	<tr>
+		<td>test</td>
+	</tr>
+</table>
+```
+
+### mso-table-bspace
+These are similar to `margin-bottom` but only when the table is floated with an `align="left"` or `align="right"` attribute. 
+```html
+<table style="mso-table-bspace:50px;" align="left">
+	<tr>
+		<td>test</td>
+	</tr>
+</table>
+```
