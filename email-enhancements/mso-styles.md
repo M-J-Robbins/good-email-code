@@ -14,8 +14,8 @@ There is quite a lot to cover, so I've broken it down into a few sections to hop
 * [MSO text styling](#mso-text-styling)
 * [MSO advanced text styling (Word Art)](#mso-text-styling)
 * [MSO box model](#mso-box-model)
-*  [MSO backgrounds](#mso-backgrounds)
-* MSO table styles(#mso-table-styles)
+* [MSO backgrounds](#mso-backgrounds)
+* [MSO table styles](#mso-table-styles)
 * more to follow...
 
 ## MSO text styling
