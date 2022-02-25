@@ -1,4 +1,4 @@
-
+<div class="updated">Last Updated: <time datetime="2022-02-25">25<sup>th</sup> February 2022</time></div>
 
 # Using MSO- styles in Email
 If you've been working in email dev, you may have come across `mso-` prefixed styles in the code, I mention them a few time on this site. MSO styles are styles that are specific to MSO (**M**icro**S**oft **O**ffice), some of these styles are unique to MSO but often these are repeats of standard CSS styles, in which case they can be used to provide a different value in MSO email clients.  
@@ -16,7 +16,7 @@ There is quite a lot to cover, so I've broken it down into a few sections to hop
 * [MSO box model](#mso-box-model)
 *  [MSO backgrounds](#mso-backgrounds)
 * MSO table styles(#mso-table-styles)
-more to follow...
+* more to follow...
 
 ## MSO text styling
 There are a few different font types used here ascii, ansi, bidi, fareast, hansi, symbol. Depending on what language you're sending in ,you may need to adjust some of these styles accordingly (I need to do more testing around this).  For now I'm focusing on English content, so looking at ascii and ansi. 
