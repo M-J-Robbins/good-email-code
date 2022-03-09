@@ -1,3 +1,4 @@
+
 <div class="updated">Last Updated: <time datetime="2022-02-25">25<sup>th</sup> February 2022</time></div>
 
 # Using MSO- styles in Email
@@ -16,6 +17,7 @@ There is quite a lot to cover, so I've broken it down into a few sections to hop
 * [MSO box model](#mso-box-model)
 * [MSO backgrounds](#mso-backgrounds)
 * [MSO table styles](#mso-table-styles)
+* [MSO element](#mso-element)
 * more to follow...
 
 ## MSO text styling
@@ -98,6 +100,7 @@ Similar to `color:transparent` MSO email clients don't respect the `transparent`
 ```html
 <p style="mso-style-textfill-type: none">test</p>
 ```
+Also see [mso-style-textfill-type: gradient](#mso-style-textfill-type-gradient) 
 
 ### mso-text-indent-alt
 Works just like `text-indent` 
@@ -124,6 +127,8 @@ Works in a similar way to `text-indent`. This is the shrothand version of `mso-c
 <p style="mso-char-indent: 2">test</p>
 <p style="mso-char-indent-count: 2">test</p>
 ```
+
+For a closer comparison to `text-indent` see [mso-text-indent-alt](#mso-text-indent-alt)
 
 ## MSO advanced text styles (Word Art)
 Back in the 90's if you want to create a poster for your school disco, you would do it in MS Word using Word Art.  If you're still loving this retro style then we can  recreate it in Outlook too. 
@@ -325,4 +330,70 @@ These are similar to `margin-bottom` but only when the table is floated with an 
 		<td>test</td>
 	</tr>
 </table>
+```
+
+
+## MSO element
+When using mso-elements you'll see a border appear around the first element used.  I've not worked out how to remove this yet but we can set another element first that will take the boarder then move that out of the way.
+
+Place this code at the top of your email
+```html
+<div style="mso-element-wrap:none;mso-element-left:right;font-size:1px;">&zwnj;</div>
+```
+You will still see it in the top right corner but this is the best I have so far.
+
+### mso-element
+This is used to set an element.  In it doesn't do much on it's own.  However be aware that setting a valuse of `none` will remove all the content after it.
+```html
+<div style="mso-element:none"></div>
+```
+So don't do that.
+
+### mso-element-frame-width
+Set the width of the mso-element.  There is no need to a set `mso-element: frame`,  In Outlook the rendered code becomes a `<table>`
+```html
+<div style="mso-element-frame-width:600px;">test</div>
+```
+
+### mso-element-frame-height
+Set the height of the mso-element.  There is no need to a set `mso-element: frame`,  In Outlook the rendered code becomes a `<table>`
+```html
+<div style="mso-element-frame-height:400px;">test</div>
+```
+
+### mso-element-wrap
+This sets the wrapping of the mso-element, it works a bit like CSS `float` 
+* **around** works like float, other elements will wrap around it
+* **auto** Sets to around
+* **none** works like position, absolute and takes the element out of the flow of the DOM
+* **no-wrap-beside** similar to display:block puts the element on it's own line
+
+Here's an example of it used for a drop-cap on a paragraph.
+```html
+<div style="font-size:48px; mso-element-wrap:around;">L</div>
+<p>orem ipsum dolor sit amet, consectetur adipiscing elit.<br> 
+Aenean tincidunt, diam a rutrum tristique, tellus turpis malesuada enim, sed luctus est turpis quis sem.<br>
+Ut tellus augue, pulvinar ac nunc iaculis, interdum tristique orci.<br>
+Curabitur maximus lacus erat, vitae rutrum tortor ullamcorper in.</p>
+```
+
+### mso-element-left
+Positioning from the left, similar to `margin-left`
+* **center** acts like `margin:0 auto;` and centres the element. This only works when `mso-element-wrap:no-wrap-beside;`is set.
+* **[length]** sets a value with units (`mso-element-left:50px`). Acts like `margin-left`. This only works when `mso-element-wrap:no-wrap-beside;`is set.
+* **left/right** Acts like `float:left` `float:right`
+* **inside/outside** Appears to do the same as left/right
+
+There is also `mso-element-top` but I've not get ot working yet
+
+### mso-element-frame-vspace
+Works like css `margin-block` to give vertical space.  This requires setting a `mso-element-frame-height`, `mso-element-frame-width` or `mso-element-wrap`to make the vspace work.
+```html
+<div style="mso-element-wrap:no-wrap-beside;mso-element-frame-vspace:20px;">test</div>
+```
+
+### mso-element-frame-hspace
+Works like css `margin-inline` to give horazontal space. This requires setting a `mso-element-frame-height`, `mso-element-frame-width` or `mso-element-wrap`to make the hspace work.
+```html
+<div style="mso-element-wrap:no-wrap-beside;mso-element-frame-hspace:20px;">test</div>
 ```
