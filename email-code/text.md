@@ -75,7 +75,7 @@ These are purely typographic and pass no semantic meaning.
 This is purely typographic and passes no semantic meaning. It renders the text 1 font-size smaller than the current setting.
 
 
-### Code
+## Code
 ```html
 <p>Use an HTML5 <code style="color:red;background-color: #eee;font-family: courier, monospace;">&lt;!DOCTYPE html&gt;</code> in your email</p>
 ```
@@ -83,14 +83,14 @@ This is purely typographic and passes no semantic meaning. It renders the text 1
 This is used for defining an inline sample of code. Which I do on this site often and looks like `<code>`
 
 
-### Pre
+## Pre
 This is used to preserve spaces, line breaks and tabs in the text. So how you format the code in the HTML file is how it will look on the screen. 
 
 ```html
 <pre>pre      space</pre>
 ```
 
-Will render as <pre>pre      space</pre>
+Will render all of the spaces between the words.
 
 This is often used with `<code>` to show a multi line code sample with indentation.
 
