@@ -1,5 +1,5 @@
 
-<div class="updated">Last Updated: <time datetime="2022-02-25">25<sup>th</sup> February 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2022-03-11">11<sup>th</sup> March 2022</time></div>
 
 # Using MSO- styles in Email
 If you've been working in email dev, you may have come across `mso-` prefixed styles in the code, I mention them a few time on this site. MSO styles are styles that are specific to MSO (**M**icro**S**oft **O**ffice), some of these styles are unique to MSO but often these are repeats of standard CSS styles, in which case they can be used to provide a different value in MSO email clients.  
@@ -17,6 +17,7 @@ There is quite a lot to cover, so I've broken it down into a few sections to hop
 * [MSO box model](#mso-box-model)
 * [MSO backgrounds](#mso-backgrounds)
 * [MSO table styles](#mso-table-styles)
+* [MSO List styles](#mso-ist-styles)
 * [MSO element](#mso-element)
 * more to follow...
 
@@ -332,6 +333,31 @@ These are similar to `margin-bottom` but only when the table is floated with an 
 </table>
 ```
 
+## MSO List styles
+### mso-special-format
+When adding a left margin to lists `<ul>` or `<ol>`, Outlook likes to convert the `<li>` elements into `<p>` elements and will mess with the spacing.  This is flipped in `rtl` languages to the right margin.
+
+We can work around this by adding `mso-special-format:bullet;` 
+
+```html
+<ul style="margin-left:10px;" >
+	<li style="mso-special-format:bullet;">Test</li>
+	<li style="mso-special-format:bullet;">Test</li>
+	<li style="mso-special-format:bullet;">Test</li>
+</ul>
+```
+However this will also reset to the default margin (about 48px in Outlook) and default `list-style-type: disc;`
+
+### mso-bullet-image
+Works similar to `list-style-image`but only accepts `gif` and `ico` formats.  Also it requires setting `mso-special-format:bullet`
+```html
+<ul>
+  <li style="mso-special-format:bullet;mso-bullet-image:'https://dummyimage.com/600x400/fff/000.gif&text=✓'">
+    test
+  </li>
+</ul>
+```
+If you want to remove a list icon to replicate, `list-style: none` you could use a transparent gif as the `mso-bullet-image`. 
 
 ## MSO element
 When using mso-elements you'll see a border appear around the first element used.  I've not worked out how to remove this yet but we can set another element first that will take the boarder then move that out of the way.
