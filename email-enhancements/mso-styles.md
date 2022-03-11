@@ -122,7 +122,7 @@ Works just like `text-decoration-color`
 ```
 
 ### mso-char-indent
-Works in a similar way to `text-indent`. This is the shrothand version of `mso-char-indent-count` (how many characters to indent by) and `mso-char-indent-size`(how big those characters are).  However the indent size dosn't work in Outlook so we can only set the count, but this works either as long hand or short hand.
+Works in a similar way to `text-indent`. This is the shorthand version of `mso-char-indent-count` (how many characters to indent by) and `mso-char-indent-size`(how big those characters are).  However the indent size dosn't work in Outlook so we can only set the count, but this works either as long hand or short hand.
 ```html
 <p style="mso-char-indent: 2">test</p>
 <p style="mso-char-indent-count: 2">test</p>
