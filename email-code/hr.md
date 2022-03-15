@@ -23,7 +23,7 @@ You can adjust the space around with a margin, either in long hand or short hand
 <div style="margin:0 20px"><hr style="margin:50px 0;border-width: 0; background: #000; color: #000; height:1em"></div>
 ```
 
-Although often it may be easier to use `width` if it's a suitable alturnative.
+Although often it may be easier to use `width` if it's a suitable alternative.
 
 ### Align
 By default it will be aligned center, but with an `align=""` attribute you can set it to align left or right.
