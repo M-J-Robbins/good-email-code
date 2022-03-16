@@ -24,7 +24,6 @@ Yes, we can still keep semantic structure by wrapping our images in HTMl.
 <h1>
   <img  src="heading.png"  alt="Is it ok to add text in images in email?">
 </h1>
-
 ```
 
 But this does mean separating images into individual HTML elements, heading paragraphs, list-items etc.
