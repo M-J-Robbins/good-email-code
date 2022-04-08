@@ -423,3 +423,54 @@ Works like css `margin-inline` to give horazontal space. This requires setting a
 ```html
 <div style="mso-element-wrap:no-wrap-beside;mso-element-frame-hspace:20px;">test</div>
 ```
+
+## More to come
+I've had this half finished for a few months and very slowly adding to it, but I've already referenced it a few times so I decided I'll put it live and finish it off when I get time. 
+
+
+<!-- Notes of what I still have to test and write up -->
+<!-- ## Layout
+mso-break-type
+
+mso-default-height
+mso-default-width
+
+mso-horizontal-page-align
+
+mso-width-alt
+mso-width-source
+mso-zero-height:yes
+
+mso-vertical-align-alt
+text-justify: distribute-all-lines
+
+
+  
+
+
+## misc
+### mso-rotate
+```html
+<table>
+  <tr>
+    <td style="mso-rotate:-90">test</td>
+  </tr>
+</table>
+```
+mso-text-orientation
+mso-scheme-fill-color
+mso-scheme-shadow-color
+mso-space-above
+mso-space-below
+mso-spacerun	
+mso-pagination:widow-orphan;
+mso-style-priority: 99 
+mso-ignore
+`<br style="mso-ignore:vglayout" clear="ALL">`
+mso-style-noshow:yes;
+mso-linked-frame:auto - seems to crash Outlook
+text-fit:600px
+
+mso themecolor only seems to work on borders, might be an option for darkmode hacks
+
+white space https://stigmortenmyre.no/mso/html/concepts/ofconwhitespace.htm -->
