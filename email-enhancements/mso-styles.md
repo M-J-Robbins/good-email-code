@@ -13,7 +13,7 @@ Over the years, I've gone through this document and a few others and made some n
 There is quite a lot to cover, so I've broken it down into a few sections to hopefully make things easier to follow
 
 * [MSO text styling](#mso-text-styling)
-* [MSO advanced text styling (Word Art)](#mso-text-styling)
+* [MSO advanced text styling (Word Art)](#mso-advanced-text-styles-word-art)
 * [MSO box model](#mso-box-model)
 * [MSO backgrounds](#mso-backgrounds)
 * [MSO table styles](#mso-table-styles)
