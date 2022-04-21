@@ -17,7 +17,7 @@ There is quite a lot to cover, so I've broken it down into a few sections to hop
 * [MSO box model](#mso-box-model)
 * [MSO backgrounds](#mso-backgrounds)
 * [MSO table styles](#mso-table-styles)
-* [MSO List styles](#mso-ist-styles)
+* [MSO List styles](#mso-list-styles)
 * [MSO element](#mso-element)
 * more to follow...
 
@@ -247,7 +247,7 @@ Similar to `box-shadow` but with less control.   This only works when a border i
 <p style="border:solid red 8px; mso-border-shadow:yes">test</p>
 ```
 
-## Backgrounds 
+## MSO Backgrounds 
 
 ### mso-shading
 Works just like `background-color` 
