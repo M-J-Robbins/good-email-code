@@ -166,7 +166,7 @@ Those first 3 are required, but if you want some more options...
 * `mso-style-textoutline-outlinestyle-dash` sets the outline style a bit like `border-style` the options are `solid` (default), 
 `dotsys`, `dashsys`, `dashgel`, `dashdotgel`, `longdashgel`, `longdashdotgel`, `longdashdotdotgel`
 * `mso-style-textoutline-outlinestyle-compound` is also a bit like `border-style` these options are `simple`(default), `double`, `tripple`,`thickthin`, `thinthick`.
-Also take a look back at [mso-style-textfill-fill-alpha]() as that pairs well with using an outline.
+Also take a look back at [mso-style-textfill-fill-alpha](#mso-style-textfill-fill-alpha) as that pairs well with using an outline.
 
 ### mso-style-textfill-type: gradient;
 ```html
