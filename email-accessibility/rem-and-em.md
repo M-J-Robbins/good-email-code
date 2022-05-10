@@ -1,4 +1,5 @@
-<div class="updated">Last Updated: <time datetime="2022-02-01">1<sup>st</sup> February 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2022-05-10">10<sup>th</sup> May 2022</time></div>
+
 # Using rem and em units in email
 
 There are a number of different units that can be used to set sizes in CSS these can be grouped into absolute and relative.  
@@ -72,9 +73,9 @@ Unfortunately `rem` units don’t yet have full support in email clients so for 
 
 Ideally we want to return the font size to `1rem` however some email clients don’t support `rem` and in some the default value can be very small (12px in Applemail) so we will set a minimum and some fallbacks.
 
-{% highlight html %}
+```html
 <div style="font-size:medium; font-size:max(16px, 1rem)">
-{% endhighlight %}
+```
 
 I’m going to look at these values in reverse order as that’s what the priority order is;
 
@@ -86,16 +87,19 @@ The wording is confusing as we’re using `max` to set a minimum `font-size` but
 **N.B** This will prevent the user from being able to set a smaller preferred font size.  So it’s not an ideal solution, you may want to leave this part off.
 
 ### `font-size:medium`
-If the email client doesn't support `max` we will fall back to using `font-size:medium`, all email clients I've tested support this.
+If the email client doesn't support `max` we will fall back to using `font-size:medium`, all email clients I've tested support this, and it passed the users prefered font-size.
 
-**Edit:** _On a previous version of this article I use `rem` units and an extra fallback to 16px `font-size:16px;font-size:1rem; font-size:max(16px, 1rem)` but later found `font-size:medium` has better support._
+**Edit - February 2022:** _On a previous version of this article I use `rem` units and an extra fallback to 16px `font-size:16px;font-size:1rem; font-size:max(16px, 1rem)` but later found `font-size:medium` has better support._
+
+**Edit - May 2022:** _It looks like the CSS spec has updated so that [`font-size: 'medium'` is no lnoger required to match the user's preferred font size](https://github.com/w3c/csswg-drafts/issues/2430) so this behaviour may change in the future_
 
 ## Converting your code to use `em`
 Mostly the standard size for `1rem` is `16px` so using that as a base will keep your sizing looking the same for most users.  So to calculate em from px, divide your `px` value by 16 and that will give you your `em` value.
 
-So if your font is `20px` divided by 16 gives you `1.25em`.
-If you font is `18px` divided by 16 give you `1.125em`
-If your font is `10px` it’s too small. Don’t use 10px fonts.
+So for example
+ - if your font is `20px` divided by 16 gives you `1.25em`.
+ - If you font is `18px` divided by 16 give you `1.125em`
+ - If your font is `10px` it’s too small. Don’t use 10px fonts.
 
 Ideally your minimum font size would be `1em` but at a push I’ll sometimes go down to `.8em` if you asks really nicely and I don’t have time to talk you round.
 
@@ -108,7 +112,7 @@ So far we’ve been talking about `font-size` but you can use `em` anywhere you 
 
 Setting `width` on text using `em` can help accessibility too.  For example `<p style="max-width:30em">` would stop small fonts creating very long paragraphs, which are harder to read.
 
-Use `em` in media queries. If your breakpoints are defined by how the content breaks, then consider how `font-size` may affect that. Although if you are targeting devices then `px` would work better.
+For media queries, if your breakpoints are defined by how the content breaks, then consider how `font-size` may affect that and if using `em` would work better than `px`, although be aware of the potential [media queries issue](#media-queries) which can clash with out minimum font-size reset.
 
 There’s certainly a good argument for moving everything to `em` if a user has selected a larger font then they may well want larger images, and larger layout too and it makes the design more consistent.  However there may be a reason they have chosen to change the font rather than adjusting the screen resolution or using a zoom tool.
 
@@ -125,6 +129,11 @@ In this example if the user root font is set to 16px then the paragraph has a ma
 Another good example if we have an email with a highlighted section where we want to increase the font-size.  We can use the same module we have for other sections but just wrap it with `font-size:1.5em` and it will increase all the sizes of that section with just a tiny bit of code.  The same could be done on a footer where we might want a small font, we can just use `font-size: 0.8em` and it will reduce the sizes of that section.
 
 ## Issues
+### Media queries
+If you are setting media queries using `rem` or `em` they are always bassed off the users prefered `font-size`. This will clash with the minimum font size fix we use `max(16px, 1rem)`.  
+
+So for example we set a media query of `100em`. In Apple Mail with default settings that will be `1200px`, but in most other places it would be `1600px`.
+
 ### Attributes
 `em` units don’t work inside attributes, the unit is effectively removed from the code and rendered as if no unit were used, which in defaults to `px`.
 
