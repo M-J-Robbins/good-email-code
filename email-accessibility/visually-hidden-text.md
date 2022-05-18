@@ -66,9 +66,21 @@ So what we can do is make the text very small with `font-size:1px;` then make it
 ### Extra safe
 I've not seen it, but there is a chance that in this 1px square we've created we might see a corner of a letter where the `color:rgba(0,0,0,0)` isn's supported, to protect from that happening we can push the text over a little using `text-indent:9px;`.
 
+## Testing
+I've tested this on my Mac with VoiceOver and Text-to-speach, both of which worked.
+
+[Steven Sayo](https://twitter.com/Sayo1337) helped me out testing in Office 365 on Windows using Narrator.
+
+And I've tested NVDA via Litmus.
+
+Also, when I previously had access to more screen reader testing, I found if copy/paste picks up the hidden text, then screen readers would. And that works.
+
+If you have access to a screen reader,I've love to know if it worked or not. [Any bugs please let me know](https://github.com/M-J-Robbins/good-email-code/issues).
 
 ## Hiding things other than text
-I've only focused my testing on text as that's the main use case here.  This technique should work for most inline elements
+I've only focused my testing on text as that's the main use case here.  This technique should work for most inline elements.
+
+If you have a use case for something where this doesn't work, let me know.
 
 ## Version2
 I'm working on a smaller version, this puts everything on a single `<span>` and drops the `overflow:hidden`but otherwise the code is pretty much the same.
