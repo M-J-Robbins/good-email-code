@@ -62,9 +62,9 @@ This sets the language of the email, it's important to set as this can affect th
 
 Here I've set `lang="en"` to set the content in English, however you can get more granular if you like and set `en-GB` for British English or `en-US` for American English.
 
-It's important to be accurate with your language settings, however if you are in the situation that you don't know what langauge will be used in your template you can use `lang="und"` which [defines the language as undetermined](https://tools.ietf.org/rfc/bcp/bcp47#:~:text=The%20%27und%27%20(Undetermined)%20primary%20language%20subtag%20identifies%0A%20%20%20%20%20%20%20%20%20%20linguistic%20content%20whose%20language%20is%20not%20determined). This can be used alongside `dir="auto"` to allow the direction to adapt to the language that is assumed.
+It's important to be accurate with your language settings, however if you are in the situation that you don't know what language will be used in your template you can use `lang="und"` which [defines the language as undetermined](https://tools.ietf.org/rfc/bcp/bcp47#:~:text=The%20%27und%27%20(Undetermined)%20primary%20language%20subtag%20identifies%0A%20%20%20%20%20%20%20%20%20%20linguistic%20content%20whose%20language%20is%20not%20determined). This can be used alongside `dir="auto"` to allow the direction to adapt to the language that is assumed.
 
-In my testing I've found that using `lang="und" dir="auto"`has better results than setting nothing at all. This should only be used as a last resort as the language and direction will be assumed, it's alway sbetter to define these.
+In my testing I've found that using `lang="und" dir="auto"`has better results than setting nothing at all. This should only be used as a last resort as the language and direction will be assumed, it's always better to define these.
 
 As email clients often strip the `<html>` element it's also important to set a lang on the [Wrapping element](#wrapping-element).
 
