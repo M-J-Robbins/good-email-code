@@ -54,7 +54,7 @@ html{
   background-size:5em;
   background-position: center top;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23005959' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M8 15 42 15 25 26z M7 16 7 34 20 25z M43 16 43 34 30 25z M8 35 22 26 25 28 28 26 42 35z M58 15 92 15 75 26z M57 16 57 34 70 25z M93 16 93 34 80 25z M58 35 72 26 75 28 78 26 92 35z M8 65 42 65 25 76z M7 66 7 84 20 75z M43 66 43 84 30 75z M8 85 22 76 25 78 28 76 42 85z M58 65 92 65 75 76z M57 66 57 84 70 75z M93 66 93 84 80 75z M58 85 72 76 75 78 78 76 92 85z M50 0 100 0 100 50 50 50z M0 50 50 50 50 100 0 100z '/%3E%3C/g%3E%3C/svg%3E");
-  transition:background-color 3s, color 3s;
+  transition:background-color 3s, color 1s;
 }
 @media (prefers-color-scheme: dark) {
   html{
