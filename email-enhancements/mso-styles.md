@@ -196,6 +196,13 @@ Works just like `margin-top` and `margin-bottom`. But doesn't work with left, ri
 <p style="mso-margin-top-alt:1em;mso-margin-bottom-alt:1em;">test</p>
 ```
 
+### mso-para-margin
+Works just like `margin` also supports short hand values and longhand `mso-para-margin-top`, `mso-para-margin-right`, `mso-para-margin-bottom`, `mso-para-margin-left`.
+
+```html
+<p style="mso-para-margin:0 0 3em 5em;">test</p>
+```
+
 ### mso-padding-alt
 Works just like `padding`.  Also supports longhand values `mso-padding-top-alt`, `mso-padding-right-alt`, `mso-padding-bottom-alt`, `mso-padding-left-alt` 
 
@@ -466,7 +473,7 @@ mso-spacerun
 mso-pagination:widow-orphan;
 mso-style-priority: 99 
 mso-ignore
-`<br style="mso-ignore:vglayout" clear="ALL">`
+`<br style="mso-ignore:vglayout" clear="ALL">` - line break in all but outlook via solente matthieu on slack
 mso-style-noshow:yes;
 mso-linked-frame:auto - seems to crash Outlook
 text-fit:600px
