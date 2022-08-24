@@ -1,5 +1,5 @@
 
-<div class="updated">Last Updated: <time datetime="2022-03-11">11<sup>th</sup> March 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2022-08-24">24<sup>th</sup> August 2022</time></div>
 
 # Using MSO- styles in Email
 If you've been working in email dev, you may have come across `mso-` prefixed styles in the code, I mention them a few time on this site. MSO styles are styles that are specific to MSO (**M**icro**S**oft **O**ffice), some of these styles are unique to MSO but often these are repeats of standard CSS styles, in which case they can be used to provide a different value in MSO email clients.  
