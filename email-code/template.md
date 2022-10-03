@@ -100,7 +100,7 @@ The viewport element gives the browser and email client instructions on how to c
 In theory these prevent email clients automatically detecting and generating links out of phone numbers, dates, addresses, email addresses and url's.
 However support is low, I've only ever seen it work for phone numbers on the Outlook iOS app.  I'd recommend including these anyway as it's a hint to the email clients that this is something we want.
 
-There is an argument that we shouldn't use these as the auto linking helps users.  However I feel there are too many issues with the auto detection to reply on it, if I add a phone number I will add a link myself. If I include numbers for another reason (order number etc.) I don't want them linking to a phone number.
+There is an argument that we shouldn't use these as the auto linking helps users.  However I feel there are too many issues with the auto detection to rely on it, if I add a phone number I will add a link myself. If I include numbers for another reason (order number etc.) I don't want that linking to a phone number.
 
 ### x-apple-disable-message-reformatting
  ```html
