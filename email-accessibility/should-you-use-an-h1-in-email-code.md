@@ -1,5 +1,7 @@
+<div class="updated">Last Updated: <time datetime="2022-08-02">2<sup>nd</sup> August 2022</time></div>
+
 # Should you use an `<h1>` in email code?
-Short answer, yes.
+Short answer, yes. But don't force it if it doesn't fit.
 
 Long answer...
 
@@ -9,12 +11,19 @@ I’m writing this following on from a couple of really interesting twitter conv
 The question is, should you use an `<h1>` in email code? It’s recommended to only have one `<h1>` on a page, however if we include one in our email code there might also be one already in the webmail.
 
 So there are a few questions here which I’m going to try and answer...
+ * [Do Emails need headings?](#do-emails-need-headings)
  * [Which email clients add an `<h1>` to the content?](#which-email-clients-add-an-h1-to-the-content)
  * [Is it ok to have more than one `<h1>` on a page?](#is-it-ok-to-have-more-than-one-h1-on-a-page)
  * [Does an email count as part of the page?](#does-an-email-count-as-part-of-the-page)
  * [What benefits does an `<h1>` bring?](#what-benefits-does-an-h1-bring)
  * [What is the best option for screen reader users?](#what-is-the-best-option-for-screen-reader-users)
  * [Conclusion](#conclusion)
+
+## Do emails need headings?
+All structured content needs headings. If there are no headings, then there is no structure.  Most marketing emails probably do need structure, we might want to talk about the thing we're marketing, talk about the benefits, features, options, etc.
+
+But not all emails need structure, if you are sending a couple of paragraphs of text with no clear heading, forcing one might confuse the reader.
+
 
 ## Which email clients add an `<h1>` to the content?
 I ran some quick tests on webmail clients and found that most webmail clients don’t add an `<h1>`

@@ -7,7 +7,7 @@ You can use multiple container to get different background effects and separate 
 This could be combined with the [wrapping element from the template](../email-code/template#wrapping-element) if you like but if you're using multiple containers then the wrapping element should wrap all of the containers.
 
 ## The Code
-{% highlight html %}
+```html
 <!--[if true]>
 <table role="presentation" style="width:37.5em" align="center"><tr><td>
 <![endif]-->
@@ -17,7 +17,7 @@ This could be combined with the [wrapping element from the template](../email-co
 <!--[if true]>
 </td></tr></table>
 <![endif]-->
-{% endhighlight %}
+```
 
 Lets start with the mso code,  I've wrapped this in `<!--[if true]> <![endif]-->` conditional comments.  This is a bit of a broader version of the `<!--[if mso]> <![endif]-->` comment you may be more familiar with.  
 
@@ -32,7 +32,7 @@ Generally most styling can be added to the `<div>` and it will work for both the
 You can set everything in the `<div>` then reset anything that is breaking in mso using mso styles, for example `padding:2em;mso-padding-alt:0;`.  You can then set those styles specifically for mso by placing them on the `<td>`.
 
 The other option is to set all the styles for HTML on the `<div>` and all the styles for mso on the `<td>`.  We already have code to hide the table from the HTML version so here we could also add code to hide the HTML version from mso.
-{% highlight html %}
+```html
 <!--[if true]>
 <table role="presentation" style="width:37.5em" align="center"><tr><td>
 <![endif]-->
@@ -46,14 +46,14 @@ The other option is to set all the styles for HTML on the `<div>` and all the st
 <!--[if true]>
 </td></tr></table>
 <![endif]-->
-{% endhighlight %}
+```
 
 ### Adding a background colour to the outer body
 For the most part you can simple add the style to the body element like `<body style="background:#000000">`.  Then add a wrapping div around the entire content of the email `<div style="background:#000000">`.  Between these 2 this will cover almost every email client.
 
 However this doesn't cover Windows Mail, to get that as well we need to make some changes to our mso table we're using.
 
-{% highlight html %}
+```html
 <div style="background:#000000">
   <!--[if true]>
   <table role="presentation" width="100%" align="center" style="background:#000000"><tr><td></td><td style="width:37.5em;background:#ffffff">
@@ -62,19 +62,19 @@ However this doesn't cover Windows Mail, to get that as well we need to make som
     <!-- email content in here -->
   </div>
   <!--[if true]>
-  </td></tr><td></td></table>
+  </td><td></td></tr></table>
   <![endif]-->
 </div>
-{% endhighlight %}
+```
 
 Here I've changed the width to `width="100%"` to fill the screen, now I can set the background on this table.  Then I add a `<td></td>` either side of our content, creating a table with 3 cells. The middle `<td>` now takes the width and background colour of our container `style="width:37.5em;background:#ffffff"`
 
 
 ## No table version
 This is a touch more experimental you may find there are a few restrictions but it does work for a lot of use cases.
-{% highlight html %}
+```html
 <div style="max-width:37.5em;margin:0 auto;mso-element-frame-width:37.5em;mso-element:para-border-div;mso-element-left:center;mso-element-wrap:no-wrap-beside;">
-{% endhighlight %}
+```
 
 `max-width:37.5em;` sets the width for every email client (apart from those with mso rendering) I've used `max-width` instead of `width` so it can adapt to smaller viewport without any additional code, 37.5em works out at 600px if the default font-size is 16px.
 

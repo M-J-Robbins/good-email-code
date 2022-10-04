@@ -9,7 +9,7 @@ Personally I don't see this as a problem and in some cases is a nice feature, I 
 However if you want to stop it there are a few ways around this.  
 * Use a small image, Gmail only applies this to images of a certain size. - But small images will have lower resolution.
 * Add a link to the image.  Gmail won't apply this to linked images. - But a link might not makes sense here.
-* Use some code to hide the arrow. Some variation on `img + .a6S{display:none}`. - But this only removes the download icon, the cursor still shows as a pointer anda click still open the lightbox.
+* Use some code to hide the arrow. Some variation on `img + div{display:none}`. - This only removes the download icon, the cursor still shows as a pointer and a click still open the lightbox.  Also using generic selectors like this opens up a lot of potential for unwanted targeting and additional bugs.
 
 When chatting to [Jay](https://twitter.com/emailjay_) on [twitter](https://twitter.com/M_J_Robbins/status/1276554228710989825) the other day, about how they used the [faux absolute position](../email-enhancements/faux-absolute-position) technique in the [Email Weekly newsletter](http://emailweekly.co/). I realised that a simplified version of this  technique could also be used to solve this Gmail issue.
 

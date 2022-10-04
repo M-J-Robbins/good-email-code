@@ -54,6 +54,7 @@ html{
   background-size:5em;
   background-position: center top;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23005959' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M8 15 42 15 25 26z M7 16 7 34 20 25z M43 16 43 34 30 25z M8 35 22 26 25 28 28 26 42 35z M58 15 92 15 75 26z M57 16 57 34 70 25z M93 16 93 34 80 25z M58 35 72 26 75 28 78 26 92 35z M8 65 42 65 25 76z M7 66 7 84 20 75z M43 66 43 84 30 75z M8 85 22 76 25 78 28 76 42 85z M58 65 92 65 75 76z M57 66 57 84 70 75z M93 66 93 84 80 75z M58 85 72 76 75 78 78 76 92 85z M50 0 100 0 100 50 50 50z M0 50 50 50 50 100 0 100z '/%3E%3C/g%3E%3C/svg%3E");
+  transition:background-color 3s, color 1s;
 }
 @media (prefers-color-scheme: dark) {
   html{
@@ -67,6 +68,39 @@ html{
     background-color: #111;
   }
 }
+@media (prefers-reduced-transparency: reduce) {
+  html{
+    --main-bg-color: #eee;
+  }
+  @media (prefers-color-scheme: dark) {
+    html{
+      --main-bg-color: #333;
+    }
+  }
+}
+/* Override colour scheme */
+html.dark{
+  --bg-color: #333;
+  --main-bg-color: #333c;
+  --fg-color: #eee;
+  --highlight: #00d9d9;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300d9d9' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M8 15 42 15 25 26z M7 16 7 34 20 25z M43 16 43 34 30 25z M8 35 22 26 25 28 28 26 42 35z M58 15 92 15 75 26z M57 16 57 34 70 25z M93 16 93 34 80 25z M58 35 72 26 75 28 78 26 92 35z M8 65 42 65 25 76z M7 66 7 84 20 75z M43 66 43 84 30 75z M8 85 22 76 25 78 28 76 42 85z M58 65 92 65 75 76z M57 66 57 84 70 75z M93 66 93 84 80 75z M58 85 72 76 75 78 78 76 92 85z M50 0 100 0 100 50 50 50z M0 50 50 50 50 100 0 100z '/%3E%3C/g%3E%3C/svg%3E");
+}
+html.dark .highlight pre{
+  background-color: #111;
+}
+html.light{
+  --bg-color: #eee;
+  --main-bg-color: #eeec;
+  --fg-color: #222;
+  --highlight: #005959;
+  --highlight: #005959;background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23005959' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M8 15 42 15 25 26z M7 16 7 34 20 25z M43 16 43 34 30 25z M8 35 22 26 25 28 28 26 42 35z M58 15 92 15 75 26z M57 16 57 34 70 25z M93 16 93 34 80 25z M58 35 72 26 75 28 78 26 92 35z M8 65 42 65 25 76z M7 66 7 84 20 75z M43 66 43 84 30 75z M8 85 22 76 25 78 28 76 42 85z M58 65 92 65 75 76z M57 66 57 84 70 75z M93 66 93 84 80 75z M58 85 72 76 75 78 78 76 92 85z M50 0 100 0 100 50 50 50z M0 50 50 50 50 100 0 100z '/%3E%3C/g%3E%3C/svg%3E");
+}
+html.light .highlight pre{
+  background-color: #272822;
+}
+
+
 *{
   box-sizing:border-box;
 }
@@ -85,6 +119,7 @@ header .logo{
 }
 .logo .fill{
   fill: var(--fg-color, #222);
+  transition: fill 3s;
 }
 a:hover .logo .fill[fill-opacity]{
   fill:var(--highlight, #005959);
@@ -102,6 +137,7 @@ header .logo:hover{
   box-shadow:10em 4em 15em -15em var(--fg-color, #222),
             -10em 4em 15em -15em var(--fg-color, #222);
   line-height:1.5;
+  transition: background 3s;
 }
 .updated{
   float: right;
@@ -130,6 +166,7 @@ h4 code.highlighter-rouge {
 }
 a{
   color: var(--highlight, #005959);
+  transition: color 3s;
 }
 main a:hover{
   text-decoration:none;
@@ -140,6 +177,20 @@ iframe.caniemail{
   height:20em;
   border:none;
 }
+table, td, th{
+  border:1px solid currentColor;
+  border-collapse: collapse;
+  padding:.3em;
+}
+thead th{
+  border-bottom-width:.3em;
+}
+tr:nth-child(even){
+  background-color:  #0001;
+}tr:nth-child(odd){
+  background-color:  #fff1;
+}
+
 
 hr.end{
   width: 50%;
@@ -147,6 +198,7 @@ hr.end{
   height: .2em;
   border: none;
   background: var(--highlight, #005959);
+  transition: background 3s;
 }
 footer{
     background: #000;
@@ -161,32 +213,10 @@ footer{
 footer a{
   color:#00d9d9;
 }
-@media screen and (max-width:60em){
-  #main{
-    width:100%;
-  }
-  figure.highlight{
-    margin:1em;
-  }
-}
-@media screen and (max-width:30em){
-  #main{
-    padding:0 .5em 3em .5em;
-  }
-  h1{
-    font-size:2.5em;
-  }
-  figure.highlight{
-    margin:0;
-  }
-  .highlight, p{
-    overflow-wrap: break-word;
-  }
-  iframe.caniemail{
-    height: 30em;
-  }
-}
 /* Syntax highlighting */
+.highlight {
+  margin:1em;
+}
 .highlight pre {
   background-color: #272822;
   padding:1em;
@@ -198,6 +228,7 @@ footer a{
   box-shadow:  inset .25em .25em .5em #616161,
               .25em .25em .5em rgba(0,0,0,0.5);
   line-height:1.3;
+  tab-size: 2;
 }
 code{
   font-family: 'Source Code Pro', monospace;
@@ -227,8 +258,8 @@ code.highlighter-rouge{
 .highlight .style-attr{color:#a6e22e}
 .highlight .tag{color:#a7925a}
 
-.highlight .attr-equals{color:}
-.highlight .style{color:;}
+/* .highlight .attr-equals{color:}
+.highlight .style{color:;} */
 
 
 /* This is what I had orriginally not sure why the naming keeps changing but in case it changes back it's worth saving this */
@@ -298,3 +329,27 @@ code.highlighter-rouge{
 .highlight .gu { color: #b7b39f; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+
+@media screen and (max-width:60em){
+  #main{
+    width:100%;
+  }
+  .highlight{
+    margin:0;
+  }
+}
+@media screen and (max-width:30em){
+  #main{
+    padding:0 .5em 3em .5em;
+  }
+  h1{
+    font-size:2.5em;
+  }
+  .highlight, p{
+    overflow-wrap: break-word;
+  }
+  iframe.caniemail{
+    height: 30em;
+  }
+}
