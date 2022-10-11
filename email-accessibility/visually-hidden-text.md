@@ -71,11 +71,9 @@ I've tested this on my Mac with VoiceOver and Text-to-speach, and I've tested on
 
 [Steven Sayo](https://twitter.com/Sayo1337) helped me out testing in Office 365 on Windows using Narrator.
 
-And I've tested NVDA via Litmus.
+Also, when I previously had access to more screen reader testing, I found if copy/paste picks up the hidden text, then screen readers would also. And this works with copy/paste.
 
-Also, when I previously had access to more screen reader testing, I found if copy/paste picks up the hidden text, then screen readers would. And that works.
-
-If you have access to a screen reader,I've love to know if it worked or not. [Any bugs please let me know](https://github.com/M-J-Robbins/good-email-code/issues).
+If you have access to a screen reader, I've love to know if this works for you or not. [Any bugs please let me know](https://github.com/M-J-Robbins/good-email-code/issues).
 
 ## Hiding things other than text
 I've only focused my testing on text as that's the main use case here.  This technique should work for most inline elements.
