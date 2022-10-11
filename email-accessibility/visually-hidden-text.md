@@ -67,7 +67,7 @@ So what we can do is make the text very small with `font-size:1px;` then make it
 I've not seen it, but there is a chance that in this 1px square we've created we might see a corner of a letter where the `color:rgba(0,0,0,0)` isn's supported, to protect from that happening we can push the text over a little using `text-indent:9px;`.
 
 ## Testing
-I've tested this on my Mac with VoiceOver and Text-to-speach, both of which worked.
+I've tested this on my Mac with VoiceOver and Text-to-speach, and I've tested on Windows with NVDA.
 
 [Steven Sayo](https://twitter.com/Sayo1337) helped me out testing in Office 365 on Windows using Narrator.
 
