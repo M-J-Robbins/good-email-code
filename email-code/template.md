@@ -63,7 +63,7 @@ This sets the language of the email, it's important to set as this can affect th
 
 Here I've set `lang="en"` to set the content in English, however you can get more granular if you like and set `en-GB` for British English or `en-US` for American English.
 
-It's important to be accurate with your language settings, however if you are in the situation that you don't know what language will be used in your template you can use `lang="und"` which [defines the language as undetermined](https://tools.ietf.org/rfc/bcp/bcp47#:~:text=The%20%27und%27%20(Undetermined)%20primary%20language%20subtag%20identifies%0A%20%20%20%20%20%20%20%20%20%20linguistic%20content%20whose%20language%20is%20not%20determined). This can be used alongside `dir="auto"` to allow the direction to adapt to the language that is assumed.
+It's important to be accurate with your language settings, however if you are in the situation that you don't know what language will be used in your template you can use `lang="und"` which [defines the language as undetermined](https://iso639-3.sil.org/code/und). This can be used alongside `dir="auto"` to allow the direction to adapt to the language that is assumed.
 
 In my testing I've found that using `lang="und" dir="auto"` did pick up the corrrect language and direction. However, this should only be used as a last resort, it’s nowhere near as good as setting these values explicitly, but it is better than not setting them at all.
 
