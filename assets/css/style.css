@@ -209,9 +209,11 @@ footer{
     border: .25em solid currentColor;
     border-radius: 120% 4em 120% 4em / 4em 120% 4em 120%;
     text-align: center;
+    line-height: 1.5;
 }
 footer a{
   color:#00d9d9;
+  white-space: nowrap;
 }
 /* Syntax highlighting */
 .highlight {
