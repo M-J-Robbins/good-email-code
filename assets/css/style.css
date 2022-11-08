@@ -78,6 +78,18 @@ html{
     }
   }
 }
+/* Windows high contrast mode */
+@media (forced-colors: active) {
+  html{
+    --bg-color: Canvas;
+    --main-bg-color: Canvas;
+    --fg-color: CanvasText;
+    --highlight: LinkText;
+  }
+  svg {
+    stroke: CanvasText !important;
+  }
+}
 /* Override colour scheme */
 html.dark{
   --bg-color: #333;
