@@ -86,8 +86,8 @@ html{
     --fg-color: CanvasText;
     --highlight: LinkText;
   }
-  svg {
-    stroke: CanvasText !important;
+  .logo .fill[fill-opacity]{
+    fill-opacity: 0;
   }
 }
 /* Override colour scheme */
