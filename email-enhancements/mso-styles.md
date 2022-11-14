@@ -220,7 +220,9 @@ This only works when [`mso-border-between`](#mso-border-between) is set on a ele
 ```
 
 ### mso-border-alt
-Works just like `border`.  Also supports longhand values for sides `mso-border-top-alt`, `mso-border-right-alt`, `mso-border-bottom-alt`, `mso-border-left-alt` and for settings `mso-border-style-alt`, `mso-border-color-alt`, `mso-border-width-alt`
+Works just like `border`.  Inline elements like `<span>`, `<a>` only support a single style which will be applied to all sides. Block elements like `<div>`, `<table>` support different values on each side.
+
+There is also support for longhand values for sides `mso-border-top-alt`, `mso-border-right-alt`, `mso-border-bottom-alt`, `mso-border-left-alt` and for settings `mso-border-style-alt`, `mso-border-color-alt`, `mso-border-width-alt`. On inline elements these will be applied to all 4 sides.
 
 ```html
 <p style="mso-border-alt:4px solid green">test</p>
