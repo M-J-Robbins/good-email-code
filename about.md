@@ -1,14 +1,14 @@
-# About this site
+# About
 
-This site is...
+## Bio
+Mark has been working in email for over 10 years, pushing code to it’s limits with his work on interactive email and working to make email better for everyone with his work on email accessibility. He is a member of the AMP for Email working group and a co-founder/co-admin of the Email Markup Consortium.
+
+Mark has given talks about email development across Europe and the US and written many articles for both print and web. He is also very active in the email community, contributing to open source projects and working with others to define and share new techniques and new best practices for email code. 
 
 
-## Hi I'm Mark
-
-My name is Mark Robbins I've been working as an email developer since 2012.  After a while of writing email code I started to notice some of the rules and best practices were a bit over simplified.  I was told things like you can't use lists, and you can't use background images but with a little testing I found you can but there are just a few caveats to be aware of.  The more I looked into it, the more of these exceptions I found.
-
-Since then I've been working on finding better ways to write code, more accessible, more semantic, less code
+## headshot
+<img src="https://github.dev/M-J-Robbins/good-email-code/blob/master/assets/mark/a11y-t-shirt.jpg" alt="Mark in a blue t-shirt that read an access = inclustion.  in the backgroudn there are several guitars including a DIY 2 sting diddley bow." style="max-width:400px">
+<a href="https://github.dev/M-J-Robbins/good-email-code/blob/master/assets/mark/a11y-t-shirt.jpg" download>download</a>
 
 ## Contact
-
-If you have feedback or find issues with the site it's best to [submit a Github issue](https://github.com/M-J-Robbins/email-code/issues), if you want to chat about anything else you can [contact me via twitter](https://twitter.com/M_J_Robbins) or [join the #EmailGeeks slack group](https://email.geeks.chat/) and talk to me on there.
+If you have feedback or find issues with the site it's best to [submit a Github issue](https://github.com/M-J-Robbins/email-code/issues), if you want to chat about anything else you can contact me [via mastodon](https://mastodon.social/@M_J_Robbins) or [via twitter](https://twitter.com/M_J_Robbins) or [join the #EmailGeeks slack group](https://email.geeks.chat/) and talk to me on there.
