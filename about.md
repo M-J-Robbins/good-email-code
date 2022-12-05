@@ -1,9 +1,9 @@
 # About
 
 ## Bio
-Mark has been working in email for over 10 years, pushing code to it’s limits with his work on interactive email and working to make email better for everyone with his work on email accessibility. He is a member of the AMP for Email working group and a co-founder/co-admin of the Email Markup Consortium.
+Hi, I'm Mark I've been working in email for over 10 years, pushing email markup to it’s limits with interactive email and working to make email better for everyone with my work on email accessibility. I am a member of the [AMP for Email working group](https://amp.dev/community/working-groups/amp4email) and a co-founder/co-admin of the [Email Markup Consortium](https://emailmarkup.org).
 
-Mark has given talks about email development across Europe and the US and written many articles for both print and web. He is also very active in the email community, contributing to open source projects and working with others to define and share new techniques and new best practices for email code. 
+I have given talks about email development across Europe and the US and written many articles for both print and web. I'm also very active in the email community, contributing to open source projects and working with others to define and share new techniques and new best practices for email code. 
 
 
 ## headshot
