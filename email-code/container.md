@@ -71,7 +71,7 @@ Here I've changed the width to `width="100%"` to fill the screen, now I can set 
 
 
 ## No table version
-This is a touch more experimental you may find there are a few restrictions but it does work for a lot of use cases.
+This is much more experimental you may find there are a few restrictions but it does work for a lot of use cases.
 ```html
 <div style="max-width:37.5em;margin:0 auto;mso-element-frame-width:37.5em;mso-element:para-border-div;mso-element-left:center;mso-element-wrap:no-wrap-beside;">
 ```
