@@ -33,7 +33,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
     }
   </style>
 </head>
-<body class="body">
+<body class="body" xml:lang="en">
   <div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
     <!-- email content in here -->
   </div>
@@ -67,7 +67,7 @@ It's important to be accurate with your language settings, however if you are in
 
 In my testing I've found that using `lang="und" dir="auto"` did pick up the corrrect language and direction. However, this should only be used as a last resort, it’s nowhere near as good as setting these values explicitly, but it is better than not setting them at all.
 
-As email clients often strip the `<html>` element it's also important to set a lang on the [Wrapping element](#wrapping-element).
+As email clients often strip the `<html>` element it's also important to set a lang on the [Wrapping element](#wrapping-element). And for Windows Outlook we also need to set it on the [body](#body) as an `xml:lang`.
 
 Read more on the [w3school lang attribute page](https://www.w3schools.com/tags/att_global_lang.asp), they also have a useful [list of language codes](https://www.w3schools.com/tags/ref_language_codes.asp).
 
@@ -166,9 +166,11 @@ This is essentially a duplicate of the [meta color-scheme](#color-scheme). At ti
 
 ## Body
  ```html
-<body class="body">
+<body class="body" xml:lang="en">
  ```
 I always like to define a body class on the body element, this is because sometimes when an email renders the `<body>` element is converted to a `<div>`.  It is also useful for targeting certain email clients.
+
+The `xml:lang="en"` sets a language for Windows Outlook, which will ingnore the other places it's set.
 
 ## Wrapping element
  ```html
