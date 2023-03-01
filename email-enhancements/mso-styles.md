@@ -1,5 +1,5 @@
 
-<div class="updated">Last Updated: <time datetime="2022-08-24">24<sup>th</sup> August 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2023-03-01">1<sup>st</sup> March 2023</time></div>
 
 # Using MSO- styles in Email
 If you've been working in email dev, you may have come across `mso-` prefixed styles in the code, I mention them a few time on this site. MSO styles are styles that are specific to MSO (**M**icro**S**oft **O**ffice), some of these styles are unique to MSO but often these are repeats of standard CSS styles, in which case they can be used to provide a different value in MSO email clients.  
@@ -173,18 +173,18 @@ Also take a look back at [mso-style-textfill-fill-alpha](#mso-style-textfill-fil
 <p style="mso-style-textfill-type: gradient;
 mso-style-textfill-fill-gradientfill-shadetype:linear;
 mso-style-textfill-fill-gradientfill-shade-linearshade-angle:
-0;mso-style-textfill-fill-gradientfill-stoplist:'0 \#000000 1 100000\,50000 \#C00000 -1 100000\,100000 \#000000 1 100000'">
+0;mso-style-textfill-fill-gradientfill-stoplist:'0 \#000000 -1 100000\,50000 \#C00000 -1 100000\,100000 \#000000 -1 100000'">
 test
 </p>
 ```
 
 * `mso-style-textfill-type: gradient;` set this as a gradient fill.
-* `mso-style-textfill-fill-gradientfill-shadetype: linear;` sets the type of gradient fill, options are `linear`(default)
+* `mso-style-textfill-fill-gradientfill-shadetype: linear;` sets the type of gradient fill, options are `linear`(default) not sure about other options yet.
 * `mso-style-textfill-fill-gradientfill-shade-linearshade-angle: 5400000;` sets the direction of the gradient.  Again this uses units of 1/60000th of a degree, with 0 being a left to right gradient.
 * `mso-style-textfill-fill-gradientfill-stoplist:"0 \#000000 1 100000\,50000 \#C00000 -1 100000\,100000 \#FFFFFF 0 0` sets the colours of the gradient as a comma separated list.  
   * Each part has a position, set in 1/1000th of a % (so that means 50000 = 50%). 
   * Then a hex colour escaped with a `\`. 
-  * Then a number representing something I don't understand yet...
+  * Then a number representing something I don't understand yet, but may is to do with blending over the underneath color. `-1` seems to do what we need.
   * Then opacity set in 1/1000th of a %
   * Additionally we can also add `lumm=90000 lumo=3000` which I'm assuming stands for Luminance & Luminosity.
 
@@ -280,9 +280,9 @@ The style options include;
 
 ## MSO table styles
 ### mso-cellspacing
-Works just like `cellspacing=""` attribute.  This can be set with a unit, in which case it will be treated as `px`
+Works in a similar way to the `cellspacing=""` attribute or like the `border-spacing` style in CSS.  Using `mso-cellspacing` mean we can use other units such as `em` to improve accessibility which isn't possible using the `cellspacing=""` attribute.  The value can also set with a unit, in which case it will be treated as `px`.
 ```html
-<table style="mso-cellspacing:20px">
+<table style="mso-cellspacing:1em">
 	<tr>
 		<td>test</td>
 	</tr>
