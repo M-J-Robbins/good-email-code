@@ -439,7 +439,7 @@ I've had this half finished for a few months and very slowly adding to it, but I
 
 <!-- Notes of what I still have to test and write up -->
 <!-- ## Layout
-mso-break-type
+mso-break-type: section-break
 
 mso-default-height
 mso-default-width

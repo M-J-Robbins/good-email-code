@@ -1,4 +1,4 @@
-<div class="updated">Last Updated: <time datetime="2022-05-19">19<sup>th</sup> May 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2023-03-07">7<sup>th</sup> March 2023</time></div>
 
 # Visually hidden text
 
@@ -11,9 +11,9 @@ Visually hidden text is text, that is hidden, visually.  So that means the text 
 
 So what's the point? We can use visually hidden text to give extra information to assistive technology like screen readers that isn't shown on the screen.
 
-For example, if we have a link with the text "Find Out More" that's not great for accessibility, it doesn't give any information, find out more about what?  If we're looking on the screen, we might see something next to it that give us context, but if we're using a screen read and especially if we're using the links shortcut menu, we don't have that context. 
+For example, if we have a link with the text "Find Out More" that's not great for accessibility, it doesn't give any information, find out more about what?  If we're looking on the screen, we might see some content next to it that give us context, but if we're using a screen reader and especially if we're using the links shortcut menu, we don't have that context. 
 
-So what we can do is add some visually hidden text, on screen the user will see "Find out more" but a screen reader will read "Find out more about visually hidden text".
+So what we can do is add some more detail using visually hidden text. On screen the user will see "Find out more" but a screen reader will read "Find out more about visually hidden text".
 
 
 ## The code
@@ -27,9 +27,9 @@ So what we can do is add some visually hidden text, on screen the user will see 
 Yeah, that's quite a lot of code, I'm hoping to reduce it, if I can.
 
 ### `<span>` `<span>`
-I'm using 2 `<span>` elements, one to take away the space that the text adds and one to hide the text. Separating this out is the big break through I had
+I'm using 2 `<span>` elements, one to take away the space that the text adds and one to hide the text. Separating this out is the big breakthrough I had.
 
-I'm using `<span>` elements as they are semantically neutral (don't add any meaning to the code) and Outlook won't allow  a block element like a `<div>` inside an inline element like an `<a>`.
+I'm using `<span>` elements as they are semantically neutral (don't add any meaning to the code), Outlook won't allow  a block element like a `<div>` inside an inline element like an `<a>` and also a `<div>` would cause a line break.
 
 ### Removing the space
 We want to remove any extra space that the text adds, so visually there is no difference. For this we add `display:inline-block; max-height:0; max-width:0;`.
