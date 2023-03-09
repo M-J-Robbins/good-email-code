@@ -1,4 +1,4 @@
-<div class="updated">Last Updated: <time datetime="2022-07-29">29<sup>th</sup> July 2022</time></div>
+<div class="updated">Last Updated: <time datetime="2023-03-09">09<sup>th</sup> March 2023</time></div>
 # Email Template
 
 This is a simple stripped back basic template that I'd use for every email I send.
@@ -73,6 +73,9 @@ Read more on the [w3school lang attribute page](https://www.w3schools.com/tags/a
 
 ### dir
 This sets the language direction either as left to right (`ltr`) or right to left (`rtl`).
+
+### xmlns 
+These 2 settings are used to help Windows Outlook support `xmlns:v="urn:schemas-microsoft-com:vml"` is needed if you want to use VML in your markup, although if you prefer this can be placed [diretly on the VML](../email-enhancements/svg-to-vml#xmlns) shapes you use. I still need to do some more research into `xmlns:o="urn:schemas-microsoft-com:office:office"`.
 
 ## Meta
 There are a number of meta elements set here so lets look at them individually.
