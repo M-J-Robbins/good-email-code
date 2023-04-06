@@ -17,9 +17,9 @@ Previously have been a number of issue with support for `display:none;`. For exa
 ## Preheader spacing hack
 If you want to use a short preheader then the rest of the space of the preheader will pull in content from the rest of your email.  To stop this happening we can fill the remaining space with... spaces.  For this just add a number of spaces with `&#8199;&#65279;&#847;` between them, like this `&#8199;&#65279;&#847; &#8199;&#65279;&#847; &#8199;&#65279;&#847; &#8199;&#65279;&#847;`.  Just add as many as you need to fill up the space (this could be as much as 100-200)  
 
-Previously I recomended using `&#847;` but it apears that stopped working in Yahoo and AOL at some point late in 2022 and stopped working in Applemail 16.4 Beta (March 2023). If you want to know more, I've gone into a more detail on this issue on the Parcel Blog[Preheader spacing](https://parcel.io/blog/preheader-spacing).
+Previously I recomended using `&#847;` but it apears that stopped working in Yahoo and AOL at some point late in 2022 and stopped working in Applemail 16.4 Beta (March 2023). If you want to know more, I've gone into a more detail on this issue on the Parcel Blog  [Preheader spacing](https://parcel.io/blog/preheader-spacing).
 
-I've seem emails also use `&zwnj;` or `&#8204;` but from my tests those don't add any space on mail.ru.
+I've seen emails also use `&zwnj;` or `&#8204;` but from my tests those don't add any space on mail.ru.
 
 ## Plain text preheader
 Some email apps pulls in the preheader content from the plain text version of the email. Including
