@@ -3,6 +3,6 @@
 * [Container](email-code/container) - A centered column to house all the email content.
 * [Columns](email-code/columns) - Place multiple columns of content next to each other.
 * [Text](email-code/text) - Basic text elements.
-* [Link Button](email-code/link-button) - A link that is styled to look like a button.
+* [CTA Link](email-code/link-button) - A link that is styled to look like a button.
 * [Hr](email-code/hr) - A horizontal rule, used to separate sections of content.
 * [Spacing](email-code/spacing) - Adding horizontal or vertical spacing between elements in email.
