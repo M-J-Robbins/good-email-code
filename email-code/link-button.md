@@ -46,8 +46,7 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
   This is wrapped in a conditional comment so it only shows to Outlook `<!--[if mso]> <![endif]-->`
 
-  Inside the `<i>` we add `&#8195;`, this is an EM space. An EM space is a space, that is the width of `1em`. This is great because it's predictable and scalable. However we often want paddinng that is either more or less than `1em` so to adjust this we can use `mso-font-width` to say what persentage of `1em` we want. So for example `0.5em`=`50%` or as we have in the example code `2em`=`200%`.  There is a maximum width of `500%`, so if you need a width wider that `5em` you can add more `&#8195;` characters. You could also try a 3em space (`&#8196;`), 4em space (`&#8197;`), or 6em space (`&#8198;`), but I've not tested these yet.
-
+  Inside the `<i>` we add `&#8195;`, this is an EM space. An EM space is a space, that is the width of `1em`. This is great because it's predictable and scalable. However we often want paddinng that is either more or less than `1em` so to adjust this we can use `mso-font-width` to say what persentage of `1em` we want. So for example `0.5em`=`50%` or as we have in the example code `2em`=`200%`.  There is a maximum width of `500%`, so if you need a width wider that `5em` you can add more `&#8195;` characters. 
   <!-- If for some strange reason you want to use absolute units instead of relative units. You could set `font-size` instead of `mso-font-width`. -->
 
   The right padding also has `&#8203;` included, this is because there needs to be a character on the other side of the space to stop it collapsing. `&#8203;` is a "Zero Width Space" so it's not going to add any extra width, it's just there to help it render.  If you are using a right-to-left language then you'll need to place the `&#8203;` in the left padding, or if you are using a lot of both left-to-right and right-to-left it might be easiest to put it in both left and right.
