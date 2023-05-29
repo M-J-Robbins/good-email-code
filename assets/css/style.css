@@ -121,6 +121,7 @@ html.light .highlight pre{
 }
 header{
   text-align:center;
+  view-transition-name: header;
 }
 header .logo{
   width:18em;
@@ -150,6 +151,7 @@ header .logo:hover{
             -10em 4em 15em -15em var(--fg-color, #222);
   line-height:1.5;
   transition: background 3s;
+  view-transition-name: main;
 }
 .updated{
   float: right;
@@ -227,6 +229,34 @@ footer a{
   color:#00d9d9;
   white-space: nowrap;
 }
+/* Page transitions */
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes slide-from-right {
+  from { transform: translateY(50vh); }
+}
+
+@keyframes slide-out {
+  to { transform: translateY(-50vh); }
+}
+
+::view-transition-old(main) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-out;
+}
+
+::view-transition-new(main) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-in;
+}
+
+
 /* Syntax highlighting */
 .highlight {
   margin:1em;
