@@ -239,11 +239,11 @@ footer a{
 }
 
 @keyframes slide-in {
-  from { transform: translateY(-50vh); }
+  from { transform: translateY(50vh); }
 }
 
 @keyframes slide-out {
-  to { transform: translateY(-50vh); }
+  to { transform: translateY(50vh); }
 }
 
 ::view-transition-old(main) {
