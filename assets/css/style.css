@@ -238,8 +238,8 @@ footer a{
   to { opacity: 0; }
 }
 
-@keyframes slide-from-right {
-  from { transform: translateY(50vh); }
+@keyframes slide-in {
+  from { transform: translateY(-50vh); }
 }
 
 @keyframes slide-out {
