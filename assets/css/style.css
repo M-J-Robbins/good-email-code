@@ -120,16 +120,27 @@ html.light .highlight pre{
   box-sizing: content-box;
 }
 header{
+  display:grid;
+  grid-template-columns: 1fr 0fr;
+  max-width: 80em;
   text-align:center;
-  view-transition-name: header;
+  margin-inline: auto;
 }
 header .logo{
   width:18em;
   height:11em;
+  aspect-ratio: 18 / 11;
   max-width:80%;
   transition:1s transform;
   transform-origin:top;
+  view-transition-name: logo;
 }
+header:has(nav){
+  grid-template-columns: 20em 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
 .logo .fill{
   fill: var(--fg-color, #222);
   transition: fill 3s;
@@ -138,8 +149,95 @@ a:hover .logo .fill[fill-opacity]{
   fill:var(--highlight, #005959);
 }
 header .logo:hover{
-  transform:scale(1.1);
+  transform:scale(1.05);
   filter: drop-shadow(.2em .2em .1em #0005);
+}
+nav{width:100%}
+nav ul{
+  display:table;
+  table-layout: fixed;
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+nav ul,
+nav li{
+  width:100%;
+  position: relative;
+}
+nav > ul > li{
+  display:table-cell;
+  vertical-align: middle;
+}
+nav > ul > li:nth-of-type(2){
+  border:1px solid;
+  border-width:0 1px;
+}
+nav div{
+  font-size: 1.5em;
+  font-weight: bold;
+  padding:1em;
+}
+nav li span{
+  display:none;
+}
+nav li ul{
+  position:absolute;
+  z-index: 1;
+  background: var(--bg-color, #eee);
+  flex-direction: column;
+  text-align: left;
+  transform:scaleY(0);
+  transition: transform 0.1s;
+  transition-delay: .7s;
+  transform-origin: top;
+}
+nav li:focus-within ul,
+nav li:focus ul,
+nav li:hover ul{
+  transition: transform 0.5s;
+  transition-delay: 0s;
+  transform:scaleY(1);
+  box-shadow: .25em .25em 1em var(--fg-color, #222);
+}
+nav li ul li{
+  margin: 0.5em;
+  width:auto;
+}
+nav li a{
+  display:block;
+  padding:.5em;
+  border-radius: 12% 4em 120% 4em / 4em 120% 4em 120%;
+}
+nav li a:hover,
+nav li a:focus{
+  text-decoration: none;
+  transform: scale(1.03);
+  box-shadow: .25em .25em 1em var(--highlight, #005959);
+}
+@media screen and (max-width:64em) {
+    header:has(nav){
+      grid-template-columns: 1fr;
+      grid-template-rows: 12em auto;
+    }
+}
+@media screen and (max-width:40em) {
+  header{
+    width:auto;
+  }
+  nav > ul{
+    width:auto;
+    margin-inline: auto;
+  }
+  nav > ul > li{
+    display:block;
+  }
+  nav div{
+    padding:.25em;
+  }
+  nav > ul > li:nth-of-type(2){
+    border-width:1px 0;
+  }
 }
 #main{
   width:90%;

@@ -1,0 +1,13 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    rect {fill: #a00;}
+    svg:hover rect{opacity:.5;}
+    @media (prefers-color-scheme: dark) {
+      rect {fill: #fab;}
+    }
+    @media screen and (max-width: 600px){
+      rect{rx: 50%;}
+    }
+  </style>
+  <rect width="50" height="50" rx="5"/>
+</svg>

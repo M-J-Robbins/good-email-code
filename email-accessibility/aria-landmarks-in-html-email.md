@@ -1,3 +1,10 @@
+---
+layout: default
+title: ARIA landmarks in Email
+description: Which landmarks can we use in email, and how to use them.
+group: "accessibility"
+---    
+
 <div class="updated">Last Updated: <time datetime="2022-02-07">7<sup>th</sup> February 2022</time></div>
 
 # ARIA landmarks in Email

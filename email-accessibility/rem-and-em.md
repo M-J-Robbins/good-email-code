@@ -1,3 +1,10 @@
+---
+layout: default
+title: Using rem and em units in email
+description: How and why to use relative units in email.
+group: "accessibility"
+--- 
+
 <div class="updated">Last Updated: <time datetime="2022-05-10">10<sup>th</sup> May 2022</time></div>
 
 # Using rem and em units in email

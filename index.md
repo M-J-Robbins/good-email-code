@@ -1,3 +1,8 @@
+---
+layout: home
+title: Good Email Code
+---
+
 # Welcome to the arrogantly named library of, Good Email Code
 I always enjoy writing and talking about email code so I decided to set up this site to share code and explain the reasons behind everything I'm doing.  You are welcome to simply copy and paste code or you can read up and learn the theory behind it.
 
@@ -10,12 +15,14 @@ With all that in mind, look at these cool things I've written.
 
 ## Email code
 
-{% include email-code.md %}
+{% include email-code.html %}
 
 ## Email enhancements
 
-{% include email-enhancements.md %}
+  {% include email-enhancements.html %}
 
 ## Email accessibility
 
-{% include email-accessibility.md %}
+  {% assign group = 'accessibility' %}
+  {% assign description = true %}
+  {% include pages_list %}

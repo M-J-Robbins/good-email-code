@@ -2,4 +2,4 @@
 
 A few small ways to enhance your emails.
 
-{% include email-enhancements.md %}
+{% include email-enhancements.html %}
