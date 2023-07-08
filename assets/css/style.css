@@ -159,6 +159,7 @@ header .logo:hover{
 }
 h1{
   font-size:3em;
+  text-wrap: balance;
   background:linear-gradient(to right, currentcolor 50%, var(--highlight, #005959), transparent) bottom / 100% .1em no-repeat;
 }
 h2{
