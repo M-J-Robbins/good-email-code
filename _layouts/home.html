@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- Based on theme orriginally designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Orrginal default page https://github.com/pages-themes/time-machine/blob/master/_layouts/default.html -->
+<html lang="en-GB" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="view-transition" content="same-origin">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ 'assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+  {% seo %}
+
+</head>
+<body>
+  <header>
+    <a href="../">
+      {% include logo.html %}
+    </a>
+  </header>
+  <main id="main">
+      {{ content }}
+      <hr class="end">
+  </main>
+  <footer>
+    Site and content by Mark Robbins <a rel="me" href="https://mastodon.social/@M_J_Robbins">@M_J_Robbins on Mastodon</a> / <a href="https://twitter.com/M_J_Robbins">@M_J_Robbins on Twitter</a><br>
+    If you find something that isn't working, please <a href="https://github.com/M-J-Robbins/good-email-code/issues">submit an issue</a>.
+  </footer>
+</body>
+</html>

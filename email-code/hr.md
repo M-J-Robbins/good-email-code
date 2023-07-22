@@ -1,3 +1,11 @@
+---
+layout: default
+title: Hr
+description: A horizontal rule, used to separate sections of content.
+group: "code"
+order: 1.7
+--- 
+
 <div class="updated">Last Updated: <time datetime="2022-01-24">24<sup>th</sup> January 2022</time></div>
 
 # hr - The Horizontal rule

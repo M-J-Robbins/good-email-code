@@ -1,3 +1,11 @@
+---
+layout: default
+title: Should you use an &lt;h1&gt; in email code?
+description: What are the possible issues.
+group: "accessibility"
+order: 3.2
+--- 
+
 <div class="updated">Last Updated: <time datetime="2022-08-02">2<sup>nd</sup> August 2022</time></div>
 
 # Should you use an `<h1>` in email code?

@@ -1,3 +1,11 @@
+---
+layout: default
+title: Container
+description: A centered column to house all the email content.
+group: "code"
+order: 1.3
+--- 
+
 # Container
 
 The  container is the main wrapper that hold your content, typically in email this is a single 600px wide center aligned column, that will shrink down on smaller viewports.

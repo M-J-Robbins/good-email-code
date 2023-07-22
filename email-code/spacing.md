@@ -1,5 +1,12 @@
-<div class="updated">Last Updated: <time datetime="2022-03-01">1<sup>st</sup> March 2022</time></div>
+---
+layout: default
+title: Spacing
+description: Adding horizontal or vertical spacers between elements in email.
+group: "code"
+order: 1.8
+--- 
 
+<div class="updated">Last Updated: <time datetime="2022-03-01">1<sup>st</sup> March 2022</time></div>
 
 # Spacing
 Spacing seems like a very simple task but to do it accurately in email can get a little tricky at times.

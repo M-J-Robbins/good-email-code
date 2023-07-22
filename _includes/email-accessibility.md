@@ -1,5 +1,22 @@
-* [Rem and Em units](email-accessibility/rem-and-em) - How and why to use relative units in email.
-* [Should you use an h1 in email code?](email-accessibility/should-you-use-an-h1-in-email-code) - What are the possible issues.
-* [ARIA landmarks in email](email-accessibility/aria-landmarks-in-html-email) - Which landmarks can we use in email, and how to use them.
-*  [Text in images](email-accessibility/text-in-images) - Looking at some of the issues associated with including text in images. 
-* [Visually hidden text](email-accessibility/visually-hidden-text) - Text that is picked up by screen readers but doesn't appear on screen.
+<ul>
+  <li>
+    <a href="../email-accessibility/rem-and-em">Rem and Em units</a>
+    <span>How and why to use relative units in email.</span>
+  </li>
+  <li>
+    <a href="../email-accessibility/should-you-use-an-h1-in-email-code">Should you use an h1 in email code?</a>
+    <span>What are the possible issues.</span>
+  </li>
+  <li>
+    <a href="../email-accessibility/aria-landmarks-in-html-email">ARIA landmarks in email</a>
+    <span>Which landmarks can we use in email, and how to use them.</span>
+  </li>
+  <li>
+    <a href="../email-accessibility/text-in-images">Text in images</a>
+    <span>Looking at some of the issues associated with including text in images. </span>
+  </li>
+  <li>
+    <a href="../email-accessibility/visually-hidden-text">Visually hidden text</a>
+    <span>Text that is picked up by screen readers but doesn't appear on screen.</span>
+  </li>
+</ul>

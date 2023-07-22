@@ -2,4 +2,4 @@
 
 A few ways to improve the accessibility of your emails.
 
-{% include email-accessibility.md %}
+{% include email-accessibility.html %}
