@@ -1,3 +1,11 @@
+---
+layout: default
+title: Stopping Gmail image popups
+description:  How to block the Gmail image lightbox from popping up.
+group: "enhancements"
+order: 2.2
+--- 
+
 # Stopping Gmail image popup
 
 Sending emails with images in is very common, I'd guess that the vast majority of HTML emails have an `<img>` inside them somewhere.

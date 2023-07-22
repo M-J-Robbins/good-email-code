@@ -1,3 +1,11 @@
+---
+layout: default
+title: SVG in email
+description: Using embedded or external SVG's in an email.
+group: "enhancements"
+order: 2.5
+--- 
+
 # SVG
 
 Scalable Vector Graphics or SVG, is a markup language for creating vector based images.  Because these images are created in code rather than pixels they can scale to any size without pixelating.  This is the same way fonts can look clear at any size.  And because it's code you can edit the image to change appearance to fit smaller viewports, change colours to fit with darkmode or even add hover effects.

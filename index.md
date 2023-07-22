@@ -21,7 +21,9 @@ With all that in mind, look at these cool things I've written.
 
 ## Email enhancements
 
-  {% include email-enhancements.html %}
+  {% assign group = 'enhancements' %}
+  {% assign description = true %}
+  {% include pages_list %}
 
 ## Email accessibility
 

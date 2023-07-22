@@ -1,3 +1,11 @@
+---
+layout: default
+title: CSS Triangles
+description:  A triangle shape, made with code to avoid using an image.
+group: "enhancements"
+order: 2.3
+--- 
+
 # CSS triangles
 I originally wrote about this back in 2014 on my old site. So reposting with some small updates.
 

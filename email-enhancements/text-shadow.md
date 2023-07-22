@@ -1,6 +1,12 @@
-<div  class="updated">Last Updated: <time  datetime="2022-03-08">8<sup>th</sup> April 2022</time></div>
+---
+layout: default
+title: Text shadow
+description: Replicating text-shadow to work across email clients.
+group: "enhancements"
+order: 2.8
+--- 
 
-  
+<div  class="updated">Last Updated: <time  datetime="2022-03-08">8<sup>th</sup> April 2022</time></div>
 
 # Text Shadow
 

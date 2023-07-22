@@ -1,3 +1,11 @@
+---
+layout: default
+title: Absolute Position
+description: Replicating position:absolute; to work across email clients.
+group: "enhancements"
+order: 2.1
+--- 
+
 # Faux Absolute Position
 I originally wrote about this back in 2016 on the old Rebel site. More recently it has come up in a few conversations on (email geek slack)[https://email.geeks.chat/]. Shortly after I started work on this article I realised [Steven Sayo](https://twitter.com/Sayo1337) was also writing about this, so we decided to team up and cross reference each other.
 

@@ -1,5 +1,15 @@
+---
+layout: default
+title: SVG to VML
+description: How to manually convert an SVG image into a VML image.
+group: "enhancements"
+order: 2.6
+--- 
+
 <div class="updated">Last Updated: <time datetime="2021-09-28">28<sup>th</sup> September 2021</time></div>
+
 # SVG to VML
+
 ***Since this was first published the brilliant people over at [Style Campaing](http://stylecampaign.com/) have created an [online tool for converting SVG to VML](https://stylecampaign.com/vml/).  I played around with it and it works really well, although they do note it's not perfect as some SVG features didn't exist in VML so can't be converted. Check out the [Style Campaing VML R&D article](https://stylecampaign.com/blog/2021/07/vml-rd/) to find out more.***
 
 From my extensive research ([this wikipedia post](https://en.wikipedia.org/wiki/Vector_Markup_Language)) the SVG specification is, in part, based off the VML spec.  When comparing the two formats, there are a lot of similarities so I've written up this brief guide to help you manually convert SVG to VML.

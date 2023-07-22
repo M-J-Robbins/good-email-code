@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Container
+title: Text
 description: Basic text elements.
 group: "code"
 order: 1.5

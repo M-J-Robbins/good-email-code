@@ -26,11 +26,13 @@
       <ul>
         <li>
           <div>Email code</div>
-          {% include email-code.html %}
+          {% assign group = 'code' %}
+          {% include pages_list %}
         </li>
         <li>
           <div>Email enhancements</div>
-          {% include email-enhancements.html %}
+          {% assign group = 'enhancements' %}
+          {% include pages_list %}
         </li>
 
         <li>

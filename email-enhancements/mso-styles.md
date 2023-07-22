@@ -1,3 +1,10 @@
+---
+layout: default
+title: MSO styles
+description: Digging in to Outlook spesific CSS styles.
+group: "enhancements"
+order: 2.9
+--- 
 
 <div class="updated">Last Updated: <time datetime="2023-03-01">1<sup>st</sup> March 2023</time></div>
 

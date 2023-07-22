@@ -2,4 +2,6 @@
 
 A few ways to improve the accessibility of your emails.
 
-{% include email-accessibility.html %}
+  {% assign group = 'accessibility' %}
+  {% assign description = true %}
+  {% include pages_list %}

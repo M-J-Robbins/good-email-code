@@ -1,3 +1,11 @@
+---
+layout: default
+title: CSS Art
+description: Creating images with CSS.
+group: "enhancements"
+order: 2.4
+--- 
+
 # CSS Art in email
 The concept of CSS art is about creating images out of hand written code rather than using any type of graphics editor.  Some great examples can be found on [css-art.com](https://css-art.com/) [a.singeldiv.com](https://a.singlediv.com/) and I’ve put together a [CSS art collection on codepen](https://codepen.io/collection/XmpLYx). But I think my favourite examples can be found on [diana-adrianne.com](https://diana-adrianne.com/) I strongly recommend checking out Diana's work.
 

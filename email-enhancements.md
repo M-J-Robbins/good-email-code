@@ -2,4 +2,6 @@
 
 A few small ways to enhance your emails.
 
-{% include email-enhancements.html %}
+{% assign group = 'enhancements' %}
+{% assign description = true %}
+{% include pages_list %}

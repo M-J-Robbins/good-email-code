@@ -1,3 +1,11 @@
+---
+layout: default
+title: Picture
+description:  How to use the picture element in an email.
+group: "enhancements"
+order: 2.7
+--- 
+
 <div class="updated">Last Updated: <time datetime="2021-06-30">30<sup>th</sup> June 2021</time></div>
 
 # Picture

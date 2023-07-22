@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Container
+title: Columns
 description: A centered column to house all the email content.
 group: "code"
 order: 1.3
