@@ -1,3 +1,12 @@
+---
+layout: default
+title: Container
+description: Place multiple columns of content next to each other.
+group: "code"
+order: 1.4
+--- 
+
+
 # Columns
 
 Columns, laying out content beside other content, seems so simple but is one of the hardest things to achieve.  There are a number of ways of doing this but the one I find to be the most reliable and accessible is Ghost tables.

@@ -3,6 +3,7 @@ layout: default
 title: Visually hidden text
 description: Text that is picked up by screen readers but doesn’t appear on screen.
 group: "accessibility"
+order: 3.5
 --- 
 
 <div class="updated">Last Updated: <time datetime="2023-03-07">7<sup>th</sup> March 2023</time></div>

@@ -1,4 +1,4 @@
-{% assign pages_list = site.pages %}
+{% assign pages_list = site.pages | sort:"order" %}
 <ul>
 {% for node in pages_list %}
   {% if group == null or group == node.group %}

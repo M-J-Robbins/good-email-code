@@ -1,3 +1,11 @@
+---
+layout: default
+title: CTA Link 
+description: A link that is styled to look like a button.
+group: "code"
+order: 1.6
+--- 
+
 <div class="updated">Last Updated: <time datetime="2023-04-20">20<sup>th</sup> April 2023</time></div>
 
 # CTA Link - button
@@ -10,7 +18,7 @@ Quite often in the email world we talk about buttons, when actually we mean link
 
 ## The code
 ```html
-<a href="htts://parcel.io" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959"><!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i><span style="mso-text-raise:50%;"><![endif]-->My link text<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i><![endif]-->
+<a href="htts://parcel.io" style="background-color:#005959; text-decoration: none; padding: .5em 2em; color: #FCFDFF; display:inline-block; border-radius:.4em; mso-padding-alt:0;text-underline-color:#005959"><!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&emsp;</i><span style="mso-text-raise:50%;"><![endif]-->My link text<!--[if mso]></span><i style="mso-font-width:200%;" hidden>&emsp;&#8203;</i><![endif]-->
 </a>
 ```
 
@@ -39,14 +47,14 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
 ### Add left and right padding for Outlook
   ```html
-  <i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
-  <i style="mso-font-width:200%;" hidden>&#8195;&#8203;</i>
+  <i style="mso-font-width:200%;mso-text-raise:100%" hidden>&emsp;</i>
+  <i style="mso-font-width:200%;" hidden>&emsp;&#8203;</i>
   ```
   Inside the link either side of the text we add an `<i>` element, the element isn't relevant it's just something small and can take the style.
 
   This is wrapped in a conditional comment so it only shows to Outlook `<!--[if mso]> <![endif]-->`
 
-  Inside the `<i>` we add `&#8195;`, this is an EM space. An EM space is a space, that is the width of `1em`. This is great because it's predictable and scalable. However we often want paddinng that is either more or less than `1em` so to adjust this we can use `mso-font-width` to say what persentage of `1em` we want. So for example `0.5em`=`50%` or as we have in the example code `2em`=`200%`.  There is a maximum width of `500%`, so if you need a width wider that `5em` you can add more `&#8195;` characters. 
+  Inside the `<i>` we add `&emsp;`, this is an EM space. An EM space is a space, that is the width of `1em`. This is great because it's predictable and scalable. However we often want paddinng that is either more or less than `1em` so to adjust this we can use `mso-font-width` to say what persentage of `1em` we want. So for example `0.5em`=`50%` or as we have in the example code `2em`=`200%`.  There is a maximum width of `500%`, so if you need a width wider that `5em` you can add more `&emsp;` characters. 
   <!-- If for some strange reason you want to use absolute units instead of relative units. You could set `font-size` instead of `mso-font-width`. -->
 
   The right padding also has `&#8203;` included, this is because there needs to be a character on the other side of the space to stop it collapsing. `&#8203;` is a "Zero Width Space" so it's not going to add any extra width, it's just there to help it render.  If you are using a right-to-left language then you'll need to place the `&#8203;` in the left padding, or if you are using a lot of both left-to-right and right-to-left it might be easiest to put it in both left and right.
@@ -63,9 +71,9 @@ There is quite a lot going on in here, if you want to just copy and paste the co
 
 ### Add top padding
   ```html
-  <i style="mso-font-width:200%;mso-text-raise:100%" hidden>&#8195;</i>
+  <i style="mso-font-width:200%;mso-text-raise:100%" hidden>&emsp;</i>
   ```
-  In the `<i>` we have added for either the left or right padding we add `mso-text-raise` again, but this time adding both the top and bottom padding together, this plus the height of the `&#8195;` adds to the total height of our design. So in our example we have `0.5em` + `0.5em` which equals `1em` so we add `mso-text-raise:100%`.
+  In the `<i>` we have added for either the left or right padding we add `mso-text-raise` again, but this time adding both the top and bottom padding together, this plus the height of the `&emsp;` adds to the total height of our design. So in our example we have `0.5em` + `0.5em` which equals `1em` so we add `mso-text-raise:100%`.
 
   If you don't have left or right padding then you'll need to add the `<i>` element to get the top padding.
 

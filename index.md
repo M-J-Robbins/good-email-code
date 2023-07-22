@@ -15,7 +15,9 @@ With all that in mind, look at these cool things I've written.
 
 ## Email code
 
-{% include email-code.html %}
+  {% assign group = 'code' %}
+  {% assign description = true %}
+  {% include pages_list %}
 
 ## Email enhancements
 

@@ -9,25 +9,25 @@
   <meta name="view-transition" content="same-origin">
   <link rel="icon" href="assets/images/favicon.ico" sizes="any">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/css/style.css?v=826cab3d7b136fc8b4688c477696525542690edf">
+  <link rel="stylesheet" href="/assets/css/style.css?v=75666bc1f031248f1ee1a70c43f0dc0b0f32c661">
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
   <script src="/assets/js/script.js"></script>
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>good-email-code | Email code resources website</title>
+<title>Preview Text | good-email-code</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="good-email-code" />
+<meta property="og:title" content="Preview Text" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Email code resources website" />
-<meta property="og:description" content="Email code resources website" />
+<meta name="description" content="Small preview text that shows in the inbox but not in the email." />
+<meta property="og:description" content="Small preview text that shows in the inbox but not in the email." />
 <link rel="canonical" href="http://localhost:4000/email-code/preheader.html" />
 <meta property="og:url" content="http://localhost:4000/email-code/preheader.html" />
 <meta property="og:site_name" content="good-email-code" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="good-email-code" />
+<meta property="twitter:title" content="Preview Text" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Email code resources website","headline":"good-email-code","url":"http://localhost:4000/email-code/preheader.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Small preview text that shows in the inbox but not in the email.","headline":"Preview Text","url":"http://localhost:4000/email-code/preheader.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -137,11 +137,63 @@
 <ul>
 
   
-    
-      <li><a href="/email-accessibility/aria-landmarks-in-html-email.html">ARIA landmarks in Email</a>
-        
-      </li>
-    
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -164,6 +216,14 @@
 
   
     
+      <li><a href="/email-accessibility/aria-landmarks-in-html-email.html">ARIA landmarks in Email</a>
+        
+      </li>
+    
+  
+
+  
+    
       <li><a href="/email-accessibility/text-in-images.html">Text In Images</a>
         
       </li>
@@ -178,66 +238,6 @@
     
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 </ul>
@@ -250,29 +250,29 @@
 
   <main id="main">
       <div class="updated">Last Updated: <time datetime="2023-03-09">09<sup>th</sup> March 2023</time></div>
-<h1 id="preheader">Preheader</h1>
+<h1 id="preview-text">Preview Text</h1>
 
 <p>This is a text snippet that appears under the subject line in the inbox but is hidden from the main email content when it’s opened.</p>
 
 <h2 id="the-code">The code</h2>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span>
-  Preheader text...
+  Preview text...
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <p>It really is that simple.</p>
 
-<p>Previously have been a number of issue with support for <code class="language-plaintext highlighter-rouge">display:none;</code>. For example when tested in October 2019 Mail.ru would hide content from the preheader as well as the email when set to <code class="language-plaintext highlighter-rouge">display:none</code>, <code class="language-plaintext highlighter-rouge">visibility:hidden</code>, or using a <code class="language-plaintext highlighter-rouge">hidden</code> attribute.  And I was recommending using <code class="language-plaintext highlighter-rouge">&lt;div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true"&gt;</code> but that appears to be fixed now (July 2020), so we can just use the simplified version.</p>
+<p>Previously have been a number of issue with support for <code class="language-plaintext highlighter-rouge">display:none;</code>. For example when tested in October 2019 Mail.ru would hide content from the preview text as well as the email when set to <code class="language-plaintext highlighter-rouge">display:none</code>, <code class="language-plaintext highlighter-rouge">visibility:hidden</code>, or using a <code class="language-plaintext highlighter-rouge">hidden</code> attribute.  And I was recommending using <code class="language-plaintext highlighter-rouge">&lt;div style="max-height:0;overflow:hidden;mso-hide:all;" aria-hidden="true"&gt;</code> but that appears to be fixed now (July 2020), so we can just use the simplified version.</p>
 
-<h2 id="preheader-spacing-hack">Preheader spacing hack</h2>
-<p>If you want to use a short preheader then the rest of the space of the preheader will pull in content from the rest of your email.  To stop this happening we can fill the remaining space with… spaces.  For this just add a number of spaces with <code class="language-plaintext highlighter-rouge">&amp;#8199;&amp;#65279;&amp;#847;</code> between them, like this <code class="language-plaintext highlighter-rouge">&amp;#8199;&amp;#65279;&amp;#847; &amp;#8199;&amp;#65279;&amp;#847; &amp;#8199;&amp;#65279;&amp;#847; &amp;#8199;&amp;#65279;&amp;#847;</code>.  Just add as many as you need to fill up the space (this could be as much as 100-200)</p>
+<h2 id="preview-text-spacing-hack">preview text spacing hack</h2>
+<p>If you want to use short preview text then the rest of the space of the preview will pull in content from the rest of your email.  To stop this happening we can fill the remaining space with… spaces.  For this just add a number of spaces with <code class="language-plaintext highlighter-rouge">&amp;#8199;&amp;#65279;&amp;#847;</code> between them, like this <code class="language-plaintext highlighter-rouge">&amp;#8199;&amp;#65279;&amp;#847; &amp;#8199;&amp;#65279;&amp;#847; &amp;#8199;&amp;#65279;&amp;#847; &amp;#8199;&amp;#65279;&amp;#847;</code>.  Just add as many as you need to fill up the space (this could be as much as 100-200)</p>
 
-<p>Previously I recomended using <code class="language-plaintext highlighter-rouge">&amp;#847;</code> but it apears that stopped working in Yahoo and AOL at some point late in 2022 and stopped working in Applemail 16.4 Beta (March 2023). If you want to know more, I’ve gone into a more detail on this issue on the Parcel Blog  <a href="https://parcel.io/blog/preheader-spacing">Preheader spacing</a>.</p>
+<p>Previously I recomended using <code class="language-plaintext highlighter-rouge">&amp;#847;</code> but it apears that stopped working in Yahoo and AOL at some point late in 2022 and stopped working in Applemail 16.4 Beta (March 2023). If you want to know more, I’ve gone into a more detail on this issue on the Parcel Blog  <a href="https://parcel.io/blog/preheader-spacing">preview text spacing</a>.</p>
 
 <p>I’ve seen emails also use <code class="language-plaintext highlighter-rouge">&amp;zwnj;</code> or <code class="language-plaintext highlighter-rouge">&amp;#8204;</code> but from my tests those don’t add any space on mail.ru.</p>
 
-<h2 id="plain-text-preheader">Plain text preheader</h2>
-<p>Some email apps pulls in the preheader content from the plain text version of the email. Including</p>
+<h2 id="plain-text-preview-text">Plain text preview text</h2>
+<p>Some email apps pulls in the preview text content from the plain text version of the email. Including</p>
 <ul>
   <li>GMX on Android</li>
   <li>Web.de on Android</li>
@@ -281,7 +281,7 @@
   <li>K-9 on Android</li>
 </ul>
 
-<p>Often the plain text version is auto generated by your ESP if this version is generated with <code class="language-plaintext highlighter-rouge">&amp;#847;</code> rather than the characters they represent then they will show in the preheader.  If this happens you can copy and paste the character into your plain text version, however this will show in the plain text version of your email.</p>
+<p>Often the plain text version is auto generated by your ESP if this version is generated with <code class="language-plaintext highlighter-rouge">&amp;#847;</code> rather than the characters they represent then they will show in the preview text.  If this happens you can copy and paste the character into your plain text version, however this will show in the plain text version of your email.</p>
 
       <hr class="end">
   </main>
