@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Container
-description: Place multiple columns of content next to each other.
+title: Columns
+description: A centered column to house all the email content.
 group: "code"
 order: 1.4
 --- 
