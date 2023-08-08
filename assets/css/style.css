@@ -132,8 +132,8 @@ header{
 }
 header .logo{
   width:18em;
-  height:11em;
-  aspect-ratio: 18 / 11;
+  height:9em;
+  margin:1em 0;
   max-width:80%;
   transition:1s transform;
   transform-origin:top;
