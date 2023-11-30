@@ -3,13 +3,13 @@
 {% for node in pages_list %}
   {% if group == null or group == node.group %}
     {% if page.url == node.url %}
-      <li class="active"><a href="{{node.url}}">{{node.title}}</a>
+      <li class="active">{{node.title}}
         {% if description %}
           <span>- {{node.description}}</span>
         {% endif %}
       </li>
     {% else %}
-      <li><a href="{{node.url}}">{{node.title}}</a>
+      <li><a href="{{node.url | remove: '.html' }}">{{node.title}}</a>
         {% if description %}
           <span>- {{node.description}}</span>
         {% endif %}

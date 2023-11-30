@@ -14,20 +14,20 @@
   <script src="/assets/js/script.js"></script>
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Picture | good-email-code</title>
+<title>Table layouts | good-email-code</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="Picture" />
+<meta property="og:title" content="Table layouts" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to use the picture element in an email." />
-<meta property="og:description" content="How to use the picture element in an email." />
-<link rel="canonical" href="http://localhost:4000/email-enhancements/picture.html" />
-<meta property="og:url" content="http://localhost:4000/email-enhancements/picture.html" />
+<meta name="description" content="Why you should avoid using table layouts as much as possible." />
+<meta property="og:description" content="Why you should avoid using table layouts as much as possible." />
+<link rel="canonical" href="http://localhost:4000/email-accessibility/table-layouts.html" />
+<meta property="og:url" content="http://localhost:4000/email-accessibility/table-layouts.html" />
 <meta property="og:site_name" content="good-email-code" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Picture" />
+<meta property="twitter:title" content="Table layouts" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"How to use the picture element in an email.","headline":"Picture","url":"http://localhost:4000/email-enhancements/picture.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Why you should avoid using table layouts as much as possible.","headline":"Table layouts","url":"http://localhost:4000/email-accessibility/table-layouts.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -317,7 +317,7 @@
 
   
     
-      <li class="active">Picture
+      <li><a href="/email-enhancements/picture">Picture</a>
         
       </li>
     
@@ -466,7 +466,7 @@
 
   
     
-      <li><a href="/email-accessibility/table-layouts">Table layouts</a>
+      <li class="active">Table layouts
         
       </li>
     
@@ -483,111 +483,40 @@
 
 
   <main id="main">
-      <div class="updated">Last Updated: <time datetime="2021-06-30">30<sup>th</sup> June 2021</time></div>
+      <div class="updated">Last Updated: <time datetime="2023-08-01">1<sup>st</sup> August 2023</time></div>
 
-<h1 id="picture">Picture</h1>
+<h1 id="table-layouts">Table layouts</h1>
 
-<p>The picture element allows us to define a number of different sources for an image.  This can be really useful for things like,</p>
+<p>For the majority of HTML emails, table layouts are the default way of structuring the code. A lot of emails use this approach to work around issues with Windows Outlook. However in my experience layout tables causes a lot more issues than they fix.</p>
+
+<p>## Issues solved by table layouts</p>
 <ul>
-  <li>Using different image formats that aren’t supported everywhere.</li>
-  <li>Changing images for smaller viewports.</li>
-  <li>Changing images for dark mode.</li>
-  <li>Swapping an animated image to a static image for users who prefer reduced motion.</li>
+  <li>Adding a width to a section in Windows Outlook.</li>
+  <li>Adding a background to a section in Windows Outlook.</li>
+  <li>Creating colum layouts in Windows Outlook.</li>
 </ul>
 
-<h2 id="the-code">The code</h2>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;picture&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"webP-image.webp"</span> <span class="na">type=</span><span class="s">"image/webp"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"fallback-image.gif"</span> <span class="na">alt=</span><span class="s">"Alt Text!"</span> <span class="na">style=</span><span class="s">""</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/picture&gt;</span></code></pre></figure>
-
-<p>There are 3 main parts to the code</p>
+<p>## Issues caused by table layouts</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> this acts as a wrapper to the content.</li>
-  <li><code class="language-plaintext highlighter-rouge">&lt;source&gt;</code> this gives alternate options to use for the image <code class="language-plaintext highlighter-rouge">src</code>, we can add more than one option here if we like.</li>
-  <li><code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> this is the default image.  If none of the <code class="language-plaintext highlighter-rouge">&lt;source&gt;</code> elements match our needs or if <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> isn’t supported this acts as a standard <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> element.  We should add our <code class="language-plaintext highlighter-rouge">class</code> and <code class="language-plaintext highlighter-rouge">style</code> attributes here and as with any image it’s important to include an <code class="language-plaintext highlighter-rouge">alt=""</code> attribute.  These attributes apply to all versions of the image.</li>
+  <li>Screen readers reading out tables.</li>
+  <li>A number of email clients apply default styles to the content inside tables, blocking inherited styles.
+    <ul>
+      <li>Libaro / open exchange adding padding to <code class="language-plaintext highlighter-rouge">&lt;th&gt;</code> elements.</li>
+      <li></li>
+    </ul>
+  </li>
+  <li>Gmail munged tables</li>
+  <li><a href="https://twitter.com/M_J_Robbins/status/979390098339966983">Outlook webmail auto zooming emails</a>.</li>
+  <li><a href="https://github.com/hteumeuleu/email-bugs/issues/98">Tables don’t always apply border radius</a>.</li>
+  <li><a href="https://github.com/hteumeuleu/email-bugs/issues/78">TD elements can’t be set to <code class="language-plaintext highlighter-rouge">display: block</code> in Outlook</a>.</li>
+  <li><a href="https://github.com/hteumeuleu/email-bugs/issues/73">Table with a width attribute will stop Samsung showing responsive emails correctly</a>.</li>
+  <li><a href="https://github.com/hteumeuleu/email-bugs/issues/45">Apple Mail adds 1px width for an empty cells</a>.</li>
+  <li>[SFR adds grey background to <a> tags inside &lt;th&gt; elements](https://github.com/hteumeuleu/email-bugs/issues/33).</a></li>
 </ul>
 
-<h3 id="source"><code class="language-plaintext highlighter-rouge">&lt;source&gt;</code></h3>
-<p>The <code class="language-plaintext highlighter-rouge">&lt;source&gt;</code> element is used to give other options to use for the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> so we need to give some hints to say which image is the best to use.  This is done with 3 attributes <code class="language-plaintext highlighter-rouge">srcset</code> <code class="language-plaintext highlighter-rouge">type</code> and <code class="language-plaintext highlighter-rouge">media</code>.</p>
+<p>These issues can all be solved by using a number of additional workarounds. But as they are spread across a number of email client they can be hard to test and adding these additional workarounds can lead to extra issues.</p>
 
-<h4 id="srcset">srcset</h4>
-<p>This sets the alternate image src.  However as it uses <code class="language-plaintext highlighter-rouge">srcset</code> rather than <code class="language-plaintext highlighter-rouge">src</code> we can do a little more with it too and include a comma-separated list of image sources with either a width descriptor to define the source image width or a pixel density descriptor for high-DPI screens.
-<code class="language-plaintext highlighter-rouge">&lt;source srcset="image-300.png 300w, image-600.png 600w, image-2x.png 2x"&gt;</code></p>
-
-<h4 id="type">type</h4>
-<p>This defines the image type, in the above example I’m using a webP image.  WebP is a great image format, it can do animation and has far better compression than a gif (to be fair the gif format was last updated in 1989 so it’s done well to last this long).  However webP is not supported everywhere just yet, so using <code class="language-plaintext highlighter-rouge">type="image/webp"</code> we can suggest to switch to this image if it’s supported, otherwise it will fallback to another <code class="language-plaintext highlighter-rouge">&lt;source&gt;</code> that is supported or go back to the fallback set in the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code>.</p>
-
-<p>Here is a <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types">list of image file types</a>  you can reference.</p>
-
-<h4 id="media">media</h4>
-<p>This defines a media condition (similar to a media query), so you could, for example change an image on viewports less than 500px using this code.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;picture&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"small-logo.png"</span> <span class="na">media=</span><span class="s">"(max-width: 500px)"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"big-logo.png"</span> <span class="na">alt=</span><span class="s">"Alt Text!"</span> <span class="na">style=</span><span class="s">""</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/picture&gt;</span></code></pre></figure>
-
-<h5 id="dark-mode">Dark Mode</h5>
-<p>But where this is really cool is you can use it for other enhancements, like dark mode.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;picture&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"dark-img.png"</span> <span class="na">media=</span><span class="s">"(prefers-color-scheme: dark)"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"light-img.png"</span> <span class="na">alt=</span><span class="s">"Alt Text!"</span> <span class="na">style=</span><span class="s">""</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/picture&gt;</span></code></pre></figure>
-
-<h5 id="reduced-motion">Reduced Motion</h5>
-<p>And it’s great for using as an accessibility enhancement for things like reduced motion.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;picture&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"animation.webp"</span>  <span class="na">type=</span><span class="s">"image/webp"</span> <span class="na">media=</span><span class="s">"(prefers-reduced-motion: no-preference)"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"animation.gif"</span>  <span class="na">type=</span><span class="s">"image/gif"</span> <span class="na">media=</span><span class="s">"(prefers-reduced-motion: no-preference)"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static.png"</span> <span class="na">alt=</span><span class="s">"Alt Text!"</span> <span class="na">style=</span><span class="s">""</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/picture&gt;</span></code></pre></figure>
-
-<p>In this example if the user has said they don’t mind movement and there is support for webP they will see the <code class="language-plaintext highlighter-rouge">animation.webp</code> image.
-If the user has said they don’t mind movement but there isn’t support for webP they will see the <code class="language-plaintext highlighter-rouge">animation.gif</code> image.
-And if the user has said they don’t want movement (or if <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> isn’t supported) they will see the <code class="language-plaintext highlighter-rouge">static.png</code> image.</p>
-
-<h2 id="additional-support">Additional support</h2>
-<p>We can add a little extra support by wrapping our picture element with a span so we can target it.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"picture-fallback"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;picture&gt;</span>
-		<span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"source-image.png"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"fallback-image.png"</span> <span class="na">alt=</span><span class="s">"alt text"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;/picture&gt;</span>
-<span class="nt">&lt;/span&gt;</span></code></pre></figure>
-
-<p>Then adding some CSS to show an alternate image.</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
-<span class="nt">span</span><span class="nc">.picture-fallback</span><span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">background-image</span><span class="p">:</span><span class="sx">url(css-image.png)</span><span class="p">;</span>
-  <span class="nl">background-repeat</span><span class="p">:</span><span class="nb">no-repeat</span><span class="p">;</span>
-  <span class="nl">background-size</span><span class="p">:</span><span class="n">contain</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">span</span><span class="nc">.picture-fallback</span> <span class="nt">img</span><span class="p">{</span>
-  <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">span</span><span class="nc">.picture-fallback</span> <span class="nt">picture</span> <span class="nt">img</span><span class="p">{</span>
-  <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span></code></pre></figure>
-
-<p>Here we set the span to be <code class="language-plaintext highlighter-rouge">display: inline-block;</code> and set our new image as a <code class="language-plaintext highlighter-rouge">background-image</code>.</p>
-
-<p>We then set the original image to be <code class="language-plaintext highlighter-rouge">opacity: 0;</code> I’m using this instead of <code class="language-plaintext highlighter-rouge">display:none</code> so we can use the same <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> of the original <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code>.</p>
-
-<p>Finally we put the image back if the picture tag is supported <code class="language-plaintext highlighter-rouge">span.picture-fallback picture img{opacity: 1;}</code>.</p>
-
-<p>You can wrap that code inside a media query or use some CSS <a href="https://howtotarget.email/">email client targeting</a> to make sure it only applies where you want it to.</p>
-
-<h2 id="picture-support"><code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> support</h2>
-<p>The <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> element doesn’t work everywhere but the fallback to the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> is solid so I’d say it’s pretty safe to use.  If you spot anywhere where the fallback isn’t working, please let me know and I’ll add a note.</p>
-<iframe src="https://embed.caniemail.com/html-picture/" width="600" height="400" class="caniemail" title="picture element support from caniemail.com"></iframe>
+<p>The issues solved by table layouts are all in Windows Outlook.</p>
 
       <hr class="end">
   </main>

@@ -139,6 +139,10 @@ header .logo{
   transform-origin:top;
   view-transition-name: logo;
 }
+.home header .logo{
+  width: 18em;
+  height: 10.6em;
+}
 header:has(nav){
   grid-template-columns: 20em 1fr;
   align-items: center;
@@ -212,6 +216,12 @@ nav li a{
   display:block;
   padding:.5em;
   border-radius: 12% 4em 120% 4em / 4em 120% 4em 120%;
+}
+nav li.active{
+  display:block;
+  padding:.5em;
+  background: var(--highlight, #005959);
+  color: var(--bg-color, #eee);
 }
 nav li a:hover,
 nav li a:focus{
