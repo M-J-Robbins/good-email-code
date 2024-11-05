@@ -6,7 +6,7 @@ group: "accessibility"
 order: 3.4
 --- 
 
-<div  class="updated">Last Updated: <time  datetime="2022-02-01">1<sup>st</sup> February 2022</time></div>
+<div  class="updated">Last Updated: <time  datetime="2022-02-01">5<sup>th</sup>November 2024</time></div>
 
 # Text In Images
 This is something that comes up from time to time. Is it ok to add text in images in email?
@@ -95,6 +95,9 @@ Changing text in code is very quick and easy, it may not even require a develope
 
 ### Alt text and image text can fall out of sync
 If you do make an update to an image, you must also update the alt text. This is an extra added risk that isn't needed.
+
+### AI summaries don't include alt text
+AI summaries of email content are on the rise, at the time of writing these don't take into account alt text. Some examples from AppleMail show a message like _"This message is too short to summerize"_ or it may include the _"Unsubscribe"_ link text. AI might account for alt text in the future, but it's likly still going to be treated as lower priority than live text. 
 
 ## Conclusion
 I'm not saying never use text in an image, you absolutely can. However, you must consider all the above points. 
