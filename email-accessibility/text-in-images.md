@@ -93,6 +93,9 @@ If images are disabled by the email client settings, there are no images. It's l
 ### Harder to make quick updates to copy
 Changing text in code is very quick and easy, it may not even require a developer. Changing text in an image mostly requires specialist software, then it needs to be exported and optimised.
 
+### Harder to personalise content
+A lot of people use templating languages to personalise content. There are tools around to help generate dynamic image content but that adds an extra layer of complexity.
+
 ### Alt text and image text can fall out of sync
 If you do make an update to an image, you must also update the alt text. This is an extra added risk that isn't needed.
 
