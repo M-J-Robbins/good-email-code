@@ -110,17 +110,29 @@ Text will wrap normally in all clients apart from them Windows Outlooks.  As Win
 If you are setting `mso-line-height-rule: exactly;` on a parent element that houses your link button, then you may see some issue with height in MSO Outlook. In which case try removing it or resetting it to `mso-line-height-rule: at-least`.
 
 ## `role="button"`
-I've seen a few emails where a link has `role="button"` applied to it.
- 
+
+I've seen a few emails where `role="button"` has been applied to elements like `<a>`, `<div>`, `<td>`, or `<span>` to make them look more meaningful to assistive technology.
+
 **Don't do that!**
- 
-As I mentioned at the top of this article, an `<a>` is a link, not a button.  For a button, we should use `<button>` (but that doesn't come up often in email).
- 
-Changing the semantic meaning of a link can cause some pretty serious issues.
- 
-Assistive technology users may not be able to find it in the links menu for the page.  And if they do find it and want to click on it, the shortcut for clicking may be different to what is expected or may not work at all.
- 
-So rather than helping your users click through to your side, you may be actively blocking them from doing so.
+
+An `<a>` is a link, a `<div>` is a generic container, a `<td>` is a table cell. Setting `role="button"` on them tells assistive technology to treat them as button, without any of the behaviour that comes with it.
+
+A real `<button>` element gets keyboard support for free. Press Enter or Space and it activates. When you use `role="button"` on a non-native element you get none of that, the interaction has to be added with JavaScript. And JavaScript doesn't work in email.
+
+So what you end up with is an element that a screen reader announces as a button, but that a keyboard user can't actually activate. Rather than helping your users, you may be actively blocking them.
+
+
+## `role="link"`
+
+Similar to `role="button"` I've also seen `role="link"` applied to elements that aren't links.
+
+A real `<a>` element with an `href` gets keyboard support for free. Tab to it, press Enter, it navigates. When you use `role="link"` on a non-native element you get none of that, the keyboard interaction has to be wired up with JavaScript. And JavaScript doesn't work in email.
+
+So you end up with something a screen reader announces as a link, that a keyboard user can't activate. It may also be missing from the links menu that many assistive technology users rely on to navigate a page, since some tools only populate that menu from real `<a>` elements.
+
+There's also no good reason to do this in email. Unlike `<button>`, which has limited support in some email clients, `<a>` works everywhere. Just use it, it's what users are expecting and looking for.
+
+
 
 ## Updates
 The previouds version of this used `letter-spacing` to create the padding for Windows Outlooks, however sometime [late 2022 Cosmin noticed](https://twitter.com/M_J_Robbins/status/1575804582545960960) the Beta version of Outlook stopped supporting `letter-spacing`. I was hoping this would be fixed but then in early 2023 this came out to the production version. This lead me to finding this new way of doing it, which is actually better as it uses relative units, making it more accessible and more scalable. It's also a tiny bit less code.
