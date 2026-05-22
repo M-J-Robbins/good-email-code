@@ -130,7 +130,7 @@ A real `<a>` element with an `href` gets keyboard support for free. Tab to it, p
 
 So you end up with something a screen reader announces as a link, that a keyboard user can't activate. It may also be missing from the links menu that many assistive technology users rely on to navigate a page, since some tools only populate that menu from real `<a>` elements.
 
-There's also no good reason to do this in email. Unlike `<button>`, which has limited support in some email clients, `<a>` works everywhere. Just use it, it's what users are expecting and looking for.
+There's also no good reason to do this in email. Unlike `<button>`, which has limited support in some email clients, `<a>` works everywhere. Just use it as it is, it's what users are expecting and looking for.
 
 
 
