@@ -58,7 +58,22 @@ html, main, footer{
   background-size: 370px;
   background-blend-mode: multiply;
 }
-
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: 
+    radial-gradient(ellipse at center,rgb(156 116 190 / 50%) 50%, transparent 80%),
+    radial-gradient(ellipse at center, #000 0%, #000 35%, transparent),
+    linear-gradient(90deg, rgb(255 42 133 / .75) 2px, transparent 2px),
+    linear-gradient(0deg, rgb(255 42 133 / .75) 2px, transparent 2px);
+    background-size: 
+    cover,
+    100% 50%,
+    40px 40px,
+    40px 40px;
+    background-position: center;
+    background-color: #1E2026;
+  }
+}
 /* Windows high contrast mode */
 @media (forced-colors: active) {
   html{
