@@ -6,7 +6,7 @@ group: "code"
 order: 1.1
 --- 
 
-<div class="updated">Last Updated: <time datetime="2023-03-09">09<sup>th</sup> March 2023</time></div>
+<div class="updated">Last Updated: <time datetime="2026-10-09">09<sup>th</sup> October 2026</time></div>
 
 # Base Template
 
@@ -20,11 +20,10 @@ This is a simple stripped back basic template that I'd use for every email I sen
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
-  <meta name="x-apple-disable-message-reformatting">
+  <meta name="x-apple-disable-message-reformatting" content="true">
   <meta name="color-scheme" content="light dark">
-  <meta name="supported-color-schemes" content="light dark">
   <title>Email title</title>
   <!--[if mso]>
   <noscript>
@@ -38,12 +37,11 @@ This is a simple stripped back basic template that I'd use for every email I sen
   <style>
     :root {
       color-scheme: light dark;
-      supported-color-schemes: light dark;
     }
   </style>
 </head>
 <body class="body" xml:lang="en">
-  <div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
+  <div role="article" aria-roledescription="email" aria-label="email subject line" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
     <!-- email content in here -->
   </div>
 </body>
@@ -102,9 +100,11 @@ Be aware that the email headers may override what is set in the meta.
 
 ### viewport
  ```html
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1">
  ```
-The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the email is first loaded.  `user-scalable=yes` allows the user to adjust the scale (pinch and zoom).
+The viewport element gives the browser and email client instructions on how to control the page's dimensions and scaling.  `width=device-width` sets the width of the page to follow the screen-width of the device.  `initial-scale=1.0` sets the initial zoom level when the email is first loaded.  
+
+**Update:** Removed [user-scalable](#user-scalable)
 
 ### format-detection
  ```html
@@ -117,9 +117,11 @@ There is an argument that we shouldn't use these as the auto linking helps users
 
 ### x-apple-disable-message-reformatting
  ```html
-<meta name="x-apple-disable-message-reformatting">
+<meta name="x-apple-disable-message-reformatting" content="true">
  ```
 As the name suggests this is specific to Apple.  It appears Apple were trying to fix the display of non-responsive email in their iOS email client, however when encountering a responsive email they would display at half the width of the screen and zoomed out.  This meta tag prevents the Apple fix and relies on the developer to make the email responsive.
+
+Including `content="true"` is required to make this valid HTML. I've seen this work without that addition, however including it reduces risk of it being stripped by an ESP or email client.
 
 There are more details on [Apple auto-scaling emails bug](https://github.com/hteumeuleu/email-bugs/issues/18) on the email bugs repo.
 
@@ -127,9 +129,9 @@ There are more details on [Apple auto-scaling emails bug](https://github.com/hte
 ### color-scheme
  ```html
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark">
  ```
-These are used to control dark mode preferences. They both do the same thing but `supported-color-schemes` was renamed to `color-scheme` so for now we include both to get more as the old name is supported by Safari, and Mail in macOS 10.14.4.
+
+These are used to control dark mode preferences. 
 
 The `content` values include
 * light - tells the email client that only light styles are provided
@@ -140,6 +142,14 @@ The `content` values include
 * light dark only — tells the email clients that light and dark styles are ready to use and not to try and transform any styles.
 
 It's best to set this with logic depending on if dark styles are included in the code. But if you can't place that logic I'd opt for `light dark`.
+
+#### Gmail color-scheme
+  ```html
+<meta name="color-scheme" content="light only">
+ ```
+Setting this will prevent Gmail from applying it's forced dark mode styles to the email. It's advised not to use this and instead work with the dark styles to respect the users preference. However sometimes the changes made by Gmail can create accessibility issues and this is a quick way to sort that.
+
+Setting this also has a knock on effect and will prevent AppleMail showing dark styles you have provided. This Apple issue can be fixed by [setting the `color-scheme` in CSS](#style) to `light dark` as Gmail will ignore these styles.
 
 
 ## Title
@@ -170,7 +180,6 @@ This code helps rendering on Windows versions of Outlook desktop.
 <style>
   :root {
     color-scheme: light dark;
-    supported-color-schemes: light dark;
   }
 </style>
  ```
@@ -186,7 +195,7 @@ The `xml:lang="en"` sets a language for Windows Outlook, which will ingnore the 
 
 ## Wrapping element
  ```html
-<div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
+<div role="article" aria-roledescription="email" aria-label="email subject line" lang="en" dir="ltr" style="font-size:medium; font-size:max(16px, 1rem)">
  ```
 Inside the email body we wrap the whole content of the email in this `<div>`, I've also seen some people apply these attributes to a wrapping `<table>` personally I try and avoid tables as much as possible, but if that's your set up then you can use it on a `<table>`.
 
@@ -197,8 +206,8 @@ This is an accessibility enhancement, when navigating with a screen reader this 
 ### `aria-roledescription="email"`
 As I mentioned previously, article may not be the best word to describe the content, so this will rename it to email.  This is a custom name so we can use anything here but I wouldn't advise using anything else apart from translating it to match the language of your content.  If you are unable to translate this to match your content I'd recommend leaving it off.
 
-### `aria-label="email name"`
-So we've said this is stand-alone content, we've said the content type is email now we give that a title.  To keep it simple I'd recommend using the subject line if you can dynamically insert that or perhaps say who the email is from.
+### `aria-label="email subject line"`
+So we've said this is stand-alone content, we've said the content type is email now we give that a title.  To keep it simple I'd recommend using the subject line if you can dynamically insert that or perhaps say who the email is from "update from GoodEmailCode.com".
 
 ### `lang="en" dir="ltr"`
 These are a duplication of the [lang](#lang) & [dir](#dir) set on the HTML element.  Email clients will often remove the `<html>` element so it's best to duplicate it here also.
@@ -222,3 +231,11 @@ I've written up more about using `rem` and `em` units and how to convert your co
 This told the browser which version of IE to render with.  In theory this would only apply to webmail clients opening in IE 9 or below (although meta tags are likely to be stripped from webmail), emails viewed in browser in IE 9 or below and Outlook 2000-2003 for windows. 
 
 It also enabled media queries to work on some versions of windows phone.
+
+### supported-color-schemes
+
+`supported-color-schemes` was renamed to `color-scheme` the old name was supported in older AppleMail version in macOS 10.14. But from macOS 10.15 onward the newer version has been supported.
+
+### user-scalable
+
+Previous versions of the meta viewport included `user-scalable=yes`. This allows the user to adjust the scale (pinch and zoom), however this is now default so n longer required.

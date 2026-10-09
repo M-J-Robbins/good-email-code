@@ -1,4 +1,3 @@
-theme               : jekyll-theme-time-machine
 markdown            : kramdown
 highlighter         : rouge
 linenos             : false
