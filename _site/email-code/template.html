@@ -191,6 +191,8 @@
 
   
 
+  
+
 
 
 </ul>
@@ -329,6 +331,8 @@
 
   
 
+  
+
 
 
 </ul>
@@ -436,6 +440,14 @@
 
   
     
+      <li><a href="/email-accessibility/animation">Animation</a>
+        
+      </li>
+    
+  
+
+  
+    
       <li><a href="/email-accessibility/visually-hidden-text">Visually hidden text</a>
         
       </li>
@@ -466,7 +478,7 @@
 
 <h2 id="the-code">The code</h2>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span> <span class="na">dir=</span><span class="s">"ltr"</span> <span class="na">xmlns:v=</span><span class="s">"urn:schemas-microsoft-com:vml"</span> <span class="na">xmlns:o=</span><span class="s">"urn:schemas-microsoft-com:office:office"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span> <span class="na">dir=</span><span class="s">"ltr"</span> <span class="na">xmlns:v=</span><span class="s">"urn:schemas-microsoft-com:vml"</span> <span class="na">xmlns:o=</span><span class="s">"urn:schemas-microsoft-com:office:office"</span> <span class="na">xmlns:w=</span><span class="s">"urn:schemas-microsoft-com:office:word"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
@@ -481,6 +493,9 @@
       &lt;o:OfficeDocumentSettings&gt;
         &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
       &lt;/o:OfficeDocumentSettings&gt;
+      &lt;w:WordDocument&gt;
+        &lt;w:DontUseAdvancedTypographyReadingMail/&gt;
+      &lt;/w:WordDocument&gt;
     &lt;/xml&gt;
   &lt;/noscript&gt;
   &lt;![endif]--&gt;</span>
@@ -509,7 +524,7 @@
 <p>Rémi Parmentier has written a really great article about <a href="https://emails.hteumeuleu.com/which-doctype-should-you-use-in-html-emails-cd323fdb793c">which doctype should you use in HTML emails</a>.  If you want to know more I’d strongly recommend reading that.</p>
 
 <h2 id="html-element">HTML element</h2>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span> <span class="na">dir=</span><span class="s">"ltr"</span> <span class="na">xmlns:v=</span><span class="s">"urn:schemas-microsoft-com:vml"</span> <span class="na">xmlns:o=</span><span class="s">"urn:schemas-microsoft-com:office:office"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span> <span class="na">dir=</span><span class="s">"ltr"</span> <span class="na">xmlns:v=</span><span class="s">"urn:schemas-microsoft-com:vml"</span> <span class="na">xmlns:o=</span><span class="s">"urn:schemas-microsoft-com:office:office"</span> <span class="na">xmlns:w=</span><span class="s">"urn:schemas-microsoft-com:office:word"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 <p>The <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> tag defines the document as HTML format, however if the file is saved as <code class="language-plaintext highlighter-rouge">.html</code> then this is assumed anyway so it’s not really needed.  However what is needed are the attributes set on in.</p>
 
@@ -530,7 +545,12 @@
 <p>This sets the language direction either as left to right (<code class="language-plaintext highlighter-rouge">ltr</code>) or right to left (<code class="language-plaintext highlighter-rouge">rtl</code>).</p>
 
 <h3 id="xmlns">xmlns</h3>
-<p>These 2 settings are used to help Windows Outlook support <code class="language-plaintext highlighter-rouge">xmlns:v="urn:schemas-microsoft-com:vml"</code> is needed if you want to use VML in your markup, although if you prefer this can be placed <a href="../email-enhancements/svg-to-vml#xmlns">diretly on the VML</a> shapes you use. I still need to do some more research into <code class="language-plaintext highlighter-rouge">xmlns:o="urn:schemas-microsoft-com:office:office"</code>.</p>
+<p>These 3 settings are used to help Windows Outlook support. The <code class="language-plaintext highlighter-rouge">v</code>, <code class="language-plaintext highlighter-rouge">o</code> and <code class="language-plaintext highlighter-rouge">w</code> are used to prefix tags like <code class="language-plaintext highlighter-rouge">&lt;v:rect&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;o:OfficeDocumentSettings&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;w:WordDocument&gt;</code>.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">xmlns:v="urn:schemas-microsoft-com:vml"</code> is needed if you want to use VML in your markup. I generally advice against using VML so I tend to exclude this one. Also if you prefer this can be placed <a href="../email-enhancements/svg-to-vml#xmlns">diretly on the VML</a> shapes you use.</li>
+  <li><code class="language-plaintext highlighter-rouge">xmlns:o="urn:schemas-microsoft-com:office:office"</code> is used in the <a href="#xml">XML</a> tags below that fix scaling issues.</li>
+  <li><code class="language-plaintext highlighter-rouge">xmlns:w="urn:schemas-microsoft-com:office:word"</code> is used in the <a href="#xml">XML</a> tags below that fix scaling text rendering issues.</li>
+</ul>
 
 <h2 id="meta">Meta</h2>
 <p>There are a number of meta elements set here so lets look at them individually.</p>
@@ -605,6 +625,9 @@ However support is low, I’ve only ever seen it work for phone numbers on the O
     &lt;o:OfficeDocumentSettings&gt;
       &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
     &lt;/o:OfficeDocumentSettings&gt;
+    &lt;w:WordDocument&gt;
+      &lt;w:DontUseAdvancedTypographyReadingMail/&gt;
+    &lt;/w:WordDocument&gt;
   &lt;/xml&gt;
 &lt;/noscript&gt;
 &lt;![endif]--&gt;</span>
@@ -614,6 +637,7 @@ However support is low, I’ve only ever seen it work for phone numbers on the O
   <li><code class="language-plaintext highlighter-rouge">&lt;!--[if mso]&gt; &lt;![endif]--&gt;</code> This if statement means this code is only visible to Windows versions of Outlook desktop. Although T-online also renders the code.</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;noscript&gt;</code> Stops the text <code class="language-plaintext highlighter-rouge">96</code> showing in T-Online.</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;</code> This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have manually chosen to increase the DPI.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;w:DontUseAdvancedTypographyReadingMail/&gt;</code> This prevents text rendering inconsistencies with adaptive justification, kerning, ligatures and hyphenation in Outlook.</li>
 </ul>
 
 <h2 id="style">Style</h2>

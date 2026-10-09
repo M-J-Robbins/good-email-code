@@ -16,7 +16,7 @@ This is a simple stripped back basic template that I'd use for every email I sen
 ## The code
 ```html
 <!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +31,9 @@ This is a simple stripped back basic template that I'd use for every email I sen
       <o:OfficeDocumentSettings>
         <o:PixelsPerInch>96</o:PixelsPerInch>
       </o:OfficeDocumentSettings>
+      <w:WordDocument>
+        <w:DontUseAdvancedTypographyReadingMail/>
+      </w:WordDocument>
     </xml>
   </noscript>
   <![endif]-->
@@ -61,7 +64,7 @@ Rémi Parmentier has written a really great article about [which doctype should 
 
 ## HTML element
 ```html
-<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en" dir="ltr" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word">
 ```
 The `<html>` tag defines the document as HTML format, however if the file is saved as `.html` then this is assumed anyway so it's not really needed.  However what is needed are the attributes set on in.
 
@@ -82,7 +85,10 @@ Read more on the [w3school lang attribute page](https://www.w3schools.com/tags/a
 This sets the language direction either as left to right (`ltr`) or right to left (`rtl`).
 
 ### xmlns 
-These 2 settings are used to help Windows Outlook support `xmlns:v="urn:schemas-microsoft-com:vml"` is needed if you want to use VML in your markup, although if you prefer this can be placed [diretly on the VML](../email-enhancements/svg-to-vml#xmlns) shapes you use. I still need to do some more research into `xmlns:o="urn:schemas-microsoft-com:office:office"`.
+These 3 settings are used to help Windows Outlook support. The `v`, `o` and `w` are used to prefix tags like `<v:rect>`, `<o:OfficeDocumentSettings>` and `<w:WordDocument>`. 
+ * `xmlns:v="urn:schemas-microsoft-com:vml"` is needed if you want to use VML in your markup. I generally advice against using VML so I tend to exclude this one. Also if you prefer this can be placed [diretly on the VML](../email-enhancements/svg-to-vml#xmlns) shapes you use. 
+ * `xmlns:o="urn:schemas-microsoft-com:office:office"` is used in the [XML](#xml) tags below that fix scaling issues.
+ * `xmlns:w="urn:schemas-microsoft-com:office:word"` is used in the [XML](#xml) tags below that fix scaling text rendering issues.
 
 ## Meta
 There are a number of meta elements set here so lets look at them individually.
@@ -166,6 +172,9 @@ The title element give a title to your document, this will be seen in the browse
     <o:OfficeDocumentSettings>
       <o:PixelsPerInch>96</o:PixelsPerInch>
     </o:OfficeDocumentSettings>
+    <w:WordDocument>
+      <w:DontUseAdvancedTypographyReadingMail/>
+    </w:WordDocument>
   </xml>
 </noscript>
 <![endif]-->
@@ -174,6 +183,7 @@ This code helps rendering on Windows versions of Outlook desktop.
 * `<!--[if mso]> <![endif]-->` This if statement means this code is only visible to Windows versions of Outlook desktop. Although T-online also renders the code.
 * `<noscript>` Stops the text `96` showing in T-Online.
 * `<o:PixelsPerInch>96</o:PixelsPerInch>` This will improve rendering on machines that have a higher DPI set, this is often the case for Windows laptops that have higher than standard resolution monitors, or users who have manually chosen to increase the DPI.
+* `<w:DontUseAdvancedTypographyReadingMail/>` This prevents text rendering inconsistencies with adaptive justification, kerning, ligatures and hyphenation in Outlook. 
 
 ## Style
  ```html
