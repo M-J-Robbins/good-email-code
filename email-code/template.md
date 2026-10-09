@@ -183,7 +183,7 @@ This code helps rendering on Windows versions of Outlook desktop.
   }
 </style>
  ```
-This is essentially a duplicate of the [meta color-scheme](#color-scheme). At time of writing this only really works in Apple Mail which supports both methods but in the interest of future proofing I'm including both.  
+This is essentially a duplicate of the [meta color-scheme](#color-scheme). If you are setting the `light only` value for the meta tag to prevent Gmail forced dark mode. Then you can set a different value here in CSS there will override the meta value in clients like AppleMail. 
 
 ## Body
  ```html
