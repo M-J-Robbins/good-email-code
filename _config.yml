@@ -1,3 +1,6 @@
 markdown            : kramdown
 highlighter         : rouge
 linenos             : false
+
+# Pirsch analytics identification code for www.goodemailcode.com (Pirsch dashboard > Settings > Integration)
+pirsch_code         : "MIURHp4041u5wtwXGyKQC5Ql94BfIt1t"

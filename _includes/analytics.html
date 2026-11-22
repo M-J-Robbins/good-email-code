@@ -1,0 +1,4 @@
+{%- if site.pirsch_code and site.pirsch_code != "" -%}
+<!-- Pirsch analytics: cookie-free page views. Skips localhost. -->
+<script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="{{ site.pirsch_code }}"></script>
+{%- endif -%}
